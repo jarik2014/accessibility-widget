@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@blakfy/a11y-core": "workspace:*",
-    "preact": "^10.24.3"
+    "preact": "^10.29.2"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",
