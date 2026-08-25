@@ -1,6 +1,6 @@
 {
   "name": "@blakfy/accessibility-widget-next",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "Next.js helpers for @blakfy/accessibility-widget — A11yServerHelper, A11yScript with FOUC protection",
   "type": "module",
   "main": "./dist/index.js",
@@ -21,7 +21,7 @@
     "api:update": "api-extractor run --local"
   },
   "peerDependencies": {
-    "next": ">=14.0.0 <16.0.0",
+    "next": ">=14.0.0 <17.0.0",
     "react": ">=18.0.0"
   },
   "dependencies": {

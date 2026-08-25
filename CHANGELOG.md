@@ -1,5 +1,10 @@
 # Changelog
 
+## [next 2.0.0-alpha.2] — 2026-08-25
+
+### Changed
+- `@blakfy/accessibility-widget-next` peer range widened to `next >=14.0.0 <17.0.0` — Next.js 16 accepted. Verified on Next 16.3.2 + React 19.2.8: clean install, `next build`, `<A11yServerHelper />` emits the `data-a11y-*` attributes server-side (no FOUC). No runtime change (`next/headers` `cookies()` is already awaited).
+
 ## [Unreleased] — v2.0.0
 
 ### Added
