@@ -1,5 +1,10 @@
 # Changelog
 
+## [next 2.0.0-alpha.3] — 2026-08-25
+
+### Fixed
+- alpha.2 was published with `npm publish` from the pnpm workspace, so its `@blakfy/a11y-core` dependency shipped as the literal `workspace:*` and the package could not be installed. alpha.2 is deprecated on npm; alpha.3 is the same build published with `pnpm publish` (dependency resolved to `2.0.0-alpha.1`). Always publish this package with pnpm.
+
 ## [next 2.0.0-alpha.2] — 2026-08-25
 
 ### Changed
