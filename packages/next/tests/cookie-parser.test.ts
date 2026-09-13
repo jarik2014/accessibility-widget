@@ -87,16 +87,12 @@ describe('parseServerCookie', () => {
   });
 
   it('falls back safely when nested prefs is malformed', () => {
-    const cookie = encodeURIComponent(
-      JSON.stringify({ prefs: 'not-an-object', version: '1.0.0' }),
-    );
+    const cookie = encodeURIComponent(JSON.stringify({ prefs: 'not-an-object', version: '1.0.0' }));
     expect(parseServerCookie(cookie)).toEqual(DEFAULT_ATTRS);
   });
 
   it('falls back to defaults when prefs is missing entirely', () => {
-    const cookie = encodeURIComponent(
-      JSON.stringify({ version: '1.0.0', locale: 'tr' }),
-    );
+    const cookie = encodeURIComponent(JSON.stringify({ version: '1.0.0', locale: 'tr' }));
     expect(parseServerCookie(cookie)).toEqual(DEFAULT_ATTRS);
   });
 

@@ -19,16 +19,31 @@
         "description": "Textgröße erhöhen oder verringern.",
         "values": { "100": "Normal", "110": "Groß", "125": "Sehr Groß" }
       },
-      "contrast": { "title": "Hoher Kontrast", "description": "Schwarzer Hintergrund + gelbe Links (AAA 7:1)." },
-      "focusRing": { "title": "Verstärkter Fokusring", "description": "Tastaturfokus mit auffälligem 4px blauen Ring anzeigen." },
-      "linkUnderline": { "title": "Links Unterstreichen", "description": "Alle Links unterstreichen." },
-      "motion": { "title": "Bewegung Reduzieren", "description": "Animationen und Übergänge deaktivieren." },
+      "contrast": {
+        "title": "Hoher Kontrast",
+        "description": "Schwarzer Hintergrund + gelbe Links (AAA 7:1)."
+      },
+      "focusRing": {
+        "title": "Verstärkter Fokusring",
+        "description": "Tastaturfokus mit auffälligem 4px blauen Ring anzeigen."
+      },
+      "linkUnderline": {
+        "title": "Links Unterstreichen",
+        "description": "Alle Links unterstreichen."
+      },
+      "motion": {
+        "title": "Bewegung Reduzieren",
+        "description": "Animationen und Übergänge deaktivieren."
+      },
       "dyslexiaFont": {
         "title": "Legasthenie-freundliche Schrift",
         "description": "OpenDyslexic-Schriftfamilie verwenden.",
         "note": "Einige Leser bevorzugen dies; die Forschung zeigt keinen universellen Nutzen."
       },
-      "readingMode": { "title": "Lesemodus", "description": "Seitenleisten und Ablenkungen ausblenden." }
+      "readingMode": {
+        "title": "Lesemodus",
+        "description": "Seitenleisten und Ablenkungen ausblenden."
+      }
     }
   }
 }

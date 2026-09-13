@@ -61,7 +61,12 @@
       "textAlign": {
         "title": "Allineamento testo",
         "description": "Modifica l'allineamento del corpo del testo e dei titoli nella pagina.",
-        "values": { "default": "Predefinito", "left": "Sinistra", "center": "Centro", "right": "Destra" }
+        "values": {
+          "default": "Predefinito",
+          "left": "Sinistra",
+          "center": "Centro",
+          "right": "Destra"
+        }
       },
       "highlightHeadings": {
         "title": "Evidenzia intestazioni",
@@ -87,7 +92,11 @@
       "cursorSize": {
         "title": "Dimensione cursore",
         "description": "Ingrandisce il cursore del mouse per una migliore visibilità. Scegli scuro o chiaro in base allo sfondo.",
-        "values": { "default": "Predefinito", "largeDark": "Grande Scuro", "largeLight": "Grande Chiaro" }
+        "values": {
+          "default": "Predefinito",
+          "largeDark": "Grande Scuro",
+          "largeLight": "Grande Chiaro"
+        }
       },
       "motion": {
         "title": "Riduci il movimento",

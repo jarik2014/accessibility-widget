@@ -19,8 +19,14 @@
         "description": "Increase or decrease text size.",
         "values": { "100": "Normal", "110": "Large", "125": "Extra Large" }
       },
-      "contrast": { "title": "High Contrast", "description": "Black background + yellow links (AAA 7:1)." },
-      "focusRing": { "title": "Enhanced Focus Ring", "description": "Show keyboard focus with a prominent 4px blue ring." },
+      "contrast": {
+        "title": "High Contrast",
+        "description": "Black background + yellow links (AAA 7:1)."
+      },
+      "focusRing": {
+        "title": "Enhanced Focus Ring",
+        "description": "Show keyboard focus with a prominent 4px blue ring."
+      },
       "linkUnderline": { "title": "Underline Links", "description": "Add underline to all links." },
       "motion": { "title": "Reduce Motion", "description": "Disable animations and transitions." },
       "dyslexiaFont": {
@@ -28,7 +34,10 @@
         "description": "Use the OpenDyslexic font family.",
         "note": "Some readers prefer this; research has not shown universal benefit."
       },
-      "readingMode": { "title": "Reading Mode", "description": "Hide sidebars and distracting areas." }
+      "readingMode": {
+        "title": "Reading Mode",
+        "description": "Hide sidebars and distracting areas."
+      }
     }
   }
 }

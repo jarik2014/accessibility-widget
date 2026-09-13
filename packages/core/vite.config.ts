@@ -18,9 +18,7 @@ export default defineConfig({
     sourcemap: true,
     target: 'es2022',
   },
-  plugins: [
-    dts({ rollupTypes: true, tsconfigPath: './tsconfig.json' }),
-  ],
+  plugins: [dts({ rollupTypes: true, tsconfigPath: './tsconfig.json' })],
   define: {
     __VERSION__: JSON.stringify(pkg.version),
   },

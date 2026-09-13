@@ -22,9 +22,7 @@ test('every interactive panel control is ≥ 24×24 (WCAG 2.5.8 minimum)', async
   // is intentionally a small text-link footer per STABLE-API §9 and is
   // covered by the WCAG 2.5.8 inline-text exception (it is a sentence
   // of text containing a link, not a standalone target).
-  const targets = page
-    .locator('blakfy-a11y-root')
-    .locator('button, [role="switch"]');
+  const targets = page.locator('blakfy-a11y-root').locator('button, [role="switch"]');
   const count = await targets.count();
   expect(count).toBeGreaterThan(0);
   for (let i = 0; i < count; i++) {

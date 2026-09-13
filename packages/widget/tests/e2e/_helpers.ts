@@ -39,8 +39,7 @@ export function switches(page: Page): Locator {
 export async function waitForMount(page: Page): Promise<void> {
   await page.waitForFunction(
     () =>
-      typeof window !== 'undefined' &&
-      !!(window as unknown as { BlakfyA11y?: unknown }).BlakfyA11y,
+      typeof window !== 'undefined' && !!(window as unknown as { BlakfyA11y?: unknown }).BlakfyA11y,
     null,
     { timeout: 10_000 },
   );

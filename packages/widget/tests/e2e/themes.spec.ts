@@ -51,7 +51,11 @@ test('CSS custom properties are queryable on the host', async ({ page }) => {
     const root = document.querySelector('blakfy-a11y-root');
     const sr = (root as HTMLElement | null)?.shadowRoot;
     // The variable is declared on :host; read it via the host element.
-    return root ? getComputedStyle(root as HTMLElement).getPropertyValue('--blakfy-a11y-primary').trim() : '';
+    return root
+      ? getComputedStyle(root as HTMLElement)
+          .getPropertyValue('--blakfy-a11y-primary')
+          .trim()
+      : '';
   });
   expect(value).toBe('#2563eb');
 });

@@ -15,12 +15,7 @@ import { execSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const PACKAGES = [
-  'packages/core',
-  'packages/widget',
-  'packages/next',
-  'packages/react',
-];
+const PACKAGES = ['packages/core', 'packages/widget', 'packages/next', 'packages/react'];
 
 const args = process.argv.slice(2);
 const dryRun = args.includes('--dry-run');
@@ -51,9 +46,7 @@ function withProvenanceOff(dir, fn) {
   }
 }
 
-const targets = filter
-  ? PACKAGES.filter((d) => readPkg(d).name === filter)
-  : PACKAGES;
+const targets = filter ? PACKAGES.filter((d) => readPkg(d).name === filter) : PACKAGES;
 
 if (targets.length === 0) {
   console.error(`No matching package for --filter ${filter}`);

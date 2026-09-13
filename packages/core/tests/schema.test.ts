@@ -82,7 +82,12 @@ describe('invalid preference value diagnostics (#13)', () => {
     const result = safeMergePrefs({ cursorSize: 'largeDark' });
     expect(result.cursorSize).toBe(DEFAULT_PREFS.cursorSize);
     const issues = getIssues();
-    expect(issues.some((i) => i.code === 'INVALID_PREF_VALUE' && i.level === 'warn' && i.msg.includes('cursorSize'))).toBe(true);
+    expect(
+      issues.some(
+        (i) =>
+          i.code === 'INVALID_PREF_VALUE' && i.level === 'warn' && i.msg.includes('cursorSize'),
+      ),
+    ).toBe(true);
   });
 
   it('does not warn for a valid cursorSize', () => {
@@ -95,8 +100,12 @@ describe('invalid preference value diagnostics (#13)', () => {
   it('warns for invalid fontScale, contrast, saturation, textAlign', () => {
     safeMergePrefs({ fontScale: 999, contrast: 'nope', saturation: 'nope', textAlign: 'nope' });
     const issues = getIssues();
-    const fields = issues.filter((i) => i.code === 'INVALID_PREF_VALUE').map((i) => (i.extra as { field?: string } | undefined)?.field);
-    expect(fields).toEqual(expect.arrayContaining(['fontScale', 'contrast', 'saturation', 'textAlign']));
+    const fields = issues
+      .filter((i) => i.code === 'INVALID_PREF_VALUE')
+      .map((i) => (i.extra as { field?: string } | undefined)?.field);
+    expect(fields).toEqual(
+      expect.arrayContaining(['fontScale', 'contrast', 'saturation', 'textAlign']),
+    );
   });
 
   it('does not warn for a field simply omitted from the input', () => {

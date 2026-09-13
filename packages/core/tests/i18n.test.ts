@@ -1,11 +1,6 @@
 // @blakfy/a11y-core — i18n.test.ts
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import {
-  getCachedLocale,
-  getEnglishLocale,
-  loadLocale,
-  _resetLocaleCache,
-} from '../src/i18n';
+import { getCachedLocale, getEnglishLocale, loadLocale, _resetLocaleCache } from '../src/i18n';
 
 beforeEach(() => {
   _resetLocaleCache();

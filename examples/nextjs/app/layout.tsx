@@ -6,25 +6,17 @@
 // `<A11yScript />` widget'ı `next/script` lazyOnload stratejisiyle yükler.
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import {
-  A11yServerHelper,
-  A11yPreconnect,
-} from '@blakfy/accessibility-widget-next';
+import { A11yServerHelper, A11yPreconnect } from '@blakfy/accessibility-widget-next';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Blakfy Accessibility Widget — Demo',
-  description:
-    "Tek script tag ile entegre edilmiş erişilebilirlik tercih paneli demo sayfası",
+  description: 'Tek script tag ile entegre edilmiş erişilebilirlik tercih paneli demo sayfası',
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr" {...(await A11yServerHelper())}>
+    <html lang="tr" {...await A11yServerHelper()}>
       <head>
         <A11yPreconnect />
       </head>

@@ -37,16 +37,13 @@ describe('Script tag data-* config contract (STABLE-API §6)', () => {
     ]);
   });
 
-  it.each(LOCKED_DATA_ATTRS)(
-    'bundle reads dataset.%s',
-    (name) => {
-      // Vite/esbuild preserve property names. Match `<varName>.<name>`
-      // where the dataset variable is some short identifier (mangled).
-      // We search for a property access whose name matches exactly.
-      const re = new RegExp(`\\.${name}\\b`);
-      expect(src).toMatch(re);
-    },
-  );
+  it.each(LOCKED_DATA_ATTRS)('bundle reads dataset.%s', (name) => {
+    // Vite/esbuild preserve property names. Match `<varName>.<name>`
+    // where the dataset variable is some short identifier (mangled).
+    // We search for a property access whose name matches exactly.
+    const re = new RegExp(`\\.${name}\\b`);
+    expect(src).toMatch(re);
+  });
 
   it('bundle implements the documented config priority chain', () => {
     // Order: defaults < script data-* < window.__BLAKFY_A11Y__ < opts

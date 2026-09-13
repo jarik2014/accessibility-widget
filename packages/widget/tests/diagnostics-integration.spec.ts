@@ -71,8 +71,7 @@ describe('Diagnostics integration', () => {
   it('emits OS_PREFERS_* for matching media queries', () => {
     const mqMock = (q: string): MediaQueryList =>
       ({
-        matches:
-          q === '(prefers-reduced-motion: reduce)' || q === '(prefers-color-scheme: dark)',
+        matches: q === '(prefers-reduced-motion: reduce)' || q === '(prefers-color-scheme: dark)',
         media: q,
         onchange: null,
         addEventListener: () => undefined,
@@ -91,8 +90,14 @@ describe('Diagnostics integration', () => {
     try {
       mount();
       const lines = infoSpy.mock.calls.map((c) => String(c[0] ?? ''));
-      expect(lines.some((l) => l.includes('OS_PREFERS_REDUCED_MOTION') || l.includes('reduced-motion'))).toBe(true);
-      expect(lines.some((l) => l.includes('OS_PREFERS_COLOR_SCHEME_DARK') || l.includes('color-scheme=dark'))).toBe(true);
+      expect(
+        lines.some((l) => l.includes('OS_PREFERS_REDUCED_MOTION') || l.includes('reduced-motion')),
+      ).toBe(true);
+      expect(
+        lines.some(
+          (l) => l.includes('OS_PREFERS_COLOR_SCHEME_DARK') || l.includes('color-scheme=dark'),
+        ),
+      ).toBe(true);
     } finally {
       infoSpy.mockRestore();
       window.matchMedia = original;

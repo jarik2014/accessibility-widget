@@ -18,7 +18,11 @@
   },
   "unpkg": "./dist/widget.js",
   "jsdelivr": "./dist/widget.js",
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "cross-env BUILD_TARGET=iife vite build && cross-env BUILD_TARGET=esm vite build && cross-env BUILD_TARGET=element vite build",
     "build:iife": "cross-env BUILD_TARGET=iife vite build",

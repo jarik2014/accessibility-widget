@@ -19,16 +19,31 @@
         "description": "Tüm metinleri büyütür veya küçültür.",
         "values": { "100": "Normal", "110": "Büyük", "125": "Çok Büyük" }
       },
-      "contrast": { "title": "Yüksek Kontrast", "description": "Siyah arka plan + sarı bağlantılar (AAA 7:1)." },
-      "focusRing": { "title": "Belirgin Odak Halkası", "description": "Klavye odağı 4px belirgin mavi halka ile gösterilir." },
-      "linkUnderline": { "title": "Bağlantı Altçizgisi", "description": "Tüm bağlantılarda altçizgi gösterir." },
-      "motion": { "title": "Hareketi Azalt", "description": "Animasyonları ve geçişleri devre dışı bırakır." },
+      "contrast": {
+        "title": "Yüksek Kontrast",
+        "description": "Siyah arka plan + sarı bağlantılar (AAA 7:1)."
+      },
+      "focusRing": {
+        "title": "Belirgin Odak Halkası",
+        "description": "Klavye odağı 4px belirgin mavi halka ile gösterilir."
+      },
+      "linkUnderline": {
+        "title": "Bağlantı Altçizgisi",
+        "description": "Tüm bağlantılarda altçizgi gösterir."
+      },
+      "motion": {
+        "title": "Hareketi Azalt",
+        "description": "Animasyonları ve geçişleri devre dışı bırakır."
+      },
       "dyslexiaFont": {
         "title": "Disleksi Dostu Yazı Tipi",
         "description": "OpenDyslexic yazı tipi ailesini kullanır.",
         "note": "Bazı okuyucular bunu tercih eder; araştırmalar evrensel etki göstermemiştir."
       },
-      "readingMode": { "title": "Okuma Modu", "description": "Kenar çubukları ve dikkat dağıtıcı alanları gizler." }
+      "readingMode": {
+        "title": "Okuma Modu",
+        "description": "Kenar çubukları ve dikkat dağıtıcı alanları gizler."
+      }
     }
   }
 }

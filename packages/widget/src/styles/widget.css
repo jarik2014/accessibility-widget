@@ -14,13 +14,13 @@
   --blakfy-a11y-primary-text: #ffffff;
   --blakfy-a11y-panel-bg: #ffffff;
   --blakfy-a11y-panel-text: #1c1c2e;
-  --blakfy-a11y-panel-muted: rgba(28,28,46,0.45);
-  --blakfy-a11y-panel-border: rgba(0,0,0,0.08);
+  --blakfy-a11y-panel-muted: rgba(28, 28, 46, 0.45);
+  --blakfy-a11y-panel-border: rgba(0, 0, 0, 0.08);
 
   --blakfy-a11y-panel-bg-dark: #16191b;
   --blakfy-a11y-panel-text-dark: #deeffd;
-  --blakfy-a11y-panel-muted-dark: rgba(222,239,253,0.45);
-  --blakfy-a11y-panel-border-dark: rgba(255,255,255,0.06);
+  --blakfy-a11y-panel-muted-dark: rgba(222, 239, 253, 0.45);
+  --blakfy-a11y-panel-border-dark: rgba(255, 255, 255, 0.06);
 
   --blakfy-a11y-toggle-on: #3b82f6;
   --blakfy-a11y-toggle-off: #d0d0d0;
@@ -28,46 +28,48 @@
   --blakfy-a11y-fab-size: 48px;
 
   /* Internal — light: beyaz / açık gri / siyah */
-  --__bg:          #ffffff;
-  --__card:        #f5f5f5;
-  --__card-hover:  #eeeeee;
+  --__bg: #ffffff;
+  --__card: #f5f5f5;
+  --__card-hover: #eeeeee;
   --__card-active: #e8e8e8;
-  --__text:        #111111;
-  --__muted:       rgba(17,17,17,0.45);
-  --__muted-dim:   rgba(17,17,17,0.3);
-  --__divide:      rgba(0,0,0,0.07);
-  --__switch-off:  #d0d0d0;
-  --__header-bg:   #ffffff;
+  --__text: #111111;
+  --__muted: rgba(17, 17, 17, 0.45);
+  --__muted-dim: rgba(17, 17, 17, 0.3);
+  --__divide: rgba(0, 0, 0, 0.07);
+  --__switch-off: #d0d0d0;
+  --__header-bg: #ffffff;
 }
 
 /* ==========================================================================
  * 2. Dark mode — referans palette (#16191b sidebar, #222 cards, #deeffd text)
  * ========================================================================== */
-:host([data-theme="dark"]) {
+:host([data-theme='dark']) {
   --blakfy-a11y-panel-bg: #111111;
   --blakfy-a11y-panel-text: #ffffff;
-  --blakfy-a11y-panel-muted: rgba(255,255,255,0.45);
-  --blakfy-a11y-panel-border: rgba(255,255,255,0.07);
+  --blakfy-a11y-panel-muted: rgba(255, 255, 255, 0.45);
+  --blakfy-a11y-panel-border: rgba(255, 255, 255, 0.07);
   --blakfy-a11y-primary-hover: #60a5fa;
   --blakfy-a11y-toggle-off: #3a3a3a;
 
   /* Internal — dark: siyah / koyu gri / beyaz */
-  --__bg:          #111111;
-  --__card:        #1e1e1e;
-  --__card-hover:  #252525;
+  --__bg: #111111;
+  --__card: #1e1e1e;
+  --__card-hover: #252525;
   --__card-active: #1a2540;
-  --__text:        #ffffff;
-  --__muted:       rgba(255,255,255,0.45);
-  --__muted-dim:   rgba(255,255,255,0.28);
-  --__divide:      rgba(255,255,255,0.07);
-  --__switch-off:  #3a3a3a;
-  --__header-bg:   #111111;
+  --__text: #ffffff;
+  --__muted: rgba(255, 255, 255, 0.45);
+  --__muted-dim: rgba(255, 255, 255, 0.28);
+  --__divide: rgba(255, 255, 255, 0.07);
+  --__switch-off: #3a3a3a;
+  --__header-bg: #111111;
 }
 
 /* ==========================================================================
  * 3. Reset
  * ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -78,14 +80,20 @@
  * ========================================================================== */
 :host {
   all: initial;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Poppins',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.55;
   color: var(--__text);
 }
 
-button, a {
+button,
+a {
   font-family: inherit;
   color: inherit;
 }
@@ -102,7 +110,7 @@ button {
   height: 1px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
@@ -124,8 +132,10 @@ button {
   border-radius: 9999px;
   background: var(--blakfy-a11y-primary);
   color: var(--blakfy-a11y-primary-text);
-  box-shadow: 0 8px 24px rgba(59,130,246,0.35);
-  transition: background 200ms ease, transform 200ms ease;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
+  transition:
+    background 200ms ease,
+    transform 200ms ease;
   z-index: 9998;
 }
 
@@ -139,23 +149,25 @@ button {
   outline-offset: 3px;
 }
 
-:host([data-position="bottom-right"]) .fab {
+:host([data-position='bottom-right']) .fab {
   inset-inline-start: auto;
   inset-inline-end: 1rem;
 }
-:host([data-position="top-left"]) .fab {
+:host([data-position='top-left']) .fab {
   inset-block-end: auto;
   inset-block-start: 1rem;
 }
-:host([data-position="top-right"]) .fab {
+:host([data-position='top-right']) .fab {
   inset-block-end: auto;
   inset-block-start: 1rem;
   inset-inline-start: auto;
   inset-inline-end: 1rem;
 }
 
-.fab svg { width: 24px; height: 24px; }
-
+.fab svg {
+  width: 24px;
+  height: 24px;
+}
 
 /* ==========================================================================
  * 7. Dialog — sağdan kayan sidebar
@@ -163,13 +175,15 @@ button {
 .backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 9999;
   animation: blakfy-fade-in 200ms ease forwards;
 }
-.backdrop[data-state="closing"] { animation: blakfy-fade-out 180ms ease forwards; }
+.backdrop[data-state='closing'] {
+  animation: blakfy-fade-out 180ms ease forwards;
+}
 
 .dialog {
   position: fixed;
@@ -182,13 +196,17 @@ button {
   background: var(--__bg);
   color: var(--__text);
   z-index: 10000;
-  box-shadow: -12px 0 40px rgba(0,0,0,0.22);
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.22);
   scrollbar-width: thin;
   scrollbar-color: var(--__divide) transparent;
-  animation: blakfy-slide-in-right 240ms cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+  animation: blakfy-slide-in-right 240ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
-.dialog[data-state="closing"] { animation: blakfy-slide-out-right 190ms ease forwards; }
-.dialog:focus { outline: none; }
+.dialog[data-state='closing'] {
+  animation: blakfy-slide-out-right 190ms ease forwards;
+}
+.dialog:focus {
+  outline: none;
+}
 
 /* ==========================================================================
  * 8. Panel header
@@ -223,12 +241,23 @@ button {
   justify-content: center;
   border-radius: 3px;
   color: var(--__muted);
-  transition: background 150ms ease, color 150ms ease;
+  transition:
+    background 150ms ease,
+    color 150ms ease;
   flex-shrink: 0;
 }
-.dialog-close:hover { background: var(--__divide); color: var(--__text); }
-.dialog-close:focus-visible { outline: 2px solid var(--blakfy-a11y-focus-ring); outline-offset: 2px; }
-.dialog-close svg { width: 18px; height: 18px; }
+.dialog-close:hover {
+  background: var(--__divide);
+  color: var(--__text);
+}
+.dialog-close:focus-visible {
+  outline: 2px solid var(--blakfy-a11y-focus-ring);
+  outline-offset: 2px;
+}
+.dialog-close svg {
+  width: 18px;
+  height: 18px;
+}
 
 /* ==========================================================================
  * 9. Section labels
@@ -263,9 +292,18 @@ button {
   background: var(--__switch-off);
   transition: background 200ms ease;
 }
-.switch[aria-checked="true"] { background: var(--blakfy-a11y-primary); }
-.switch:focus-visible { outline: 2px solid var(--blakfy-a11y-focus-ring); outline-offset: 2px; }
-.switch::before { content: ""; position: absolute; inset: -8px; }
+.switch[aria-checked='true'] {
+  background: var(--blakfy-a11y-primary);
+}
+.switch:focus-visible {
+  outline: 2px solid var(--blakfy-a11y-focus-ring);
+  outline-offset: 2px;
+}
+.switch::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+}
 
 .switch-thumb {
   position: absolute;
@@ -275,11 +313,15 @@ button {
   block-size: 20px;
   border-radius: 9999px;
   background: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   transition: transform 200ms ease;
 }
-.switch[aria-checked="true"] .switch-thumb { transform: translateX(18px); }
-[dir="rtl"] .switch[aria-checked="true"] .switch-thumb { transform: translateX(-18px); }
+.switch[aria-checked='true'] .switch-thumb {
+  transform: translateX(18px);
+}
+[dir='rtl'] .switch[aria-checked='true'] .switch-thumb {
+  transform: translateX(-18px);
+}
 
 /* ==========================================================================
  * 11. Profile list
@@ -301,21 +343,36 @@ button {
   cursor: pointer;
   border: none;
   outline: 2px solid transparent;
-  transition: background 150ms ease, outline-color 150ms ease;
+  transition:
+    background 150ms ease,
+    outline-color 150ms ease;
   text-align: start;
   width: 100%;
 }
-.profile-list-item:hover { background: var(--__card-hover); }
+.profile-list-item:hover {
+  background: var(--__card-hover);
+}
 .profile-list-item--active {
   background: var(--__card-active);
   outline-color: var(--blakfy-a11y-primary);
 }
-.profile-list-item:focus-visible { outline-color: var(--blakfy-a11y-focus-ring); }
+.profile-list-item:focus-visible {
+  outline-color: var(--blakfy-a11y-focus-ring);
+}
 
-.profile-list-icon { color: var(--blakfy-a11y-primary); flex-shrink: 0; }
-.profile-list-icon svg { width: 18px; height: 18px; }
+.profile-list-icon {
+  color: var(--blakfy-a11y-primary);
+  flex-shrink: 0;
+}
+.profile-list-icon svg {
+  width: 18px;
+  height: 18px;
+}
 
-.profile-list-text { flex: 1; min-width: 0; }
+.profile-list-text {
+  flex: 1;
+  min-width: 0;
+}
 
 .profile-list-name {
   font-size: 13.5px;
@@ -334,7 +391,9 @@ button {
   display: block;
 }
 
-.profile-list-item .switch { pointer-events: none; }
+.profile-list-item .switch {
+  pointer-events: none;
+}
 
 /* ==========================================================================
  * 12. Stepper row
@@ -385,9 +444,16 @@ button {
   flex-shrink: 0;
   transition: background 120ms ease;
 }
-.stepper-btn:hover { background: var(--__card); }
-.stepper-btn:disabled { color: var(--__muted); cursor: default; }
-.stepper-btn:focus-visible { outline: 2px solid var(--blakfy-a11y-focus-ring); }
+.stepper-btn:hover {
+  background: var(--__card);
+}
+.stepper-btn:disabled {
+  color: var(--__muted);
+  cursor: default;
+}
+.stepper-btn:focus-visible {
+  outline: 2px solid var(--blakfy-a11y-focus-ring);
+}
 
 .stepper-value {
   min-width: 62px;
@@ -412,9 +478,14 @@ button {
   margin: 0 1.25rem 0.25rem;
   transition: background 150ms ease;
 }
-.toggle-row:hover { background: var(--__card-hover); }
+.toggle-row:hover {
+  background: var(--__card-hover);
+}
 
-.toggle-text { flex: 1; min-width: 0; }
+.toggle-text {
+  flex: 1;
+  min-width: 0;
+}
 
 .toggle-title-row {
   display: flex;
@@ -457,14 +528,20 @@ button {
   line-height: 1;
   flex-shrink: 0;
   opacity: 0.45;
-  transition: opacity 150ms ease, background 150ms ease;
+  transition:
+    opacity 150ms ease,
+    background 150ms ease;
 }
-.info-btn:hover, .info-btn:focus-visible {
+.info-btn:hover,
+.info-btn:focus-visible {
   opacity: 1;
   background: var(--blakfy-a11y-primary);
   color: #ffffff;
 }
-.info-btn:focus-visible { outline: 2px solid var(--blakfy-a11y-focus-ring); outline-offset: 2px; }
+.info-btn:focus-visible {
+  outline: 2px solid var(--blakfy-a11y-focus-ring);
+  outline-offset: 2px;
+}
 
 .info-tooltip {
   display: none;
@@ -480,12 +557,14 @@ button {
   line-height: 1.55;
   color: var(--__text);
   inline-size: 220px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
   z-index: 100;
   pointer-events: none;
 }
 .info-wrap:hover .info-tooltip,
-.info-wrap:focus-within .info-tooltip { display: block; }
+.info-wrap:focus-within .info-tooltip {
+  display: block;
+}
 
 .info-tooltip-note {
   display: block;
@@ -504,7 +583,9 @@ button {
   gap: 0.375rem;
   padding: 0.625rem 1.25rem 0.25rem;
 }
-.opt-label-row .opt-section-title { margin-block-end: 0; }
+.opt-label-row .opt-section-title {
+  margin-block-end: 0;
+}
 
 /* ==========================================================================
  * 16. Opt buttons
@@ -528,17 +609,26 @@ button {
   flex: 1;
   min-inline-size: fit-content;
   background: var(--__card);
-  transition: background 150ms, border-color 150ms, color 150ms;
+  transition:
+    background 150ms,
+    border-color 150ms,
+    color 150ms;
   opacity: 0.75;
 }
-.opt-btn:hover { background: var(--__card-hover); opacity: 1; }
-.opt-btn[aria-pressed="true"] {
+.opt-btn:hover {
+  background: var(--__card-hover);
+  opacity: 1;
+}
+.opt-btn[aria-pressed='true'] {
   background: var(--blakfy-a11y-primary);
   color: #ffffff;
   border-color: var(--blakfy-a11y-primary);
   opacity: 1;
 }
-.opt-btn:focus-visible { outline: 2px solid var(--blakfy-a11y-focus-ring); outline-offset: 2px; }
+.opt-btn:focus-visible {
+  outline: 2px solid var(--blakfy-a11y-focus-ring);
+  outline-offset: 2px;
+}
 
 /* ==========================================================================
  * 17. Panel footer
@@ -563,18 +653,23 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: background 150ms, border-color 150ms;
+  transition:
+    background 150ms,
+    border-color 150ms;
 }
 .btn-reset:hover {
   background: var(--__card);
   border-color: var(--blakfy-a11y-primary);
 }
-.btn-reset[data-confirm="true"] {
+.btn-reset[data-confirm='true'] {
   background: #dc2626;
   border-color: #dc2626;
   color: #fff;
 }
-.btn-reset:focus-visible { outline: 2px solid var(--blakfy-a11y-focus-ring); outline-offset: 2px; }
+.btn-reset:focus-visible {
+  outline: 2px solid var(--blakfy-a11y-focus-ring);
+  outline-offset: 2px;
+}
 
 /* ==========================================================================
  * 19. Disclaimer + branding
@@ -600,8 +695,14 @@ button {
   color: inherit;
   transition: background 150ms ease;
 }
-.panel-branding:hover { background: rgba(59,130,246,0.07); }
-.panel-branding:focus-visible { outline: 2px solid var(--blakfy-a11y-focus-ring); outline-offset: 2px; border-radius: 3px; }
+.panel-branding:hover {
+  background: rgba(59, 130, 246, 0.07);
+}
+.panel-branding:focus-visible {
+  outline: 2px solid var(--blakfy-a11y-focus-ring);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
 
 .panel-branding-powered {
   font-size: 11px;
@@ -617,23 +718,51 @@ button {
 /* ==========================================================================
  * 20. Animations
  * ========================================================================== */
-@keyframes blakfy-fade-in  { from { opacity: 0; } to { opacity: 1; } }
-@keyframes blakfy-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes blakfy-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes blakfy-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
 @keyframes blakfy-slide-in-right {
-  from { transform: translateX(100%); opacity: 0; }
-  to   { transform: translateX(0);    opacity: 1; }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 @keyframes blakfy-slide-out-right {
-  from { transform: translateX(0);    opacity: 1; }
-  to   { transform: translateX(100%); opacity: 0; }
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 
 /* ==========================================================================
  * 21. Reduced motion
  * ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -644,18 +773,29 @@ button {
  * 22. Responsive
  * ========================================================================== */
 @media (max-width: 480px) {
-  .fab { --blakfy-a11y-fab-size: 44px; }
-  .dialog { inline-size: 100vw; }
+  .fab {
+    --blakfy-a11y-fab-size: 44px;
+  }
+  .dialog {
+    inline-size: 100vw;
+  }
 }
 
 /* ==========================================================================
  * 23. Forced colors / Windows High Contrast
  * ========================================================================== */
 @media (forced-colors: active) {
-  .fab, .btn-reset, .opt-btn, .switch {
+  .fab,
+  .btn-reset,
+  .opt-btn,
+  .switch {
     border: 1px solid CanvasText;
     forced-color-adjust: none;
   }
-  .switch[aria-checked="true"] { background: Highlight; }
-  .switch-thumb { background: HighlightText; }
+  .switch[aria-checked='true'] {
+    background: Highlight;
+  }
+  .switch-thumb {
+    background: HighlightText;
+  }
 }

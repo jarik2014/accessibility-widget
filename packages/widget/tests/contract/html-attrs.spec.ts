@@ -100,12 +100,14 @@ describe('HTML data-attributes contract (STABLE-API §3)', () => {
 
   it('programmatic setPreferences() applies attributes to <html> (STABLE-API §1.1)', async () => {
     await remountWith({});
-    const api = (window as unknown as {
-      BlakfyA11y: {
-        setPreferences: (p: Record<string, unknown>) => void;
-        reset: () => void;
-      };
-    }).BlakfyA11y;
+    const api = (
+      window as unknown as {
+        BlakfyA11y: {
+          setPreferences: (p: Record<string, unknown>) => void;
+          reset: () => void;
+        };
+      }
+    ).BlakfyA11y;
     api.setPreferences({ fontScale: 125, contrast: 'high', dyslexiaFont: true });
     expect(document.documentElement.getAttribute('data-a11y-fontscale')).toBe('125');
     expect(document.documentElement.getAttribute('data-a11y-contrast')).toBe('high');
@@ -114,9 +116,11 @@ describe('HTML data-attributes contract (STABLE-API §3)', () => {
 
   it('programmatic reset() restores default attributes on <html> (STABLE-API §1.1)', async () => {
     await remountWith({ fontScale: 125, contrast: 'high', dyslexiaFont: true });
-    const api = (window as unknown as {
-      BlakfyA11y: { reset: () => void };
-    }).BlakfyA11y;
+    const api = (
+      window as unknown as {
+        BlakfyA11y: { reset: () => void };
+      }
+    ).BlakfyA11y;
     api.reset();
     expect(document.documentElement.getAttribute('data-a11y-fontscale')).toBe('100');
     expect(document.documentElement.getAttribute('data-a11y-contrast')).toBe('normal');

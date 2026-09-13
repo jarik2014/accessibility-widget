@@ -31,8 +31,7 @@ export default function HomePage() {
     <main className="container">
       <h1>Blakfy Accessibility Widget Demo</h1>
       <p className="lead">
-        Bu sayfa Next.js 15 App Router üzerinde widget&apos;ın canlı
-        demosudur.
+        Bu sayfa Next.js 15 App Router üzerinde widget&apos;ın canlı demosudur.
       </p>
 
       <section>
@@ -51,14 +50,10 @@ export default function HomePage() {
         <h2>Nasıl Test Edilir?</h2>
         <ol>
           <li>
-            Sol-altta erişilebilirlik FAB butonunu tıklayın (veya{' '}
-            <kbd>Alt</kbd> + <kbd>0</kbd>)
+            Sol-altta erişilebilirlik FAB butonunu tıklayın (veya <kbd>Alt</kbd> + <kbd>0</kbd>)
           </li>
           <li>Panel açılır, 7 tercih kontrolü görünür</li>
-          <li>
-            Bir tercih değiştirin — sayfa anında uygular, refresh sonrası
-            korur
-          </li>
+          <li>Bir tercih değiştirin — sayfa anında uygular, refresh sonrası korur</li>
           <li>Reset butonu iki kere tıklayınca defaultlara döner</li>
         </ol>
       </section>
@@ -82,17 +77,14 @@ export default function HomePage() {
       <section>
         <h2>Örnek İçerik</h2>
         <p>
-          Bu paragraf yazı ölçeği 110% veya 125%&apos;e çıkarıldığında
-          büyür. Tercih widget üzerinden yapılır.
+          Bu paragraf yazı ölçeği 110% veya 125%&apos;e çıkarıldığında büyür. Tercih widget
+          üzerinden yapılır.
         </p>
         <p>
-          Yüksek kontrast modu açılırsa siyah-beyaz palet uygulanır.
-          Linkler sarı olur: <a href="#ornek">örnek link</a>.
+          Yüksek kontrast modu açılırsa siyah-beyaz palet uygulanır. Linkler sarı olur:{' '}
+          <a href="#ornek">örnek link</a>.
         </p>
-        <p>
-          Disleksi font modunda OpenDyslexic font kullanılır (CDN
-          yüklüyse).
-        </p>
+        <p>Disleksi font modunda OpenDyslexic font kullanılır (CDN yüklüyse).</p>
       </section>
 
       <footer>

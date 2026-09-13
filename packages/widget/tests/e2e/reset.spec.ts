@@ -8,7 +8,9 @@ test.beforeEach(async ({ page }) => {
   await page.evaluate(() => (window as any).BlakfyA11y.reset());
 });
 
-test('first click switches button to confirm state, second click resets prefs', async ({ page }) => {
+test('first click switches button to confirm state, second click resets prefs', async ({
+  page,
+}) => {
   // Toggle three preferences first
   await openPanel(page);
   const sw = page.locator('blakfy-a11y-root').locator('[role="switch"]');

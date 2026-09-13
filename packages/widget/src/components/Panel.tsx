@@ -45,10 +45,10 @@ const SATURATIONS: Saturation[] = ['normal', 'high', 'low', 'none'];
 const CURSOR_SIZES: CursorSize[] = ['default', 'large-dark', 'large-light'];
 
 const PROFILE_PRESETS: Record<ProfileKey, Partial<Preferences>> = {
-  epilepsy:  { motion: 'reduce', saturation: 'low' },
-  vision:    { fontScale: 125, contrast: 'high' },
+  epilepsy: { motion: 'reduce', saturation: 'low' },
+  vision: { fontScale: 125, contrast: 'high' },
   cognitive: { readingMode: true, lineHeight: 'medium', motion: 'reduce' },
-  adhd:      { motion: 'reduce', hideImages: true },
+  adhd: { motion: 'reduce', hideImages: true },
   blindness: { focusRing: true, linkUnderline: true, highlightHeadings: true },
 };
 
@@ -56,32 +56,53 @@ function ProfileIcon({ profileKey }: { profileKey: ProfileKey }): JSX.Element {
   const icons: Record<ProfileKey, JSX.Element> = {
     epilepsy: (
       <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11 2L4 11h6l-1 7 7-9h-6l1-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path
+          d="M11 2L4 11h6l-1 7 7-9h-6l1-7z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
     ),
     vision: (
       <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 10s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+        <path
+          d="M2 10s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+        <circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5" />
       </svg>
     ),
     cognitive: (
       <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 3C6.13 3 3 6.13 3 10c0 2.38 1.19 4.47 3 5.74V17h8v-1.26C15.81 14.47 17 12.38 17 10c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path
+          d="M10 3C6.13 3 3 6.13 3 10c0 2.38 1.19 4.47 3 5.74V17h8v-1.26C15.81 14.47 17 12.38 17 10c0-3.87-3.13-7-7-7z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+        <path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
     ),
     adhd: (
       <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="10" cy="10" r="1" fill="currentColor"/>
+        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5" />
+        <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5" />
+        <circle cx="10" cy="10" r="1" fill="currentColor" />
       </svg>
     ),
     blindness: (
       <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 4a6 6 0 100 12A6 6 0 0010 4z" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M10 8v4M8 16l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10 4a6 6 0 100 12A6 6 0 0010 4z" stroke="currentColor" stroke-width="1.5" />
+        <path
+          d="M10 8v4M8 16l4-4"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
       </svg>
     ),
   };
@@ -90,7 +111,9 @@ function ProfileIcon({ profileKey }: { profileKey: ProfileKey }): JSX.Element {
 
 const InfoBtn = ({ text, note }: { text: string; note?: string }): JSX.Element => (
   <span class="info-wrap">
-    <button type="button" class="info-btn" tabIndex={0} aria-label="bilgi">i</button>
+    <button type="button" class="info-btn" tabIndex={0} aria-label="bilgi">
+      i
+    </button>
     <span class="info-tooltip" role="tooltip">
       {text}
       {note ? <em class="info-tooltip-note">{note}</em> : null}
@@ -147,7 +170,14 @@ const StepperRow = ({
   );
 };
 
-export function Panel({ translation, locale, currentTheme, onClose, onThemeChange, titleId }: Props): JSX.Element {
+export function Panel({
+  translation,
+  locale,
+  currentTheme,
+  onClose,
+  onThemeChange,
+  titleId,
+}: Props): JSX.Element {
   const t = translation.panel;
   const [prefs, setPrefs] = useState<Preferences>(() => getPreferences());
   const [resetConfirm, setResetConfirm] = useState(false);
@@ -218,7 +248,9 @@ export function Panel({ translation, locale, currentTheme, onClose, onThemeChang
     <>
       {/* Sticky header */}
       <div class="panel-header">
-        <h2 class="panel-title" id={titleId}>{t.title}</h2>
+        <h2 class="panel-title" id={titleId}>
+          {t.title}
+        </h2>
         <button type="button" class="dialog-close" aria-label={t.close} onClick={onClose}>
           <CloseIcon />
         </button>
@@ -238,18 +270,15 @@ export function Panel({ translation, locale, currentTheme, onClose, onThemeChang
               aria-pressed={isActive}
               onClick={() => applyProfile(key)}
             >
-              <span class="profile-list-icon"><ProfileIcon profileKey={key} /></span>
+              <span class="profile-list-icon">
+                <ProfileIcon profileKey={key} />
+              </span>
               <span class="profile-list-text">
                 <span class="profile-list-name">{profileT.name}</span>
                 <span class="profile-list-desc">{profileT.description}</span>
               </span>
               {/* Görsel switch — pointer-events: none, tıklama butona ait */}
-              <span
-                class="switch"
-                aria-checked={isActive}
-                role="presentation"
-                aria-hidden="true"
-              >
+              <span class="switch" aria-checked={isActive} role="presentation" aria-hidden="true">
                 <span class="switch-thumb" />
               </span>
             </button>
@@ -266,7 +295,9 @@ export function Panel({ translation, locale, currentTheme, onClose, onThemeChang
         description={t.preferences.fontScale.description}
         value={String(prefs.fontScale)}
         options={['100', '110', '125']}
-        labels={['100', '110', '125'].map((v) => t.preferences.fontScale.values[v as '100' | '110' | '125'])}
+        labels={['100', '110', '125'].map(
+          (v) => t.preferences.fontScale.values[v as '100' | '110' | '125'],
+        )}
         onChange={(v) => update('fontScale', Number(v) as FontScale)}
       />
 
@@ -377,11 +408,13 @@ export function Panel({ translation, locale, currentTheme, onClose, onThemeChang
             aria-pressed={prefs.cursorSize === opt}
             onClick={() => update('cursorSize', opt)}
           >
-            {[
-              t.preferences.cursorSize.values.default,
-              t.preferences.cursorSize.values.largeDark,
-              t.preferences.cursorSize.values.largeLight,
-            ][i]}
+            {
+              [
+                t.preferences.cursorSize.values.default,
+                t.preferences.cursorSize.values.largeDark,
+                t.preferences.cursorSize.values.largeLight,
+              ][i]
+            }
           </button>
         ))}
       </div>
@@ -437,9 +470,7 @@ export function Panel({ translation, locale, currentTheme, onClose, onThemeChang
         >
           {resetConfirm ? `${t.reset}?` : t.reset}
         </button>
-        <p class="disclaimer">
-          {t.disclaimer}
-        </p>
+        <p class="disclaimer">{t.disclaimer}</p>
         <a
           class="panel-branding"
           href="https://blakfy.com"

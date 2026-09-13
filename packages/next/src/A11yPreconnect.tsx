@@ -26,7 +26,5 @@
  * ```
  */
 export function A11yPreconnect(): JSX.Element {
-  return (
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
-  );
+  return <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />;
 }

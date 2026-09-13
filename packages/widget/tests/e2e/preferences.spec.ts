@@ -14,7 +14,9 @@ test.beforeEach(async ({ page }) => {
   await page.evaluate(() => (window as any).BlakfyA11y.reset());
 });
 
-async function getHtmlAttrs(page: import('@playwright/test').Page): Promise<Record<string, string | null>> {
+async function getHtmlAttrs(
+  page: import('@playwright/test').Page,
+): Promise<Record<string, string | null>> {
   return page.evaluate(() => {
     const html = document.documentElement;
     return {

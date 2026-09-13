@@ -13,12 +13,7 @@ export default defineConfig({
       fileName: () => 'index.js',
     },
     rollupOptions: {
-      external: [
-        'react',
-        'react/jsx-runtime',
-        '@blakfy/a11y-core',
-        '@blakfy/accessibility-widget',
-      ],
+      external: ['react', 'react/jsx-runtime', '@blakfy/a11y-core', '@blakfy/accessibility-widget'],
     },
     minify: 'esbuild',
     sourcemap: true,

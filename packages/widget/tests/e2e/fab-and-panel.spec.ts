@@ -1,7 +1,16 @@
 // FAB + Panel + Badge E2E.
 // Asserts the locked surface from STABLE-API.md §9 (badge always visible).
 import { test, expect } from '@playwright/test';
-import { FIXTURE, fab, dialog, badge, closeButton, backdrop, waitForMount, openPanel } from './_helpers';
+import {
+  FIXTURE,
+  fab,
+  dialog,
+  badge,
+  closeButton,
+  backdrop,
+  waitForMount,
+  openPanel,
+} from './_helpers';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(FIXTURE);

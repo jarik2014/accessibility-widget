@@ -91,12 +91,7 @@ export function Widget({
         isOpen={open}
         onClick={handleFabClick}
       />
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        titleId={titleId}
-        descriptionId={descriptionId}
-      >
+      <Dialog open={open} onClose={handleClose} titleId={titleId} descriptionId={descriptionId}>
         <Panel
           translation={translation}
           locale={config.locale}

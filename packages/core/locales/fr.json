@@ -74,7 +74,12 @@
       "saturation": {
         "title": "Saturation des couleurs",
         "description": "Ajuste l'intensité des couleurs. Utilisez Niveaux de gris pour supprimer toutes les couleurs — utile pour le daltonisme ou réduire la distraction visuelle.",
-        "values": { "normal": "Normal", "high": "Élevée", "low": "Faible", "none": "Niveaux de gris" }
+        "values": {
+          "normal": "Normal",
+          "high": "Élevée",
+          "low": "Faible",
+          "none": "Niveaux de gris"
+        }
       },
       "focusRing": {
         "title": "Anneau de focus amélioré",

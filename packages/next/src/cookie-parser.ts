@@ -80,16 +80,10 @@ function _validatePrefs(input: unknown): Preferences {
     fontScale: isFontScale(raw.fontScale) ? raw.fontScale : DEFAULT_PREFS.fontScale,
     contrast: isContrast(raw.contrast) ? raw.contrast : DEFAULT_PREFS.contrast,
     focusRing: isBoolean(raw.focusRing) ? raw.focusRing : DEFAULT_PREFS.focusRing,
-    linkUnderline: isBoolean(raw.linkUnderline)
-      ? raw.linkUnderline
-      : DEFAULT_PREFS.linkUnderline,
+    linkUnderline: isBoolean(raw.linkUnderline) ? raw.linkUnderline : DEFAULT_PREFS.linkUnderline,
     motion: isMotion(raw.motion) ? raw.motion : DEFAULT_PREFS.motion,
-    dyslexiaFont: isBoolean(raw.dyslexiaFont)
-      ? raw.dyslexiaFont
-      : DEFAULT_PREFS.dyslexiaFont,
-    readingMode: isBoolean(raw.readingMode)
-      ? raw.readingMode
-      : DEFAULT_PREFS.readingMode,
+    dyslexiaFont: isBoolean(raw.dyslexiaFont) ? raw.dyslexiaFont : DEFAULT_PREFS.dyslexiaFont,
+    readingMode: isBoolean(raw.readingMode) ? raw.readingMode : DEFAULT_PREFS.readingMode,
     lineHeight: isLineHeight(raw.lineHeight) ? raw.lineHeight : DEFAULT_PREFS.lineHeight,
     letterSpacing: isLetterSpacing(raw.letterSpacing)
       ? raw.letterSpacing
@@ -98,12 +92,8 @@ function _validatePrefs(input: unknown): Preferences {
     highlightHeadings: isBoolean(raw.highlightHeadings)
       ? raw.highlightHeadings
       : DEFAULT_PREFS.highlightHeadings,
-    saturation: isSaturation(raw.saturation)
-      ? raw.saturation
-      : DEFAULT_PREFS.saturation,
-    cursorSize: isCursorSize(raw.cursorSize)
-      ? raw.cursorSize
-      : DEFAULT_PREFS.cursorSize,
+    saturation: isSaturation(raw.saturation) ? raw.saturation : DEFAULT_PREFS.saturation,
+    cursorSize: isCursorSize(raw.cursorSize) ? raw.cursorSize : DEFAULT_PREFS.cursorSize,
     hideImages: isBoolean(raw.hideImages) ? raw.hideImages : DEFAULT_PREFS.hideImages,
   };
 }

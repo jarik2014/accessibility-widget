@@ -276,7 +276,10 @@ export function subscribeToOSChanges(cb: (osPrefs: OSPreferences) => void): () =
       const list = window.matchMedia(q);
       if (typeof list.addEventListener === 'function') {
         list.addEventListener('change', handler);
-      } else if (typeof (list as MediaQueryList & { addListener?: (l: () => void) => void }).addListener === 'function') {
+      } else if (
+        typeof (list as MediaQueryList & { addListener?: (l: () => void) => void }).addListener ===
+        'function'
+      ) {
         (list as MediaQueryList & { addListener: (l: () => void) => void }).addListener(handler);
       }
       lists.push(list);

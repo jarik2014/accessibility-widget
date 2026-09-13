@@ -67,8 +67,15 @@ interface InternalState {
 function _mapHtmlLang(lang: string): Locale | undefined {
   const base = lang.toLowerCase().split(/[-_]/)[0] ?? '';
   const MAP: Record<string, Locale> = {
-    tr: 'tr', en: 'en', de: 'de', fr: 'fr',
-    es: 'es', it: 'it', ar: 'ar', he: 'he', ru: 'ru',
+    tr: 'tr',
+    en: 'en',
+    de: 'de',
+    fr: 'fr',
+    es: 'es',
+    it: 'it',
+    ar: 'ar',
+    he: 'he',
+    ru: 'ru',
     iw: 'he', // legacy Hebrew ISO 639-1 code
   };
   return MAP[base];
@@ -87,8 +94,7 @@ function _readScriptDataAttrs(): Partial<WidgetOptions> & { devPipe?: string; ve
   // fall back to currentScript (non-null only during inline execution),
   // then scan all <script src> tags for a recognisable widget URL.
   let script: HTMLScriptElement | null =
-    _CAPTURED_SCRIPT ??
-    (document.currentScript as HTMLScriptElement | null);
+    _CAPTURED_SCRIPT ?? (document.currentScript as HTMLScriptElement | null);
   if (!script) {
     const all = document.querySelectorAll<HTMLScriptElement>('script[src]');
     for (let i = 0; i < all.length; i++) {
@@ -177,14 +183,11 @@ function _baseFromScriptSrc(src: string): string {
 // Both captured synchronously at module-eval time so they survive the
 // wait for DOMContentLoaded — `document.currentScript` is null inside
 // async callbacks, which broke data-locale and base-URL detection.
-const _CAPTURED_SCRIPT = typeof document !== 'undefined'
-  ? (document.currentScript as HTMLScriptElement | null)
-  : null;
+const _CAPTURED_SCRIPT =
+  typeof document !== 'undefined' ? (document.currentScript as HTMLScriptElement | null) : null;
 
 const _CAPTURED_BASE_URL: string =
-  typeof document !== 'undefined'
-    ? _baseFromScriptSrc(_CAPTURED_SCRIPT?.src ?? '')
-    : '';
+  typeof document !== 'undefined' ? _baseFromScriptSrc(_CAPTURED_SCRIPT?.src ?? '') : '';
 
 /** Derive CDN base from `currentScript.src` so locales can be lazy-loaded. */
 export function _inferBaseURL(): string {
@@ -233,7 +236,8 @@ function _resolveTheme(theme: WidgetOptions['theme']): 'light' | 'dark' {
 
 /** Watch host <html> for class/data-theme changes when theme='auto'. */
 function _watchHostTheme(callback: () => void): () => void {
-  if (typeof MutationObserver === 'undefined' || typeof document === 'undefined') return () => undefined;
+  if (typeof MutationObserver === 'undefined' || typeof document === 'undefined')
+    return () => undefined;
   const observer = new MutationObserver(callback);
   observer.observe(document.documentElement, {
     attributes: true,
@@ -286,7 +290,9 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
 
   // 1. Resolve config: defaults < script data-* < window globals < opts
   const scriptCfg = _readScriptDataAttrs();
-  const winGlobal = (typeof window !== 'undefined' ? window.__BLAKFY_A11Y__ ?? {} : {}) as Partial<WidgetOptions> & {
+  const winGlobal = (
+    typeof window !== 'undefined' ? (window.__BLAKFY_A11Y__ ?? {}) : {}
+  ) as Partial<WidgetOptions> & {
     onPreferencesChange?: (record: import('@blakfy/a11y-core').PreferencesRecord) => void;
   };
   const merged = safeMergeOptions({ ...scriptCfg, ...winGlobal, ...opts });
@@ -328,7 +334,11 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
 
   // 3. Diagnostics: host CSS + OS pref subscriptions
   if (detectHostCSSConflicts()) {
-    addIssue('warn', 'HOST_CSS_IMPORTANT_CONFLICT', 'Host stylesheet uses !important on body/a — visual prefs may not apply.');
+    addIssue(
+      'warn',
+      'HOST_CSS_IMPORTANT_CONFLICT',
+      'Host stylesheet uses !important on body/a — visual prefs may not apply.',
+    );
   }
   const osPrefs = detectOSPreferences();
   if (osPrefs.reducedMotion) {
@@ -341,7 +351,11 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
     addIssue('info', 'OS_PREFERS_COLOR_SCHEME_DARK', 'OS prefers-color-scheme=dark detected.');
   }
   if (osPrefs.reducedTransparency) {
-    addIssue('info', 'OS_PREFERS_REDUCED_TRANSPARENCY', 'OS prefers-reduced-transparency=reduce detected.');
+    addIssue(
+      'info',
+      'OS_PREFERS_REDUCED_TRANSPARENCY',
+      'OS prefers-reduced-transparency=reduce detected.',
+    );
   }
   if (osPrefs.reducedData) {
     addIssue('info', 'OS_PREFERS_REDUCED_DATA', 'OS prefers-reduced-data=reduce detected.');
@@ -425,7 +439,8 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
 
   // 9. Public API
   const storage = _inspectStorage();
-  const mountTimeMs = (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startTime;
+  const mountTimeMs =
+    (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startTime;
   setupPublicAPI({
     config,
     mountTimeMs,

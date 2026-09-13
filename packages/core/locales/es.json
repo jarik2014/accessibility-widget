@@ -61,7 +61,12 @@
       "textAlign": {
         "title": "Alineación del texto",
         "description": "Cambia la alineación del texto del cuerpo y los encabezados en la página.",
-        "values": { "default": "Predeterminado", "left": "Izquierda", "center": "Centro", "right": "Derecha" }
+        "values": {
+          "default": "Predeterminado",
+          "left": "Izquierda",
+          "center": "Centro",
+          "right": "Derecha"
+        }
       },
       "highlightHeadings": {
         "title": "Resaltar encabezados",
@@ -87,7 +92,11 @@
       "cursorSize": {
         "title": "Tamaño del cursor",
         "description": "Amplía el cursor del ratón para mayor visibilidad. Elija oscuro o claro según su fondo.",
-        "values": { "default": "Predeterminado", "largeDark": "Grande Oscuro", "largeLight": "Grande Claro" }
+        "values": {
+          "default": "Predeterminado",
+          "largeDark": "Grande Oscuro",
+          "largeLight": "Grande Claro"
+        }
       },
       "motion": {
         "title": "Reducir movimiento",

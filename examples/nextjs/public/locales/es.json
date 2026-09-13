@@ -19,16 +19,31 @@
         "description": "Aumentar o disminuir el tamaño del texto.",
         "values": { "100": "Normal", "110": "Grande", "125": "Muy grande" }
       },
-      "contrast": { "title": "Alto contraste", "description": "Fondo negro + enlaces amarillos (AAA 7:1)." },
-      "focusRing": { "title": "Anillo de foco mejorado", "description": "Mostrar el foco del teclado con un anillo azul de 4px." },
-      "linkUnderline": { "title": "Subrayar enlaces", "description": "Subrayar todos los enlaces." },
-      "motion": { "title": "Reducir movimiento", "description": "Desactivar animaciones y transiciones." },
+      "contrast": {
+        "title": "Alto contraste",
+        "description": "Fondo negro + enlaces amarillos (AAA 7:1)."
+      },
+      "focusRing": {
+        "title": "Anillo de foco mejorado",
+        "description": "Mostrar el foco del teclado con un anillo azul de 4px."
+      },
+      "linkUnderline": {
+        "title": "Subrayar enlaces",
+        "description": "Subrayar todos los enlaces."
+      },
+      "motion": {
+        "title": "Reducir movimiento",
+        "description": "Desactivar animaciones y transiciones."
+      },
       "dyslexiaFont": {
         "title": "Fuente para dislexia",
         "description": "Usar la familia tipográfica OpenDyslexic.",
         "note": "Algunos lectores la prefieren; la investigación no muestra beneficio universal."
       },
-      "readingMode": { "title": "Modo lectura", "description": "Ocultar barras laterales y áreas distractoras." }
+      "readingMode": {
+        "title": "Modo lectura",
+        "description": "Ocultar barras laterales y áreas distractoras."
+      }
     }
   }
 }

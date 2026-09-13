@@ -19,7 +19,24 @@ describe('applyPreferences — lineHeight selector (#14)', () => {
     applyPreferences({ ...DEFAULT_PREFS, lineHeight: 'large' });
     const css = document.getElementById('blakfy-a11y-host')?.textContent ?? '';
     expect(css).toContain('line-height: 2.4 !important');
-    for (const sel of ['html h1', 'html h2', 'html h3', 'html h4', 'html h5', 'html h6', 'html a', 'html label', 'html td', 'html th', 'html p', 'html li', 'html dd', 'html dt', 'html span', 'html div']) {
+    for (const sel of [
+      'html h1',
+      'html h2',
+      'html h3',
+      'html h4',
+      'html h5',
+      'html h6',
+      'html a',
+      'html label',
+      'html td',
+      'html th',
+      'html p',
+      'html li',
+      'html dd',
+      'html dt',
+      'html span',
+      'html div',
+    ]) {
       expect(css).toContain(sel);
     }
   });

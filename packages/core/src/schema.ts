@@ -110,10 +110,7 @@ function pickTheme(v: unknown): Theme {
 }
 
 function pickPosition(v: unknown): Position {
-  return v === 'bottom-left' ||
-    v === 'bottom-right' ||
-    v === 'top-left' ||
-    v === 'top-right'
+  return v === 'bottom-left' || v === 'bottom-right' || v === 'top-left' || v === 'top-right'
     ? v
     : 'bottom-left';
 }

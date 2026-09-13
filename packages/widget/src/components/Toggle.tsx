@@ -23,7 +23,9 @@ export function Toggle({ title, description, note, checked, onChange }: Props): 
     <div class="toggle-row">
       <div class="toggle-text">
         <div class="toggle-title-row">
-          <p class="toggle-title" id={titleId}>{title}</p>
+          <p class="toggle-title" id={titleId}>
+            {title}
+          </p>
           <span class="info-wrap">
             <button
               type="button"

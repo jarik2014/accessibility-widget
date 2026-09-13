@@ -70,7 +70,9 @@ test('ESC closes the dialog and restores focus to the FAB (deep Shadow walk)', a
   expect(active).toContain('fab');
 });
 
-test('non-English locale loads from /dist/locales/*.json (Phase 11 Deviation 4)', async ({ page }) => {
+test('non-English locale loads from /dist/locales/*.json (Phase 11 Deviation 4)', async ({
+  page,
+}) => {
   await page.goto(`${FIXTURE}?locale=tr`);
   await waitForMount(page);
   await openPanel(page);
@@ -85,9 +87,6 @@ test('all 7 toggle controls are reachable via keyboard', async ({ page }) => {
   // assert we have at least 6 switches and 3 scale buttons reachable.
   const switchCount = await switches(page).count();
   expect(switchCount).toBe(6);
-  const scaleButtons = await page
-    .locator('blakfy-a11y-root')
-    .locator('button.scale-btn')
-    .count();
+  const scaleButtons = await page.locator('blakfy-a11y-root').locator('button.scale-btn').count();
   expect(scaleButtons).toBe(3);
 });

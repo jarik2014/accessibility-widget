@@ -23,13 +23,7 @@ export default defineConfig({
       fileName: () => 'index.js',
     },
     rollupOptions: {
-      external: [
-        'next/headers',
-        'next/script',
-        'react',
-        'react/jsx-runtime',
-        '@blakfy/a11y-core',
-      ],
+      external: ['next/headers', 'next/script', 'react', 'react/jsx-runtime', '@blakfy/a11y-core'],
     },
     minify: 'esbuild',
     sourcemap: true,

@@ -58,7 +58,13 @@ function _getFocusable(root: HTMLElement | null): HTMLElement[] {
   });
 }
 
-export function Dialog({ open, onClose, titleId, descriptionId, children }: Props): JSX.Element | null {
+export function Dialog({
+  open,
+  onClose,
+  titleId,
+  descriptionId,
+  children,
+}: Props): JSX.Element | null {
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const previousActiveRef = useRef<Element | null>(null);
   const onCloseRef = useRef(onClose);
@@ -108,7 +114,9 @@ export function Dialog({ open, onClose, titleId, descriptionId, children }: Prop
       if (!first || !last) return;
       // The active element inside Shadow DOM is found via the root
       const root = dialogRef.current?.getRootNode() as Document | ShadowRoot | undefined;
-      const active = (root && 'activeElement' in root ? root.activeElement : document.activeElement) as HTMLElement | null;
+      const active = (
+        root && 'activeElement' in root ? root.activeElement : document.activeElement
+      ) as HTMLElement | null;
       if (e.shiftKey) {
         if (active === first || !dialogRef.current?.contains(active)) {
           e.preventDefault();

@@ -21,12 +21,9 @@ describe('Diagnostics issue codes contract (ADR-005)', () => {
     expect(LOCKED_ISSUE_CODES.length).toBe(11);
   });
 
-  it.each(LOCKED_ISSUE_CODES)(
-    'bundle still references issue code "%s"',
-    (code) => {
-      expect(src).toContain(code);
-    },
-  );
+  it.each(LOCKED_ISSUE_CODES)('bundle still references issue code "%s"', (code) => {
+    expect(src).toContain(code);
+  });
 
   it('snapshot of locked codes (drift = potential breaking change)', () => {
     expect([...LOCKED_ISSUE_CODES].sort()).toMatchInlineSnapshot(`
