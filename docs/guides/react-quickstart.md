@@ -112,7 +112,7 @@ function Card({ children }: { children: React.ReactNode }) {
 | `textAlign` | `'default' \| 'left'` | `'default'` |
 | `highlightHeadings` | `boolean` | `false` |
 | `saturation` | `'default' \| 'low' \| 'none'` | `'default'` |
-| `cursorSize` | `'default' \| 'large'` | `'default'` |
+| `cursorSize` | `'default' \| 'large-dark' \| 'large-light'` | `'default'` |
 | `hideImages` | `boolean` | `false` |
 
 ## main.tsx'de Tek Seferlik Mount

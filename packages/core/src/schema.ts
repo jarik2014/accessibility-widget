@@ -1,5 +1,6 @@
 // Hand-rolled validators (no Zod) — keeps bundle ≤18KB gz per ADR-002
 // @blakfy/a11y-core — schema.ts
+import { addIssue } from './diagnostics';
 import {
   DEFAULT_PREFS,
   LOCALE_CODES,
@@ -20,6 +21,16 @@ import {
   type WidgetOptions,
 } from './types';
 
+function warnInvalid(field: string, received: unknown, fallback: unknown): void {
+  if (received === undefined) return;
+  addIssue(
+    'warn',
+    'INVALID_PREF_VALUE',
+    `Invalid ${field} value received: ${JSON.stringify(received)} — falling back to '${String(fallback)}'.`,
+    { field, received },
+  );
+}
+
 /** Default `WidgetOptions` returned when input is invalid or missing. */
 const DEFAULT_OPTIONS: WidgetOptions = {
   locale: 'en',
@@ -34,11 +45,15 @@ function isPlainObject(v: unknown): v is Record<string, unknown> {
 }
 
 function pickFontScale(v: unknown): FontScale {
-  return v === 100 || v === 110 || v === 125 ? v : DEFAULT_PREFS.fontScale;
+  if (v === 100 || v === 110 || v === 125) return v;
+  warnInvalid('fontScale', v, DEFAULT_PREFS.fontScale);
+  return DEFAULT_PREFS.fontScale;
 }
 
 function pickContrast(v: unknown): Contrast {
-  return v === 'normal' || v === 'high' ? v : DEFAULT_PREFS.contrast;
+  if (v === 'normal' || v === 'high') return v;
+  warnInvalid('contrast', v, DEFAULT_PREFS.contrast);
+  return DEFAULT_PREFS.contrast;
 }
 
 function pickBoolean(v: unknown, fallback: boolean): boolean {
@@ -46,27 +61,39 @@ function pickBoolean(v: unknown, fallback: boolean): boolean {
 }
 
 function pickMotion(v: unknown): Motion {
-  return v === 'auto' || v === 'reduce' ? v : DEFAULT_PREFS.motion;
+  if (v === 'auto' || v === 'reduce') return v;
+  warnInvalid('motion', v, DEFAULT_PREFS.motion);
+  return DEFAULT_PREFS.motion;
 }
 
 function pickLineHeight(v: unknown): LineHeight {
-  return v === 'normal' || v === 'medium' || v === 'large' ? v : DEFAULT_PREFS.lineHeight;
+  if (v === 'normal' || v === 'medium' || v === 'large') return v;
+  warnInvalid('lineHeight', v, DEFAULT_PREFS.lineHeight);
+  return DEFAULT_PREFS.lineHeight;
 }
 
 function pickLetterSpacing(v: unknown): LetterSpacing {
-  return v === 'normal' || v === 'medium' || v === 'large' ? v : DEFAULT_PREFS.letterSpacing;
+  if (v === 'normal' || v === 'medium' || v === 'large') return v;
+  warnInvalid('letterSpacing', v, DEFAULT_PREFS.letterSpacing);
+  return DEFAULT_PREFS.letterSpacing;
 }
 
 function pickTextAlign(v: unknown): TextAlign {
-  return v === 'default' || v === 'left' || v === 'center' || v === 'right' ? v : DEFAULT_PREFS.textAlign;
+  if (v === 'default' || v === 'left' || v === 'center' || v === 'right') return v;
+  warnInvalid('textAlign', v, DEFAULT_PREFS.textAlign);
+  return DEFAULT_PREFS.textAlign;
 }
 
 function pickSaturation(v: unknown): Saturation {
-  return v === 'normal' || v === 'high' || v === 'low' || v === 'none' ? v : DEFAULT_PREFS.saturation;
+  if (v === 'normal' || v === 'high' || v === 'low' || v === 'none') return v;
+  warnInvalid('saturation', v, DEFAULT_PREFS.saturation);
+  return DEFAULT_PREFS.saturation;
 }
 
 function pickCursorSize(v: unknown): CursorSize {
-  return v === 'default' || v === 'large-dark' || v === 'large-light' ? v : DEFAULT_PREFS.cursorSize;
+  if (v === 'default' || v === 'large-dark' || v === 'large-light') return v;
+  warnInvalid('cursorSize', v, DEFAULT_PREFS.cursorSize);
+  return DEFAULT_PREFS.cursorSize;
 }
 
 function pickLocale(v: unknown): Locale {
