@@ -164,6 +164,49 @@ button {
   inset-inline-end: 1rem;
 }
 
+/* ==========================================================================
+ * 5b. Badge — always-present sibling of the FAB (#60), never inside Dialog.
+ * Positioned adjacent to the FAB (not overlapping it) on the same side.
+ * ========================================================================== */
+.badge {
+  position: fixed;
+  inset-block-end: calc(1rem + var(--blakfy-a11y-fab-size) + 0.5rem);
+  inset-inline-start: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.35em 0.6em;
+  border-radius: 9999px;
+  background: var(--blakfy-a11y-panel-bg);
+  color: var(--blakfy-a11y-panel-text);
+  border: 1px solid var(--blakfy-a11y-panel-border);
+  font-size: 0.7rem;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 9997;
+}
+
+.badge:focus-visible {
+  outline: 2px solid var(--blakfy-a11y-focus-ring);
+  outline-offset: 2px;
+}
+
+:host([data-position='bottom-right']) .badge {
+  inset-inline-start: auto;
+  inset-inline-end: 1rem;
+}
+:host([data-position='top-left']) .badge {
+  inset-block-end: auto;
+  inset-block-start: calc(1rem + var(--blakfy-a11y-fab-size) + 0.5rem);
+}
+:host([data-position='top-right']) .badge {
+  inset-block-end: auto;
+  inset-block-start: calc(1rem + var(--blakfy-a11y-fab-size) + 0.5rem);
+  inset-inline-start: auto;
+  inset-inline-end: 1rem;
+}
+
 .fab svg {
   width: 24px;
   height: 24px;

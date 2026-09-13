@@ -19,6 +19,7 @@ import {
 import { FabButton } from './FabButton';
 import { Dialog } from './Dialog';
 import { Panel } from './Panel';
+import { FloatingBadge } from './FloatingBadge';
 
 type Props = {
   config: WidgetOptions;
@@ -91,6 +92,7 @@ export function Widget({
         isOpen={open}
         onClick={handleFabClick}
       />
+      <FloatingBadge />
       <Dialog open={open} onClose={handleClose} titleId={titleId} descriptionId={descriptionId}>
         <Panel
           translation={translation}
