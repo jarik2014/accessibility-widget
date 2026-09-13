@@ -274,6 +274,14 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
     return { unmount: () => undefined };
   }
 
+  // Idempotency guard (fixes #44): a second mount() call while already
+  // mounted must be a true no-op, matching the documented contract above.
+  // Callers who need to change live options must use the returned
+  // configure() instead of calling mount() again.
+  if (_activeUnmount) {
+    return { unmount: _activeUnmount };
+  }
+
   // 1. Resolve config: defaults < script data-* < window globals < opts
   const scriptCfg = _readScriptDataAttrs();
   const winGlobal = (typeof window !== 'undefined' ? window.__BLAKFY_A11Y__ ?? {} : {}) as Partial<WidgetOptions> & {
