@@ -117,6 +117,10 @@
       "magnifier": {
         "title": "Magnifier",
         "description": "Shows a magnified lens that follows your cursor. Note: it may not perfectly magnify videos or other live content."
+      },
+      "stopAutoplay": {
+        "title": "Stop Autoplay",
+        "description": "Stops videos and audio from playing automatically, per WCAG 2.2.2 (Pause, Stop, Hide). Embedded third-party players (e.g. YouTube) may not be affected."
       }
     }
   }

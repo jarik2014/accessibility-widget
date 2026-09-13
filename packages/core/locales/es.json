@@ -126,6 +126,10 @@
       "magnifier": {
         "title": "Lupa",
         "description": "Muestra una lupa de aumento que sigue tu cursor. Nota: puede que no amplíe perfectamente vídeos u otro contenido en vivo."
+      },
+      "stopAutoplay": {
+        "title": "Detener reproducción automática",
+        "description": "Impide que los vídeos y audios se reproduzcan automáticamente, según WCAG 2.2.2 (Pausar, detener, ocultar). Los reproductores incrustados de terceros (p. ej. YouTube) pueden no verse afectados."
       }
     }
   }

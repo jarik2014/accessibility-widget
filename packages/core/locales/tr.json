@@ -117,6 +117,10 @@
       "magnifier": {
         "title": "Büyüteç",
         "description": "İmlecinizi takip eden büyüteç merceği gösterir. Not: video veya diğer canlı içerikleri tam olarak büyütemeyebilir."
+      },
+      "stopAutoplay": {
+        "title": "Otomatik Oynatmayı Durdur",
+        "description": "WCAG 2.2.2 (Duraklat, Durdur, Gizle) uyarınca video ve seslerin otomatik oynatılmasını durdurur. Gömülü üçüncü taraf oynatıcılar (ör. YouTube) etkilenmeyebilir."
       }
     }
   }

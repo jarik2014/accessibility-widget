@@ -126,6 +126,10 @@
       "magnifier": {
         "title": "Lente d'ingrandimento",
         "description": "Mostra una lente d'ingrandimento che segue il cursore. Nota: potrebbe non ingrandire perfettamente video o altri contenuti dal vivo."
+      },
+      "stopAutoplay": {
+        "title": "Ferma la riproduzione automatica",
+        "description": "Impedisce la riproduzione automatica di video e audio, secondo WCAG 2.2.2 (Pausa, Stop, Nascondi). I lettori di terze parti incorporati (es. YouTube) potrebbero non essere interessati."
       }
     }
   }

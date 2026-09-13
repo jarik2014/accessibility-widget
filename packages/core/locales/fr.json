@@ -122,6 +122,10 @@
       "magnifier": {
         "title": "Loupe",
         "description": "Affiche une loupe grossissante qui suit votre curseur. Remarque : elle peut ne pas agrandir parfaitement les vidéos ou autre contenu en direct."
+      },
+      "stopAutoplay": {
+        "title": "Arrêter la lecture automatique",
+        "description": "Empêche la lecture automatique des vidéos et de l'audio, conformément au WCAG 2.2.2 (Pause, arrêt, masquage). Les lecteurs tiers intégrés (par ex. YouTube) peuvent ne pas être concernés."
       }
     }
   }

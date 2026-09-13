@@ -52,6 +52,7 @@ interface Preferences {
   readAloud: boolean;
   readingMask: boolean;
   magnifier: boolean;
+  stopAutoplay: boolean;
 }
 
 interface WidgetOptions {
@@ -148,6 +149,7 @@ Bu attribute'lar widget tarafından `<html>` elementine yazılır. Müşteri CSS
 | `data-a11y-readaloud` | `"true" \| "false"` | Sesli okuma (click-to-read) | 2.0.0 |
 | `data-a11y-readingmask` | `"true" \| "false"` | Okuma maskesi (imleç-takipli bant) | 2.0.0 |
 | `data-a11y-magnifier` | `"true" \| "false"` | Büyüteç merceği (imleç-takipli DOM klonu) | 2.0.0 |
+| `data-a11y-stopautoplay` | `"true" \| "false"` | Otomatik oynatmayı durdur (WCAG 2.2.2) | 2.0.0 |
 
 ### Müşteri kullanım örneği
 

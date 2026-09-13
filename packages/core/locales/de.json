@@ -117,6 +117,10 @@
       "magnifier": {
         "title": "Lupe",
         "description": "Zeigt eine vergrößernde Lupe, die Ihrem Cursor folgt. Hinweis: Videos oder andere Live-Inhalte werden möglicherweise nicht perfekt vergrößert."
+      },
+      "stopAutoplay": {
+        "title": "Autoplay stoppen",
+        "description": "Stoppt die automatische Wiedergabe von Videos und Audio gemäß WCAG 2.2.2 (Pause, Stopp, Ausblenden). Eingebettete Player von Drittanbietern (z. B. YouTube) sind möglicherweise nicht betroffen."
       }
     }
   }

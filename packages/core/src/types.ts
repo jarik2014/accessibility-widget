@@ -55,6 +55,7 @@ export interface Preferences {
   readAloud: boolean;
   readingMask: boolean;
   magnifier: boolean;
+  stopAutoplay: boolean;
 }
 
 /** Persisted preferences envelope written to localStorage and cookie. */
@@ -153,6 +154,7 @@ export interface Translation {
       readAloud: { title: string; description: string };
       readingMask: { title: string; description: string };
       magnifier: { title: string; description: string };
+      stopAutoplay: { title: string; description: string };
     };
   };
 }
@@ -240,6 +242,7 @@ export const DEFAULT_PREFS: Preferences = {
   readAloud: false,
   readingMask: false,
   magnifier: false,
+  stopAutoplay: false,
 };
 
 /** Locked ordered list of supported locale codes. */

@@ -1,6 +1,6 @@
 // @blakfy/a11y-core — apply-styles.test.ts
-import { describe, it, expect, beforeEach } from 'vitest';
-import { applyPreferences, detectOSPreferences } from '../src/apply-styles';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { applyPreferences, applyAutoplayControl, detectOSPreferences } from '../src/apply-styles';
 import { DEFAULT_PREFS, type Preferences } from '../src/types';
 
 beforeEach(() => {
@@ -80,6 +80,43 @@ describe('applyPreferences', () => {
     expect(html.getAttribute('data-a11y-motion')).toBe('reduce');
     expect(html.getAttribute('data-a11y-dyslexia')).toBe('true');
     expect(html.getAttribute('data-a11y-reading')).toBe('true');
+  });
+});
+
+describe('applyAutoplayControl (#31)', () => {
+  afterEach(() => {
+    applyAutoplayControl(false);
+    document.body.innerHTML = '';
+  });
+
+  it('removes the autoplay attribute from existing <video>/<audio> elements when enabled', () => {
+    document.body.innerHTML = '<video autoplay></video><audio autoplay></audio>';
+    applyAutoplayControl(true);
+    expect(document.querySelector('video')?.hasAttribute('autoplay')).toBe(false);
+    expect(document.querySelector('audio')?.hasAttribute('autoplay')).toBe(false);
+  });
+
+  it('catches dynamically-added autoplay media via MutationObserver', async () => {
+    applyAutoplayControl(true);
+    const video = document.createElement('video');
+    video.setAttribute('autoplay', '');
+    document.body.appendChild(video);
+    await new Promise((r) => setTimeout(r, 0));
+    expect(video.hasAttribute('autoplay')).toBe(false);
+  });
+
+  it('does not throw when disabled then re-enabled repeatedly (no observer leak)', () => {
+    expect(() => {
+      applyAutoplayControl(true);
+      applyAutoplayControl(true);
+      applyAutoplayControl(false);
+      applyAutoplayControl(true);
+      applyAutoplayControl(false);
+    }).not.toThrow();
+  });
+
+  it('is a no-op with no media elements present', () => {
+    expect(() => applyAutoplayControl(true)).not.toThrow();
   });
 });
 

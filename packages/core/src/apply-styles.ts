@@ -157,9 +157,55 @@ export function applyPreferences(prefs: Preferences): void {
   html.setAttribute('data-a11y-readaloud', String(prefs.readAloud));
   html.setAttribute('data-a11y-readingmask', String(prefs.readingMask));
   html.setAttribute('data-a11y-magnifier', String(prefs.magnifier));
+  html.setAttribute('data-a11y-stopautoplay', String(prefs.stopAutoplay));
 
   _injectHostStyles(prefs);
   applyReadAloud(prefs.readAloud);
+  applyAutoplayControl(prefs.stopAutoplay);
+}
+
+let _autoplayObserver: MutationObserver | null = null;
+
+function _pauseAutoplayMedia(root: ParentNode): void {
+  const media = root.querySelectorAll<HTMLMediaElement>('video[autoplay], audio[autoplay]');
+  media.forEach((el) => {
+    if (!el.paused) el.pause();
+    el.removeAttribute('autoplay');
+  });
+}
+
+/**
+ * When `enabled`, pauses all autoplaying <video>/<audio> on the host page
+ * immediately and watches for dynamically-added ones via MutationObserver
+ * (WCAG 2.2.2 Pause, Stop, Hide). Idempotent — safe to call on every
+ * preference change. When `enabled` is false, disconnects the observer —
+ * does NOT resume media that was already paused (resuming without user
+ * intent would be its own accessibility violation). Cross-origin iframes
+ * (e.g. an embedded YouTube player) cannot be controlled — out of scope.
+ */
+export function applyAutoplayControl(enabled: boolean): void {
+  if (typeof document === 'undefined') return;
+  if (!enabled) {
+    _autoplayObserver?.disconnect();
+    _autoplayObserver = null;
+    return;
+  }
+  _pauseAutoplayMedia(document);
+  if (_autoplayObserver) return; // already watching
+  _autoplayObserver = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      m.addedNodes.forEach((node) => {
+        if (node.nodeType !== 1) return;
+        const el = node as HTMLElement;
+        if (el.matches?.('video[autoplay], audio[autoplay]')) {
+          _pauseAutoplayMedia(el.parentNode ?? document);
+        } else {
+          _pauseAutoplayMedia(el);
+        }
+      });
+    }
+  });
+  _autoplayObserver.observe(document.body, { childList: true, subtree: true });
 }
 
 const READ_ALOUD_LISTENER_FLAG = '__blakfyReadAloudBound';

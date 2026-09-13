@@ -147,6 +147,7 @@ export function safeMergePrefs(input: unknown): Preferences {
     readAloud: pickBoolean(input.readAloud, DEFAULT_PREFS.readAloud),
     readingMask: pickBoolean(input.readingMask, DEFAULT_PREFS.readingMask),
     magnifier: pickBoolean(input.magnifier, DEFAULT_PREFS.magnifier),
+    stopAutoplay: pickBoolean(input.stopAutoplay, DEFAULT_PREFS.stopAutoplay),
   };
 }
 

@@ -457,6 +457,12 @@ export function Panel({
         checked={prefs.magnifier}
         onChange={(v) => update('magnifier', v)}
       />
+      <Toggle
+        title={t.preferences.stopAutoplay.title}
+        description={t.preferences.stopAutoplay.description}
+        checked={prefs.stopAutoplay}
+        onChange={(v) => update('stopAutoplay', v)}
+      />
 
       {/* Tema */}
       <p class="section-label">{t.theme.label}</p>
