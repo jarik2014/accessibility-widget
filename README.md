@@ -184,13 +184,15 @@ npm i @blakfy/accessibility-widget-next
 import { A11yServerHelper, A11yScript } from '@blakfy/accessibility-widget-next';
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const a11yAttrs = await A11yServerHelper();
+
   return (
-    <A11yServerHelper lang="tr">
+    <html lang="tr" {...a11yAttrs}>
       <body>
         {children}
         <A11yScript locale="tr" theme="auto" position="bottom-left" />
       </body>
-    </A11yServerHelper>
+    </html>
   );
 }
 ```
