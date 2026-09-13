@@ -94,7 +94,7 @@ See [docs/migration/v1-to-v2.md](./docs/migration/v1-to-v2.md).
 - prefers-reduced-motion ve prefers-contrast OS sinyallerine saygi
 - Disleksi font notu: arastirma karisik (Wery 2017 etkisiz, Broadbent 2023 %58 prefer) — dürüst etiket
 - Disclaimer: "Bu panel kullanici tercih kontrolu sunar; teknik a11y yapi seviyesinde saglanmistir"
-- WCAG 2.2 AA: 44x44px touch target, focus-visible, klavye erisilebilirligi, semantic HTML
+- WCAG 2.2 AA: 44x44px touch target, focus-visible, klavye erisilebilirligi, semantic HTML — **düzeltme (#63, 2026-09-13):** bu iddia v1'in Radix UI tabanlı kontrollerini anlatıyordu; v2'nin Preact/Shadow DOM panelinde (`packages/widget/src/styles/widget.css`) `.stepper-btn`/`.opt-btn`/`.switch`/`.btn-reset` 44×44'ün altında (24-42px aralığında), gerçek uygulanan eşik **WCAG 2.2 AA SC 2.5.8 (Target Size Minimum, ≥24×24px)**'dir — `.info-btn` bu eşiğin altındaydı ve 2279a2f'de 24×24'e büyütüldü. Yalnızca FAB (48×48 / 280px'te 44×44) 44×44'ü gerçekten karşılıyor.
 - Light / Dark / Auto tema (OS prefers-color-scheme takibi)
 - Akiskan tipografi (clamp, min 10px max 18px)
 - 280px responsive
