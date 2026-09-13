@@ -306,7 +306,7 @@ Tam dosya örneği:
 </html>
 ```
 
-### Wix / Webflow / Shopify
+### Wix / Webflow / Shopify / WordPress
 
 Custom Element variant'ı kullanın:
 
@@ -316,7 +316,7 @@ Custom Element variant'ı kullanın:
 <blakfy-a11y locale="tr" theme="auto" position="bottom-left"></blakfy-a11y>
 ```
 
-Custom Element framework-agnostiktir; HTML embed alanı olan tüm platformlar destekler. Detay: [ADR-002](./docs/adr/002-preact-web-component.md).
+Custom Element framework-agnostiktir; HTML embed alanı olan tüm platformlar destekler. Detay: [ADR-002](./docs/adr/002-preact-web-component.md). WordPress kurulumu için: [`docs/guides/wordpress.md`](./docs/guides/wordpress.md).
 
 ---
 
