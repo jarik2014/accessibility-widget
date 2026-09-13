@@ -69,6 +69,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build core package
+        run: pnpm --filter "@blakfy/a11y-core" build
+
       - name: Typecheck
         run: pnpm typecheck
 
@@ -92,6 +95,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Build core package
+        run: pnpm --filter "@blakfy/a11y-core" build
 
       - name: Run unit tests
         run: pnpm test
@@ -117,6 +123,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Build core package
+        run: pnpm --filter "@blakfy/a11y-core" build
 
       - name: Run contract tests
         run: pnpm test:contract
