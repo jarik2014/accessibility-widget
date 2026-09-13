@@ -11,6 +11,7 @@
     "@blakfy/accessibility-widget": "2.0.0-alpha.0"
   },
   "changesets": [
+    "dark-mode-accent-contrast-fix",
     "v2-alpha-batch-release"
   ]
 }

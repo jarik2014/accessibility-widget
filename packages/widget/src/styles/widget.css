@@ -32,6 +32,11 @@
   --__card-hover: #eeeeee;
   --__card-active: #e8e8e8;
   --__text: #111111;
+  /* Accent used as FOREGROUND directly on panel/card surfaces (icons, active
+     outlines, reset button, branding name) — distinct from
+     --blakfy-a11y-primary, which is only ever an accent BACKGROUND paired
+     with --blakfy-a11y-primary-text. Must flip with theme; primary must not. */
+  --__accent-fg: var(--blakfy-a11y-primary);
   /* 0.62 (not 0.45) — the lighter value under-shot WCAG AA 4.5:1 against
      --__card (#f5f5f5) for .profile-list-desc; verified via axe contrast.spec.ts. */
   --__muted: rgba(17, 17, 17, 0.62);
@@ -50,6 +55,12 @@
   --blakfy-a11y-panel-muted: rgba(255, 255, 255, 0.45);
   --blakfy-a11y-panel-border: rgba(255, 255, 255, 0.07);
   --blakfy-a11y-primary-hover: #404040;
+  /* Un-overridden in dark mode until 2026-09-14: stayed #000000, making the
+     focus ring invisible against the near-black (#111111) panel background.
+     --blakfy-a11y-primary itself stays black on purpose — it is always paired
+     with --blakfy-a11y-primary-text as an accent background (FAB, switches,
+     opt-btn), so it carries its own contrast regardless of theme. */
+  --blakfy-a11y-focus-ring: #ffffff;
   --blakfy-a11y-toggle-off: #3a3a3a;
   --blakfy-a11y-card-bg: #1e1e1e;
   --blakfy-a11y-divider: rgba(255, 255, 255, 0.07);
@@ -66,6 +77,7 @@
   --__divide: var(--blakfy-a11y-divider);
   --__switch-off: #3a3a3a;
   --__header-bg: #111111;
+  --__accent-fg: #ffffff;
 }
 
 /* ==========================================================================
@@ -438,14 +450,14 @@ button {
 }
 .profile-list-item--active {
   background: var(--__card-active);
-  outline-color: var(--blakfy-a11y-primary);
+  outline-color: var(--__accent-fg);
 }
 .profile-list-item:focus-visible {
   outline-color: var(--blakfy-a11y-focus-ring);
 }
 
 .profile-list-icon {
-  color: var(--blakfy-a11y-primary);
+  color: var(--__accent-fg);
   flex-shrink: 0;
 }
 .profile-list-icon svg {
@@ -518,7 +530,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--blakfy-a11y-primary);
+  color: var(--__accent-fg);
   font-size: 20px;
   font-weight: 300;
   border: none;
@@ -745,7 +757,7 @@ button {
   min-block-size: 42px;
   border: 1px solid var(--__divide);
   border-radius: var(--blakfy-a11y-radius);
-  color: var(--blakfy-a11y-primary);
+  color: var(--__accent-fg);
   background: transparent;
   font-size: 14px;
   font-weight: 500;
@@ -757,7 +769,7 @@ button {
 }
 .btn-reset:hover {
   background: var(--__card);
-  border-color: var(--blakfy-a11y-primary);
+  border-color: var(--__accent-fg);
 }
 .btn-reset[data-confirm='true'] {
   background: #dc2626;
@@ -810,7 +822,7 @@ button {
 .panel-branding-name {
   font-size: 12px;
   font-weight: 700;
-  color: var(--blakfy-a11y-primary);
+  color: var(--__accent-fg);
 }
 
 /* ==========================================================================
