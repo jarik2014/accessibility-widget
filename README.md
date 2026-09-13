@@ -318,7 +318,7 @@ Custom Element variant'ı kullanın:
 
 Custom Element framework-agnostiktir; HTML embed alanı olan tüm platformlar destekler. Detay: [ADR-002](./docs/adr/002-preact-web-component.md).
 
-WordPress'te en kolay yol "Insert Headers and Footers" gibi bir eklentiyle footer alanına yapıştırmaktır — detay: [wordpress.md](./docs/guides/wordpress.md).
+WordPress'te en kolay yol "Insert Headers and Footers" gibi bir eklentiyle footer alanına yapıştırmaktır — detay: [wordpress.md](./docs/guides/wordpress.md) (henüz gerçek bir WordPress ortamında test edilmedi, bkz. [#39](https://github.com/tariktunc/accessibility-widget/issues/39)).
 
 ---
 

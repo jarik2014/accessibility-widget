@@ -1,5 +1,10 @@
 # WordPress
 
+> ⚠️ **Henüz gerçek bir WordPress ortamında test edilmedi.** Aşağıdaki kurulum adımları
+> mimari olarak doğru (same-origin HTML embed, Wix/Webflow/İkas ile aynı yöntem) ama
+> Wordfence, iThemes Security, Gutenberg "Custom HTML" sanitizer'ı gibi WordPress'e özgü
+> etkenlerle canlı doğrulama yapılmadı — hata çıkabilir. Detay ve takip: [#39](https://github.com/tariktunc/accessibility-widget/issues/39).
+
 Docs-only destek — bkz. [ADR-007](../adr/007-wordpress-support.md). wp.org plugin'i
 şu an için yapılmıyor; Custom Element snippet zaten same-origin her HTML bağlamında
 çalışıyor (Wix/Webflow/İkas ile aynı mimari).
