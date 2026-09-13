@@ -10,10 +10,10 @@ Görev odaklı (Diátaxis "how-to") rehberler. Her dosya tek bir entegrasyon sen
 | [react-quickstart.md](./react-quickstart.md) | Vite + React 18 + TypeScript — `<A11yWidget>` + `useA11yPreferences` |
 | [vanilla-html-quickstart.md](./vanilla-html-quickstart.md) | Vanilla HTML / static site — CDN script tag + FOUC koruması |
 | [wordpress.md](./wordpress.md) | WordPress — Insert Headers and Footers / tema dosyası entegrasyonu |
+| [wix-webflow-shopify.md](./wix-webflow-shopify.md) | Wix / Webflow / Shopify — Custom Element ile no-code platformlar |
 
 ## Planlanan
 
-- `wix-webflow-shopify.md` — Custom Element ile no-code platformlar
 - `theming.md` — 15 CSS custom property ile tema; örnek paletler
 - `analytics.md` — `onChange` callback + GA/Mixpanel/Plausible entegrasyonu
 
