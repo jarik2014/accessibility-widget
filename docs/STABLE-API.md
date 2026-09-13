@@ -293,6 +293,26 @@ Tip: `Partial<WidgetOptions> & { onPreferencesChange?: (record: PreferencesRecor
 
 ---
 
+## 8a. Panel Quick-Preset "Profiller" (UI-only)
+
+Panelde 5 hazır profil butonu var (`Panel.tsx` `PROFILE_PRESETS`). Tıklandığında ilgili
+tercih demeti mevcut tercihlerin ÜSTÜNE merge edilir — diğer alanları sıfırlamaz.
+
+| Profil anahtarı | Etiket (tr) | Uyguladığı tercihler |
+|---|---|---|
+| `epilepsy` | Epilepsi Güvenli | `motion: 'reduce'`, `saturation: 'low'` |
+| `vision` | Görme Engelliler | `fontScale: 125`, `contrast: 'high'` |
+| `cognitive` | Bilişsel Engellilik | `readingMode: true`, `lineHeight: 'medium'`, `motion: 'reduce'` |
+| `adhd` | DEHB Dostu | `motion: 'reduce'`, `hideImages: true` |
+| `blindness` | Ekran Okuyucu | `focusRing: true`, `linkUnderline: true`, `highlightHeadings: true` |
+
+**Karar (2026-09-13):** Bu profiller **sadece panel UI'sinde** yaşar — `applyProfile`/
+`PROFILE_PRESETS` `Panel.tsx`'e internal'dır, `window.BlakfyA11y` üzerinde public bir API
+YOKTUR. Bilinçli tercih: mevcut kapsam yeterli, JS API talebi gelirse ayrı bir issue ile
+eklenir (LOCKED_API_KEYS kontrat testine dokunmadan).
+
+---
+
 ## 9. Marka Rozeti (Powered by Blakfy Studio)
 
 Widget her sayfada **sürekli görünür** marka rozeti basar.

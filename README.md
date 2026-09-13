@@ -124,11 +124,12 @@ Kullanıcı kendi cihazında geçici tercihler ayarlar (font ölçeği, kontrast
 | EAA 2025 standardı (EN 301 549 v3.2.3) UI seviyesinde | ✅ |
 | 280px ekranda yatay scroll yok (responsive) | ✅ |
 | Light / Dark / Auto tema (`prefers-color-scheme` takibi) | ✅ |
-| Bundle ≤18 KB gz | ✅ |
+| Bundle ≤26 KB gz | ✅ |
 | Shadow DOM CSS izolasyon (host stillerinden bağımsız) | ✅ |
 | jsDelivr CDN otomatik güncelleme | ✅ |
 | Hiçbir telemetri, hiçbir AT-fingerprinting | ✅ |
 | Marka rozeti "Powered by Blakfy Studio" (sağ-alt, kalıcı) | ✅ Non-removable |
+| 5 hazır profil butonu (epilepsi/görme/bilişsel/DEHB/ekran okuyucu) | ✅ Panel-only |
 
 Detaylı kontrat: [`docs/STABLE-API.md`](./docs/STABLE-API.md).
 
