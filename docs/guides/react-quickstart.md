@@ -63,7 +63,7 @@ function MyComponent() {
     <article
       style={{
         fontSize: prefs.fontScale === 125 ? '1.25rem' : '1rem',
-        lineHeight: prefs.lineHeight === 'loose' ? 2 : 1.5,
+        lineHeight: prefs.lineHeight === 'large' ? 2 : 1.5,
       }}
     >
       İçerik
@@ -88,7 +88,7 @@ function Card({ children }: { children: React.ReactNode }) {
         'rounded-lg p-4',
         fontScale === 125 && 'text-lg',
         contrast === 'high' && 'border-2 border-black',
-        motion === 'reduced' && '[&_*]:transition-none',
+        motion === 'reduce' && '[&_*]:transition-none',
       ]
         .filter(Boolean)
         .join(' ')}
@@ -105,20 +105,25 @@ function Card({ children }: { children: React.ReactNode }) {
 
 | Alan | Tip | Varsayılan |
 |---|---|---|
-| `fontScale` | `100 \| 110 \| 125 \| 150` | `100` |
-| `contrast` | `'default' \| 'high' \| 'low'` | `'default'` |
+| `fontScale` | `100 \| 110 \| 125` | `100` |
+| `contrast` | `'normal' \| 'high'` | `'normal'` |
 | `focusRing` | `boolean` | `false` |
 | `linkUnderline` | `boolean` | `false` |
-| `motion` | `'default' \| 'reduced'` | `'default'` |
+| `motion` | `'auto' \| 'reduce'` | `'auto'` |
 | `dyslexiaFont` | `boolean` | `false` |
 | `readingMode` | `boolean` | `false` |
-| `lineHeight` | `'default' \| 'loose'` | `'default'` |
-| `letterSpacing` | `'default' \| 'wide'` | `'default'` |
-| `textAlign` | `'default' \| 'left'` | `'default'` |
+| `lineHeight` | `'normal' \| 'medium' \| 'large'` | `'normal'` |
+| `letterSpacing` | `'normal' \| 'medium' \| 'large'` | `'normal'` |
+| `textAlign` | `'default' \| 'left' \| 'center' \| 'right'` | `'default'` |
+| `readingWidth` | `'default' \| 'narrow' \| 'narrower'` | `'default'` |
 | `highlightHeadings` | `boolean` | `false` |
-| `saturation` | `'default' \| 'low' \| 'none'` | `'default'` |
+| `saturation` | `'normal' \| 'high' \| 'low' \| 'none'` | `'normal'` |
 | `cursorSize` | `'default' \| 'large-dark' \| 'large-light'` | `'default'` |
 | `hideImages` | `boolean` | `false` |
+| `readAloud` | `boolean` | `false` |
+| `readingMask` | `boolean` | `false` |
+| `magnifier` | `boolean` | `false` |
+| `stopAutoplay` | `boolean` | `false` |
 
 ## main.tsx'de Tek Seferlik Mount
 

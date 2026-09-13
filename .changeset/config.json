@@ -14,5 +14,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@blakfy/example-nextjs", "@blakfy/example-vanilla-html"]
+  "ignore": ["@blakfy/example-nextjs", "@blakfy/example-vanilla-html", "@blakfy/example-react-vite"]
 }
