@@ -155,6 +155,7 @@ export function applyPreferences(prefs: Preferences): void {
   html.setAttribute('data-a11y-cursor', prefs.cursorSize);
   html.setAttribute('data-a11y-hideimages', String(prefs.hideImages));
   html.setAttribute('data-a11y-readaloud', String(prefs.readAloud));
+  html.setAttribute('data-a11y-readingmask', String(prefs.readingMask));
 
   _injectHostStyles(prefs);
   applyReadAloud(prefs.readAloud);

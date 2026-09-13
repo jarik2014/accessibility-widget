@@ -118,6 +118,10 @@
       "readAloud": {
         "title": "Leggi ad alta voce",
         "description": "Fai clic su qualsiasi testo della pagina per farlo leggere ad alta voce tramite la sintesi vocale integrata del tuo browser."
+      },
+      "readingMask": {
+        "title": "Maschera di lettura",
+        "description": "Oscura la pagina tranne una fascia orizzontale che segue il cursore, aiutandoti a concentrarti su una riga di testo alla volta."
       }
     }
   }

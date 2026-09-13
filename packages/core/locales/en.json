@@ -109,6 +109,10 @@
       "readAloud": {
         "title": "Read Aloud",
         "description": "Click any text on the page to have it read aloud using your browser's built-in text-to-speech."
+      },
+      "readingMask": {
+        "title": "Reading Mask",
+        "description": "Dims the page except for a horizontal band that follows your cursor, helping you focus on one line of text at a time."
       }
     }
   }

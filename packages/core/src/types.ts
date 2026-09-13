@@ -53,6 +53,7 @@ export interface Preferences {
   cursorSize: CursorSize;
   hideImages: boolean;
   readAloud: boolean;
+  readingMask: boolean;
 }
 
 /** Persisted preferences envelope written to localStorage and cookie. */
@@ -149,6 +150,7 @@ export interface Translation {
       readingMode: { title: string; description: string };
       hideImages: { title: string; description: string };
       readAloud: { title: string; description: string };
+      readingMask: { title: string; description: string };
     };
   };
 }
@@ -234,6 +236,7 @@ export const DEFAULT_PREFS: Preferences = {
   cursorSize: 'default',
   hideImages: false,
   readAloud: false,
+  readingMask: false,
 };
 
 /** Locked ordered list of supported locale codes. */

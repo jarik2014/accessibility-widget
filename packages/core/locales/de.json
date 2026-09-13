@@ -109,6 +109,10 @@
       "readAloud": {
         "title": "Vorlesen",
         "description": "Klicken Sie auf beliebigen Text auf der Seite, um ihn mit der integrierten Sprachausgabe Ihres Browsers vorlesen zu lassen."
+      },
+      "readingMask": {
+        "title": "Lesemaske",
+        "description": "Blendet die Seite aus, außer einem horizontalen Band, das Ihrem Cursor folgt, damit Sie sich auf eine Textzeile konzentrieren können."
       }
     }
   }

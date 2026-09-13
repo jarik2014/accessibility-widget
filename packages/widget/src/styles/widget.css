@@ -221,6 +221,26 @@ button {
 /* ==========================================================================
  * 7. Dialog — sağdan kayan sidebar
  * ========================================================================== */
+/* ==========================================================================
+ * 6b. Reading mask (#29) — cursor-following band, dims rest of viewport.
+ * z-index sits below FAB (9998)/badge (9997) so it never covers them.
+ * ========================================================================== */
+.reading-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0,
+    rgba(0, 0, 0, 0.55) calc(var(--mask-y, 50vh) - var(--mask-band, 60px) / 2),
+    transparent calc(var(--mask-y, 50vh) - var(--mask-band, 60px) / 2),
+    transparent calc(var(--mask-y, 50vh) + var(--mask-band, 60px) / 2),
+    rgba(0, 0, 0, 0.55) calc(var(--mask-y, 50vh) + var(--mask-band, 60px) / 2),
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
 .backdrop {
   position: fixed;
   inset: 0;

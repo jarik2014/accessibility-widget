@@ -50,6 +50,7 @@ interface Preferences {
   cursorSize: 'default' | 'large-dark' | 'large-light';
   hideImages: boolean;
   readAloud: boolean;
+  readingMask: boolean;
 }
 
 interface WidgetOptions {
@@ -144,6 +145,7 @@ Bu attribute'lar widget tarafından `<html>` elementine yazılır. Müşteri CSS
 | `data-a11y-cursor` | `"default" \| "large-dark" \| "large-light"` | İmleç boyutu | 2.0.0 |
 | `data-a11y-hideimages` | `"true" \| "false"` | Görselleri gizle | 2.0.0 |
 | `data-a11y-readaloud` | `"true" \| "false"` | Sesli okuma (click-to-read) | 2.0.0 |
+| `data-a11y-readingmask` | `"true" \| "false"` | Okuma maskesi (imleç-takipli bant) | 2.0.0 |
 
 ### Müşteri kullanım örneği
 

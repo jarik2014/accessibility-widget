@@ -109,6 +109,10 @@
       "readAloud": {
         "title": "Sesli Okuma",
         "description": "Sayfadaki herhangi bir metne tıklayarak tarayıcınızın yerleşik metin okuma özelliğiyle sesli okutabilirsiniz."
+      },
+      "readingMask": {
+        "title": "Okuma Maskesi",
+        "description": "İmlecinizi takip eden yatay bir bant dışında sayfayı karartır, tek seferde bir satıra odaklanmanıza yardımcı olur."
       }
     }
   }

@@ -445,6 +445,12 @@ export function Panel({
         checked={prefs.readAloud}
         onChange={(v) => update('readAloud', v)}
       />
+      <Toggle
+        title={t.preferences.readingMask.title}
+        description={t.preferences.readingMask.description}
+        checked={prefs.readingMask}
+        onChange={(v) => update('readingMask', v)}
+      />
 
       {/* Tema */}
       <p class="section-label">{t.theme.label}</p>

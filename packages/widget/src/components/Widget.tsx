@@ -10,6 +10,7 @@ import type { JSX } from 'preact';
 import {
   EVENT_NAMES,
   emit,
+  getPreferences,
   on,
   type IconStyle,
   type Theme,
@@ -20,6 +21,7 @@ import { FabButton } from './FabButton';
 import { Dialog } from './Dialog';
 import { Panel } from './Panel';
 import { FloatingBadge } from './FloatingBadge';
+import { ReadingMask } from './ReadingMask';
 
 type Props = {
   config: WidgetOptions;
@@ -37,9 +39,16 @@ export function Widget({
   onThemeChange,
 }: Props): JSX.Element {
   const [open, setOpen] = useState(false);
+  const [readingMask, setReadingMask] = useState(() => getPreferences().readingMask);
   const baseId = useId();
   const titleId = `${baseId}-title`;
   const descriptionId = `${baseId}-desc`;
+
+  useEffect(() => {
+    return on(EVENT_NAMES.CHANGE, (record) => {
+      setReadingMask(record.prefs.readingMask);
+    });
+  }, []);
 
   // Programmatic open via window.BlakfyA11y.open() → emits EVENT_NAMES.OPEN
   useEffect(() => {
@@ -93,6 +102,7 @@ export function Widget({
         onClick={handleFabClick}
       />
       <FloatingBadge />
+      <ReadingMask enabled={readingMask} />
       <Dialog open={open} onClose={handleClose} titleId={titleId} descriptionId={descriptionId}>
         <Panel
           translation={translation}

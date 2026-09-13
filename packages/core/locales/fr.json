@@ -114,6 +114,10 @@
       "readAloud": {
         "title": "Lecture à voix haute",
         "description": "Cliquez sur n'importe quel texte de la page pour le faire lire à voix haute grâce à la synthèse vocale intégrée de votre navigateur."
+      },
+      "readingMask": {
+        "title": "Masque de lecture",
+        "description": "Assombrit la page sauf une bande horizontale qui suit votre curseur, vous aidant à vous concentrer sur une ligne de texte à la fois."
       }
     }
   }

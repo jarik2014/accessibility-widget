@@ -118,6 +118,10 @@
       "readAloud": {
         "title": "Leer en voz alta",
         "description": "Haz clic en cualquier texto de la página para que se lea en voz alta usando la conversión de texto a voz integrada de tu navegador."
+      },
+      "readingMask": {
+        "title": "Máscara de lectura",
+        "description": "Oscurece la página excepto una franja horizontal que sigue tu cursor, ayudándote a enfocarte en una línea de texto a la vez."
       }
     }
   }
