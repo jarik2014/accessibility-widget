@@ -121,6 +121,15 @@
       "stopAutoplay": {
         "title": "Autoplay stoppen",
         "description": "Stoppt die automatische Wiedergabe von Videos und Audio gemäß WCAG 2.2.2 (Pause, Stopp, Ausblenden). Eingebettete Player von Drittanbietern (z. B. YouTube) sind möglicherweise nicht betroffen."
+      },
+      "readingWidth": {
+        "title": "Lesebreite",
+        "description": "Begrenzt die Breite von Textblöcken für einfacheres Zeilenverfolgen, gemäß WCAG 1.4.8.",
+        "values": {
+          "default": "Standard",
+          "narrow": "Schmal",
+          "narrower": "Schmaler"
+        }
       }
     }
   }

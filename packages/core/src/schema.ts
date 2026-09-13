@@ -18,6 +18,7 @@ import {
   type PreferencesRecord,
   type Saturation,
   type TextAlign,
+  type ReadingWidth,
   type Theme,
   type WidgetOptions,
 } from './types';
@@ -87,6 +88,12 @@ function pickTextAlign(v: unknown): TextAlign {
   return DEFAULT_PREFS.textAlign;
 }
 
+function pickReadingWidth(v: unknown): ReadingWidth {
+  if (v === 'default' || v === 'narrow' || v === 'narrower') return v;
+  warnInvalid('readingWidth', v, DEFAULT_PREFS.readingWidth);
+  return DEFAULT_PREFS.readingWidth;
+}
+
 function pickSaturation(v: unknown): Saturation {
   if (v === 'normal' || v === 'high' || v === 'low' || v === 'none') return v;
   warnInvalid('saturation', v, DEFAULT_PREFS.saturation);
@@ -140,6 +147,7 @@ export function safeMergePrefs(input: unknown): Preferences {
     lineHeight: pickLineHeight(input.lineHeight),
     letterSpacing: pickLetterSpacing(input.letterSpacing),
     textAlign: pickTextAlign(input.textAlign),
+    readingWidth: pickReadingWidth(input.readingWidth),
     highlightHeadings: pickBoolean(input.highlightHeadings, DEFAULT_PREFS.highlightHeadings),
     saturation: pickSaturation(input.saturation),
     cursorSize: pickCursorSize(input.cursorSize),

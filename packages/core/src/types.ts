@@ -18,6 +18,9 @@ export type LetterSpacing = 'normal' | 'medium' | 'large';
 /** Text alignment preference. */
 export type TextAlign = 'default' | 'left' | 'center' | 'right';
 
+/** Reading column width constraint. */
+export type ReadingWidth = 'default' | 'narrow' | 'narrower';
+
 /** Color saturation filter. */
 export type Saturation = 'normal' | 'high' | 'low' | 'none';
 
@@ -48,6 +51,7 @@ export interface Preferences {
   lineHeight: LineHeight;
   letterSpacing: LetterSpacing;
   textAlign: TextAlign;
+  readingWidth: ReadingWidth;
   highlightHeadings: boolean;
   saturation: Saturation;
   cursorSize: CursorSize;
@@ -155,6 +159,11 @@ export interface Translation {
       readingMask: { title: string; description: string };
       magnifier: { title: string; description: string };
       stopAutoplay: { title: string; description: string };
+      readingWidth: {
+        title: string;
+        description: string;
+        values: { default: string; narrow: string; narrower: string };
+      };
     };
   };
 }
@@ -235,6 +244,7 @@ export const DEFAULT_PREFS: Preferences = {
   lineHeight: 'normal',
   letterSpacing: 'normal',
   textAlign: 'default',
+  readingWidth: 'default',
   highlightHeadings: false,
   saturation: 'normal',
   cursorSize: 'default',

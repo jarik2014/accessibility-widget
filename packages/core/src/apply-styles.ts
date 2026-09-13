@@ -83,6 +83,12 @@ function _buildHostCSS(prefs: Preferences): string {
     );
   }
 
+  if (prefs.readingWidth === 'narrow') {
+    rules.push(`html p, html li, html blockquote { max-width: 80ch !important; }`);
+  } else if (prefs.readingWidth === 'narrower') {
+    rules.push(`html p, html li, html blockquote { max-width: 60ch !important; }`);
+  }
+
   if (prefs.highlightHeadings) {
     rules.push(
       `html h1, html h2, html h3, html h4, html h5, html h6 { outline: 3px solid #2563eb !important; outline-offset: 3px !important; }`,
@@ -150,6 +156,7 @@ export function applyPreferences(prefs: Preferences): void {
   html.setAttribute('data-a11y-lineheight', prefs.lineHeight);
   html.setAttribute('data-a11y-letterspacing', prefs.letterSpacing);
   html.setAttribute('data-a11y-textalign', prefs.textAlign);
+  html.setAttribute('data-a11y-readingwidth', prefs.readingWidth);
   html.setAttribute('data-a11y-headings', String(prefs.highlightHeadings));
   html.setAttribute('data-a11y-saturation', prefs.saturation);
   html.setAttribute('data-a11y-cursor', prefs.cursorSize);

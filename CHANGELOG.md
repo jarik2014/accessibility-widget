@@ -34,6 +34,7 @@
 - readingMask preference: cursor-following reading mask/ruler (dims viewport except a horizontal band), rendered inside the widget's own Shadow DOM
 - magnifier preference: cursor-following DOM-clone lens (~2.5x zoom), zero new dependency (static snapshot — doesn't reflect live video/canvas)
 - stopAutoplay preference: pauses autoplaying video/audio and watches for dynamically-added media (WCAG 2.2.2 Pause, Stop, Hide)
+- readingWidth preference: constrains text block width (default/narrow/narrower) for easier line-tracking (WCAG 1.4.8)
 
 ### Fixed
 - `.info-btn` tap target enlarged from 16x16 to a real 24x24 (WCAG 2.2 AA SC 2.5.8 Target Size Minimum) — was a genuine AA violation, visual dot unchanged via `::before` (#63). Note: `.stepper-btn`/`.opt-btn`/`.switch`/`.btn-reset` still fall short of the stronger 44x44 figure quoted in the v1.0.0 entry above — tracked separately, not yet resolved.

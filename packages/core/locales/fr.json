@@ -126,6 +126,15 @@
       "stopAutoplay": {
         "title": "Arrêter la lecture automatique",
         "description": "Empêche la lecture automatique des vidéos et de l'audio, conformément au WCAG 2.2.2 (Pause, arrêt, masquage). Les lecteurs tiers intégrés (par ex. YouTube) peuvent ne pas être concernés."
+      },
+      "readingWidth": {
+        "title": "Largeur de lecture",
+        "description": "Limite la largeur des blocs de texte pour faciliter le suivi des lignes, selon WCAG 1.4.8.",
+        "values": {
+          "default": "Par défaut",
+          "narrow": "Étroit",
+          "narrower": "Plus étroit"
+        }
       }
     }
   }

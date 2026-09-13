@@ -19,6 +19,7 @@ import {
   type Preferences,
   type Saturation,
   type TextAlign,
+  type ReadingWidth,
   type Theme,
   type Translation,
 } from '@blakfy/a11y-core';
@@ -41,6 +42,7 @@ const THEMES: Theme[] = ['auto', 'light', 'dark'];
 const LINE_HEIGHTS: LineHeight[] = ['normal', 'medium', 'large'];
 const LETTER_SPACINGS: LetterSpacing[] = ['normal', 'medium', 'large'];
 const TEXT_ALIGNS: TextAlign[] = ['default', 'left', 'center', 'right'];
+const READING_WIDTHS: ReadingWidth[] = ['default', 'narrow', 'narrower'];
 const SATURATIONS: Saturation[] = ['normal', 'high', 'low', 'none'];
 const CURSOR_SIZES: CursorSize[] = ['default', 'large-dark', 'large-light'];
 
@@ -336,6 +338,25 @@ export function Panel({
             onClick={() => update('textAlign', opt)}
           >
             {t.preferences.textAlign.values[opt]}
+          </button>
+        ))}
+      </div>
+
+      {/* readingWidth opt buttons */}
+      <div class="opt-label-row">
+        <p class="opt-section-title">{t.preferences.readingWidth.title}</p>
+        <InfoBtn text={t.preferences.readingWidth.description} />
+      </div>
+      <div class="opt-buttons">
+        {READING_WIDTHS.map((opt) => (
+          <button
+            key={opt}
+            type="button"
+            class="opt-btn"
+            aria-pressed={prefs.readingWidth === opt}
+            onClick={() => update('readingWidth', opt)}
+          >
+            {t.preferences.readingWidth.values[opt]}
           </button>
         ))}
       </div>

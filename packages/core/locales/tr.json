@@ -121,6 +121,15 @@
       "stopAutoplay": {
         "title": "Otomatik Oynatmayı Durdur",
         "description": "WCAG 2.2.2 (Duraklat, Durdur, Gizle) uyarınca video ve seslerin otomatik oynatılmasını durdurur. Gömülü üçüncü taraf oynatıcılar (ör. YouTube) etkilenmeyebilir."
+      },
+      "readingWidth": {
+        "title": "Okuma Genişliği",
+        "description": "WCAG 1.4.8 uyarınca satırları daha kolay takip edebilmeniz için metin bloklarının genişliğini sınırlar.",
+        "values": {
+          "default": "Varsayılan",
+          "narrow": "Dar",
+          "narrower": "Daha Dar"
+        }
       }
     }
   }

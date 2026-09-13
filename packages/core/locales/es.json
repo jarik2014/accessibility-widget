@@ -130,6 +130,15 @@
       "stopAutoplay": {
         "title": "Detener reproducción automática",
         "description": "Impide que los vídeos y audios se reproduzcan automáticamente, según WCAG 2.2.2 (Pausar, detener, ocultar). Los reproductores incrustados de terceros (p. ej. YouTube) pueden no verse afectados."
+      },
+      "readingWidth": {
+        "title": "Ancho de lectura",
+        "description": "Limita el ancho de los bloques de texto para facilitar el seguimiento de líneas, según WCAG 1.4.8.",
+        "values": {
+          "default": "Predeterminado",
+          "narrow": "Estrecho",
+          "narrower": "Más estrecho"
+        }
       }
     }
   }
