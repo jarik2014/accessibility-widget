@@ -532,7 +532,13 @@ Alpha pre-release sürümleri **kırılma değişiklikleri içerebilir**, bu ned
 
 `@v2` URL'iyle yeni patch ve minor sürümler 7 gün içinde otomatik gelir. Breaking change asla — major bump (v3) ayrı opt-in URL gerektirir. Detay: [ADR-006](./docs/adr/006-versioning-auto-update.md).
 
-> **Tavsiye edilmeyen**: `@latest`. Major bump'ları otomatik alır → breaking change riski yüksektir.
+> **Genel tavsiye (dış tüketiciler için)**: `@latest` kullanmayın. Major bump'ları otomatik alır → breaking change riski yüksektir.
+>
+> **WebForge'un kendi sitelerinde istisna (owner decision 2026-09-14):** WebForge tarafından
+> işletilen tüm siteler bilinçli olarak `@latest` kullanır — her `npm publish` sonrası TÜM
+> WebForge siteleri otomatik en güncel widget'i alsın diye, manuel redeploy gerekmesin diye.
+> Bu, kontrollü, tek-elden yönetilen bir site filosu için kabul edilen bir risk; genel/harici
+> tüketiciler için hâlâ önerilmez. Detay: `site-builder/specs/accessibility-panel.md` (WebForge repo).
 
 ---
 
