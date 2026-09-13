@@ -87,11 +87,18 @@ export async function waitForApi(timeoutMs = 1000): Promise<void> {
   }
 }
 
+// v1 locked the 8 methods + `version`. v2 additionally exposes `mount` and
+// `defineCustomElement` on the same global — these are legitimate ADDITIONS
+// (ADR-004 permits adding surface, never removing/renaming) from the IIFE
+// bundle's own named exports (entry-iife.ts) and the Custom Element system;
+// nothing in the original 9 was removed or renamed. See #74.
 export const LOCKED_API_KEYS = [
   'close',
   'configure',
+  'defineCustomElement',
   'diagnostics',
   'getPreferences',
+  'mount',
   'onChange',
   'open',
   'reset',

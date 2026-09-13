@@ -78,15 +78,29 @@ describe('Storage schema contract (STABLE-API §5)', () => {
   it('record.prefs exposes the locked Preferences keys (no extras, no removals)', () => {
     const obj = JSON.parse(window.localStorage.getItem(KEY)!);
     const keys = Object.keys(obj.prefs).sort();
-    expect(keys).toEqual([
-      'contrast',
-      'dyslexiaFont',
-      'focusRing',
-      'fontScale',
-      'linkUnderline',
-      'motion',
-      'readingMode',
-    ]);
+    expect(keys).toEqual(
+      [
+        'contrast',
+        'cursorSize',
+        'dyslexiaFont',
+        'focusRing',
+        'fontScale',
+        'hideImages',
+        'highlightHeadings',
+        'letterSpacing',
+        'linkUnderline',
+        'lineHeight',
+        'magnifier',
+        'motion',
+        'readAloud',
+        'readingMask',
+        'readingMode',
+        'readingWidth',
+        'saturation',
+        'stopAutoplay',
+        'textAlign',
+      ].sort(),
+    );
   });
 
   it('migration path: malformed cookie does not throw + falls back to defaults', () => {

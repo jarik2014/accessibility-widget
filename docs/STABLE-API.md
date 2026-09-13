@@ -24,6 +24,8 @@
 | `onChange` | `(cb: (p: Preferences) => void) => () => void` | Değişiklik dinleyicisi, unsubscribe fonksiyonu döner | 1.0.0 |
 | `configure` | `(opts: Partial<WidgetOptions>) => void` | Runtime config (locale, theme vb.) | 1.0.0 |
 | `diagnostics` | `() => DiagnosticsSnapshot` | Tanı verisi snapshot'ı | 1.0.0 |
+| `mount` | `(opts?: Partial<WidgetOptions>) => { unmount: () => void }` | IIFE/Custom Element bundle'ının kendi named export'u — aynı global üzerinde de erişilebilir (v2 eklentisi, kaldırma yok — bkz. #74) | 2.0.0 |
+| `defineCustomElement` | `() => void` | `<blakfy-a11y>` custom element'ini kaydeder (v2 eklentisi) | 2.0.0 |
 
 ### 1.2 Properties
 
