@@ -141,21 +141,28 @@ Müşteri tema customization'ı için. `:root` veya widget'in dış container'ı
 
 | Variable | Default | Açıklama | Sürüm |
 |---|---|---|---|
-| `--blakfy-a11y-primary` | `#2563eb` | FAB rengi, accent | 1.0.0 |
-| `--blakfy-a11y-primary-hover` | `#1d4ed8` | FAB hover rengi | 1.0.0 |
+| `--blakfy-a11y-primary` | `#3b82f6` | FAB rengi, accent | 1.0.0 |
+| `--blakfy-a11y-primary-hover` | `#2563eb` | FAB hover rengi (light) — dark override `#60a5fa` | 1.0.0 |
 | `--blakfy-a11y-primary-text` | `#ffffff` | FAB icon rengi | 1.0.0 |
 | `--blakfy-a11y-panel-bg` | `#ffffff` | Panel arkaplan (light) | 1.0.0 |
-| `--blakfy-a11y-panel-text` | `#171717` | Panel metin (light) | 1.0.0 |
-| `--blakfy-a11y-panel-muted` | `#525252` | Panel ikincil metin (light) | 1.0.0 |
-| `--blakfy-a11y-panel-border` | `#e5e5e5` | Panel border (light) | 1.0.0 |
-| `--blakfy-a11y-panel-bg-dark` | `#0a0a0a` | Panel arkaplan (dark) | 1.0.0 |
-| `--blakfy-a11y-panel-text-dark` | `#fafafa` | Panel metin (dark) | 1.0.0 |
-| `--blakfy-a11y-panel-muted-dark` | `#a3a3a3` | Panel ikincil metin (dark) | 1.0.0 |
-| `--blakfy-a11y-panel-border-dark` | `#262626` | Panel border (dark) | 1.0.0 |
-| `--blakfy-a11y-toggle-on` | `#171717` | Switch açık rengi | 1.0.0 |
-| `--blakfy-a11y-toggle-off` | `#d4d4d4` | Switch kapalı rengi | 1.0.0 |
-| `--blakfy-a11y-focus-ring` | `#2563eb` | Fokus halkası rengi | 1.0.0 |
+| `--blakfy-a11y-panel-text` | `#1c1c2e` | Panel metin (light) | 1.0.0 |
+| `--blakfy-a11y-panel-muted` | `rgba(28,28,46,0.45)` | Panel ikincil metin (light) | 1.0.0 |
+| `--blakfy-a11y-panel-border` | `rgba(0,0,0,0.08)` | Panel border (light) | 1.0.0 |
+| `--blakfy-a11y-panel-bg-dark` | `#16191b` | Panel arkaplan (dark) | 1.0.0 |
+| `--blakfy-a11y-panel-text-dark` | `#deeffd` | Panel metin (dark) | 1.0.0 |
+| `--blakfy-a11y-panel-muted-dark` | `rgba(222,239,253,0.45)` | Panel ikincil metin (dark) | 1.0.0 |
+| `--blakfy-a11y-panel-border-dark` | `rgba(255,255,255,0.06)` | Panel border (dark) | 1.0.0 |
+| `--blakfy-a11y-toggle-on` | `#3b82f6` | Switch açık rengi | 1.0.0 |
+| `--blakfy-a11y-toggle-off` | `#d0d0d0` | Switch kapalı rengi (light) — dark override `#3a3a3a` | 1.0.0 |
+| `--blakfy-a11y-focus-ring` | `#3b82f6` | Fokus halkası rengi | 1.0.0 |
 | `--blakfy-a11y-fab-size` | `48px` | FAB buton boyutu | 1.0.0 |
+
+> **Not (`-dark` sonekli değişkenler):** `panel-bg-dark`/`panel-text-dark`/`panel-muted-dark`/`panel-border-dark`
+> `:host` bloğunda (light-mode) bir kez tanımlanır; `:host([data-theme="dark"])` bunları AYRICA
+> override etmez — o blok `panel-bg`/`panel-text`/`panel-muted`/`panel-border` (soneksiz) değişkenlerini
+> override eder. Kod taramasında bu 4 değişkenin `widget.css` DIŞINDA (component/CSS) hiçbir yerde
+> tüketilmediği doğrulandı — muhtemelen kullanılmayan/ölü kod. Değerler bu STABLE-API sözleşmesinde
+> kilitli olduğu için burada SİLİNMEDİ; ayrı bir issue açıldı (bkz. dead-code bulgusu).
 
 ### Tema örneği — Stripe-vari mor
 
