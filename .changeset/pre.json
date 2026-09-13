@@ -10,5 +10,7 @@
     "@blakfy/accessibility-widget-react": "2.0.0-alpha.0",
     "@blakfy/accessibility-widget": "2.0.0-alpha.0"
   },
-  "changesets": []
+  "changesets": [
+    "v2-alpha-batch-release"
+  ]
 }
