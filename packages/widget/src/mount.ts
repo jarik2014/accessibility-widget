@@ -189,6 +189,12 @@ const _CAPTURED_SCRIPT =
 const _CAPTURED_BASE_URL: string =
   typeof document !== 'undefined' ? _baseFromScriptSrc(_CAPTURED_SCRIPT?.src ?? '') : '';
 
+// Fallback-path filename match is not itself a trust boundary (#54) — a
+// hostile `<script src="https://evil.example/widget.js">` would also match
+// the filename regex, so the resolved origin is checked against this
+// allowlist before ever being used as a locale-fetch base.
+const TRUSTED_LOCALE_ORIGINS = ['https://cdn.jsdelivr.net', 'https://unpkg.com'];
+
 /** Derive CDN base from `currentScript.src` so locales can be lazy-loaded. */
 export function _inferBaseURL(): string {
   if (typeof document === 'undefined') return '';
@@ -199,7 +205,7 @@ export function _inferBaseURL(): string {
     const s = all[i];
     if (s && s.src && /accessibility[-_]widget|blakfy|widget\.js$/i.test(s.src)) {
       const got = _baseFromScriptSrc(s.src);
-      if (got) return got;
+      if (got && TRUSTED_LOCALE_ORIGINS.some((o) => got.startsWith(o))) return got;
     }
   }
   return '';
