@@ -1,5 +1,5 @@
 // @blakfy/a11y-core — preferences.test.ts
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   getPreferences,
   setPreferences,
@@ -81,5 +81,68 @@ describe('preferences', () => {
 
   it('getPreferencesRecord returns null when no record exists', () => {
     expect(getPreferencesRecord()).toBeNull();
+  });
+});
+
+describe('storage failure diagnostics (#20)', () => {
+  it('warns STORAGE_UNAVAILABLE when localStorage.setItem throws', async () => {
+    const { getIssues, _resetDiagnostics } = await import('../src/diagnostics');
+    _resetDiagnostics();
+    const spy = vi.spyOn(window.localStorage.__proto__, 'setItem').mockImplementation(() => {
+      throw new DOMException('QuotaExceededError');
+    });
+    try {
+      setPreferences({ fontScale: 110 });
+      const issues = getIssues();
+      expect(
+        issues.some(
+          (i) =>
+            i.code === 'STORAGE_UNAVAILABLE' &&
+            i.level === 'warn' &&
+            (i.extra as { storage?: string } | undefined)?.storage === 'localStorage',
+        ),
+      ).toBe(true);
+    } finally {
+      spy.mockRestore();
+      _resetDiagnostics();
+    }
+  });
+
+  it('warns STORAGE_UNAVAILABLE when document.cookie write throws', async () => {
+    const { getIssues, _resetDiagnostics } = await import('../src/diagnostics');
+    _resetDiagnostics();
+    const descriptor = Object.getOwnPropertyDescriptor(Document.prototype, 'cookie');
+    Object.defineProperty(document, 'cookie', {
+      configurable: true,
+      get() {
+        return '';
+      },
+      set() {
+        throw new DOMException('cookie write blocked');
+      },
+    });
+    try {
+      setPreferences({ fontScale: 110 });
+      const issues = getIssues();
+      expect(
+        issues.some(
+          (i) =>
+            i.code === 'STORAGE_UNAVAILABLE' &&
+            i.level === 'warn' &&
+            (i.extra as { storage?: string } | undefined)?.storage === 'cookie',
+        ),
+      ).toBe(true);
+    } finally {
+      if (descriptor) Object.defineProperty(document, 'cookie', descriptor);
+      _resetDiagnostics();
+    }
+  });
+
+  it('does not warn on the normal success path', async () => {
+    const { getIssues, _resetDiagnostics } = await import('../src/diagnostics');
+    _resetDiagnostics();
+    setPreferences({ fontScale: 110 });
+    const issues = getIssues();
+    expect(issues.some((i) => i.code === 'STORAGE_UNAVAILABLE')).toBe(false);
   });
 });

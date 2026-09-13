@@ -42,7 +42,16 @@ function _setCookie(name: string, value: string, days: number): void {
     'SameSite=Lax',
   ];
   if (secure) parts.push('Secure');
-  document.cookie = parts.join(';');
+  try {
+    document.cookie = parts.join(';');
+  } catch {
+    addIssue(
+      'warn',
+      'STORAGE_UNAVAILABLE',
+      'Cookie write failed — preferences may not persist across reloads.',
+      { storage: 'cookie', op: 'write' },
+    );
+  }
 }
 
 function _getCookie(name: string): string | null {
@@ -71,7 +80,12 @@ function _safeWriteLocalStorage(key: string, value: string): void {
   try {
     window.localStorage.setItem(key, value);
   } catch {
-    /* quota / private mode — silent */
+    addIssue(
+      'warn',
+      'STORAGE_UNAVAILABLE',
+      'localStorage write failed (quota or private mode) — preferences may not persist across reloads.',
+      { storage: 'localStorage', op: 'write' },
+    );
   }
 }
 
