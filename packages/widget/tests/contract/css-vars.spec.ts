@@ -41,6 +41,8 @@ describe('CSS custom properties contract (STABLE-API §4)', () => {
         "--blakfy-a11y-primary",
         "--blakfy-a11y-primary-hover",
         "--blakfy-a11y-primary-text",
+        "--blakfy-a11y-radius",
+        "--blakfy-a11y-radius-pill",
         "--blakfy-a11y-toggle-off",
         "--blakfy-a11y-toggle-on",
       ]
@@ -64,16 +66,18 @@ describe('CSS custom properties contract (STABLE-API §4)', () => {
       '--blakfy-a11y-primary-text': '#ffffff',
       '--blakfy-a11y-panel-bg': '#ffffff',
       '--blakfy-a11y-panel-text': '#1c1c2e',
-      '--blakfy-a11y-panel-muted': 'rgba(28,28,46,0.45)',
-      '--blakfy-a11y-panel-border': 'rgba(0,0,0,0.08)',
+      '--blakfy-a11y-panel-muted': 'rgba(28, 28, 46, 0.45)',
+      '--blakfy-a11y-panel-border': 'rgba(0, 0, 0, 0.08)',
       '--blakfy-a11y-panel-bg-dark': '#16191b',
       '--blakfy-a11y-panel-text-dark': '#deeffd',
-      '--blakfy-a11y-panel-muted-dark': 'rgba(222,239,253,0.45)',
-      '--blakfy-a11y-panel-border-dark': 'rgba(255,255,255,0.06)',
+      '--blakfy-a11y-panel-muted-dark': 'rgba(222, 239, 253, 0.45)',
+      '--blakfy-a11y-panel-border-dark': 'rgba(255, 255, 255, 0.06)',
       '--blakfy-a11y-toggle-on': '#3b82f6',
       '--blakfy-a11y-toggle-off': '#d0d0d0',
       '--blakfy-a11y-focus-ring': '#3b82f6',
       '--blakfy-a11y-fab-size': '48px',
+      '--blakfy-a11y-radius': '3px',
+      '--blakfy-a11y-radius-pill': '9999px',
     };
     for (const [name, value] of Object.entries(expected)) {
       const re = new RegExp(`${name.replace(/-/g, '\\-')}\\s*:\\s*([^;]+);`);

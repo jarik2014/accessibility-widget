@@ -125,6 +125,8 @@ export const LOCKED_CSS_VARS = [
   '--blakfy-a11y-toggle-off',
   '--blakfy-a11y-focus-ring',
   '--blakfy-a11y-fab-size',
+  '--blakfy-a11y-radius',
+  '--blakfy-a11y-radius-pill',
 ] as const;
 
 export const LOCKED_EVENTS = [

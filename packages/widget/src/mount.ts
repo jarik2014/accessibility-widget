@@ -294,8 +294,11 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
   // Idempotency guard (fixes #44): a second mount() call while already
   // mounted must be a true no-op, matching the documented contract above.
   // Callers who need to change live options must use the returned
-  // configure() instead of calling mount() again.
-  if (_activeUnmount) {
+  // configure() instead of calling mount() again. Only treat it as "still
+  // mounted" when the host element is actually still in the DOM — if it
+  // was removed externally (page script, dev tools), _activeUnmount is
+  // stale and a fresh mount must proceed instead of silently no-oping.
+  if (_activeUnmount && document.querySelector(ROOT_TAG)) {
     return { unmount: _activeUnmount };
   }
 
