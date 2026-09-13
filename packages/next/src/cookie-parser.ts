@@ -35,6 +35,11 @@ export type ServerSideAttrs = {
   'data-a11y-saturation': string;
   'data-a11y-cursor': string;
   'data-a11y-hideimages': string;
+  'data-a11y-readingwidth': string;
+  'data-a11y-readaloud': string;
+  'data-a11y-readingmask': string;
+  'data-a11y-magnifier': string;
+  'data-a11y-stopautoplay': string;
 };
 
 function isFontScale(v: unknown): v is Preferences['fontScale'] {
@@ -73,6 +78,10 @@ function isBoolean(v: unknown): v is boolean {
   return typeof v === 'boolean';
 }
 
+function isReadingWidth(v: unknown): v is Preferences['readingWidth'] {
+  return v === 'default' || v === 'narrow' || v === 'narrower';
+}
+
 function _validatePrefs(input: unknown): Preferences {
   if (input == null || typeof input !== 'object') return { ...DEFAULT_PREFS };
   const raw = input as Record<string, unknown>;
@@ -95,6 +104,11 @@ function _validatePrefs(input: unknown): Preferences {
     saturation: isSaturation(raw.saturation) ? raw.saturation : DEFAULT_PREFS.saturation,
     cursorSize: isCursorSize(raw.cursorSize) ? raw.cursorSize : DEFAULT_PREFS.cursorSize,
     hideImages: isBoolean(raw.hideImages) ? raw.hideImages : DEFAULT_PREFS.hideImages,
+    readingWidth: isReadingWidth(raw.readingWidth) ? raw.readingWidth : DEFAULT_PREFS.readingWidth,
+    readAloud: isBoolean(raw.readAloud) ? raw.readAloud : DEFAULT_PREFS.readAloud,
+    readingMask: isBoolean(raw.readingMask) ? raw.readingMask : DEFAULT_PREFS.readingMask,
+    magnifier: isBoolean(raw.magnifier) ? raw.magnifier : DEFAULT_PREFS.magnifier,
+    stopAutoplay: isBoolean(raw.stopAutoplay) ? raw.stopAutoplay : DEFAULT_PREFS.stopAutoplay,
   };
 }
 
@@ -114,6 +128,11 @@ function _toAttrs(prefs: Preferences): ServerSideAttrs {
     'data-a11y-saturation': prefs.saturation,
     'data-a11y-cursor': prefs.cursorSize,
     'data-a11y-hideimages': String(prefs.hideImages),
+    'data-a11y-readingwidth': prefs.readingWidth,
+    'data-a11y-readaloud': String(prefs.readAloud),
+    'data-a11y-readingmask': String(prefs.readingMask),
+    'data-a11y-magnifier': String(prefs.magnifier),
+    'data-a11y-stopautoplay': String(prefs.stopAutoplay),
   };
 }
 

@@ -22,6 +22,11 @@ const DEFAULT_ATTRS = {
   'data-a11y-saturation': 'normal',
   'data-a11y-cursor': 'default',
   'data-a11y-hideimages': 'false',
+  'data-a11y-readingwidth': 'default',
+  'data-a11y-readaloud': 'false',
+  'data-a11y-readingmask': 'false',
+  'data-a11y-magnifier': 'false',
+  'data-a11y-stopautoplay': 'false',
 };
 
 function buildCookie(prefs: unknown): string {
