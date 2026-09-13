@@ -28,16 +28,18 @@
   --blakfy-a11y-fab-size: 48px;
   --blakfy-a11y-radius: 3px;
   --blakfy-a11y-radius-pill: 9999px;
+  --blakfy-a11y-card-bg: #f5f5f5;
+  --blakfy-a11y-divider: rgba(0, 0, 0, 0.07);
 
   /* Internal — light: beyaz / açık gri / siyah */
   --__bg: #ffffff;
-  --__card: #f5f5f5;
+  --__card: var(--blakfy-a11y-card-bg);
   --__card-hover: #eeeeee;
   --__card-active: #e8e8e8;
   --__text: #111111;
   --__muted: rgba(17, 17, 17, 0.45);
   --__muted-dim: rgba(17, 17, 17, 0.3);
-  --__divide: rgba(0, 0, 0, 0.07);
+  --__divide: var(--blakfy-a11y-divider);
   --__switch-off: #d0d0d0;
   --__header-bg: #ffffff;
 }
@@ -52,16 +54,18 @@
   --blakfy-a11y-panel-border: rgba(255, 255, 255, 0.07);
   --blakfy-a11y-primary-hover: #60a5fa;
   --blakfy-a11y-toggle-off: #3a3a3a;
+  --blakfy-a11y-card-bg: #1e1e1e;
+  --blakfy-a11y-divider: rgba(255, 255, 255, 0.07);
 
   /* Internal — dark: siyah / koyu gri / beyaz */
   --__bg: #111111;
-  --__card: #1e1e1e;
+  --__card: var(--blakfy-a11y-card-bg);
   --__card-hover: #252525;
   --__card-active: #1a2540;
   --__text: #ffffff;
   --__muted: rgba(255, 255, 255, 0.45);
   --__muted-dim: rgba(255, 255, 255, 0.28);
-  --__divide: rgba(255, 255, 255, 0.07);
+  --__divide: var(--blakfy-a11y-divider);
   --__switch-off: #3a3a3a;
   --__header-bg: #111111;
 }

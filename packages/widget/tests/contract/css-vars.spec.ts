@@ -28,6 +28,8 @@ describe('CSS custom properties contract (STABLE-API §4)', () => {
   it('locked variable list (snapshot — drift = potential breaking change)', () => {
     expect([...LOCKED_CSS_VARS].sort()).toMatchInlineSnapshot(`
       [
+        "--blakfy-a11y-card-bg",
+        "--blakfy-a11y-divider",
         "--blakfy-a11y-fab-size",
         "--blakfy-a11y-focus-ring",
         "--blakfy-a11y-panel-bg",
@@ -78,6 +80,8 @@ describe('CSS custom properties contract (STABLE-API §4)', () => {
       '--blakfy-a11y-fab-size': '48px',
       '--blakfy-a11y-radius': '3px',
       '--blakfy-a11y-radius-pill': '9999px',
+      '--blakfy-a11y-card-bg': '#f5f5f5',
+      '--blakfy-a11y-divider': 'rgba(0, 0, 0, 0.07)',
     };
     for (const [name, value] of Object.entries(expected)) {
       const re = new RegExp(`${name.replace(/-/g, '\\-')}\\s*:\\s*([^;]+);`);

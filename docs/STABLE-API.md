@@ -160,6 +160,8 @@ Müşteri tema customization'ı için. `:root` veya widget'in dış container'ı
 | `--blakfy-a11y-fab-size` | `48px` | FAB buton boyutu | 1.0.0 |
 | `--blakfy-a11y-radius` | `3px` | Kart/buton/tooltip köşe yarıçapı | 2.0.0 |
 | `--blakfy-a11y-radius-pill` | `9999px` | FAB/switch/info-btn tam yuvarlak yarıçapı | 2.0.0 |
+| `--blakfy-a11y-card-bg` | `#f5f5f5` (light) / `#1e1e1e` (dark) | Kart arkaplanı (profile-list-item/stepper-row/toggle-row) | 2.0.0 |
+| `--blakfy-a11y-divider` | `rgba(0,0,0,0.07)` (light) / `rgba(255,255,255,0.07)` (dark) | Ayraç çizgisi (panel-header/stepper/info-tooltip/panel-footer border) | 2.0.0 |
 
 > **Not (`-dark` sonekli değişkenler):** `panel-bg-dark`/`panel-text-dark`/`panel-muted-dark`/`panel-border-dark`
 > `:host` bloğunda (light-mode) bir kez tanımlanır; `:host([data-theme="dark"])` bunları AYRICA
