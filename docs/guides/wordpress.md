@@ -18,7 +18,7 @@ eklentinin "Footer" (`</body>` öncesi) alanına şu snippet'i yapıştırın:
 ```html
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget-element.js"
+  src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget-element.js"
 ></script>
 <blakfy-a11y locale="tr" theme="auto" position="bottom-left"></blakfy-a11y>
 ```

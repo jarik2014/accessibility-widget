@@ -1,10 +1,5 @@
 # React (Vite + TypeScript) Hızlı Başlangıç
 
-> ⚠️ **Henüz npm'de yayınlanmadı** — `@blakfy/accessibility-widget-react` release akışına eklendi
-> (bkz. `.changeset/config.json`, `docs/RELEASE-PROCESS.md`) ama ilk sürüm henüz yayınlanmadı.
-> `workspace:*` ile monorepo içinden kullanılabilir; npm install ile dışarıdan kurulum #34 kapanana
-> kadar çalışmaz.
-
 `@blakfy/accessibility-widget-react` — Vite + React 18 + TypeScript + Tailwind projeleri için.
 
 ## Kurulum

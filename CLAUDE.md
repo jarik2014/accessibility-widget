@@ -87,7 +87,7 @@ pnpm release:manual --filter @blakfy/accessibility-widget-next  # Tek paket
 
 ```
 # Alpha (kesin pin — floating tag yok)
-https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js
+https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js
 
 # Stable (gelecek)
 https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@v2/dist/widget.js

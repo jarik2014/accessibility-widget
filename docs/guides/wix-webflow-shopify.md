@@ -10,7 +10,7 @@ DEĞİLDİR — o blok cross-origin sandboxed bir iframe içinde çalışır ve 
 düzgün çalışmaz (bkz. aşağıdaki "Sık yapılan hata").
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget-element.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget-element.js"></script>
 
 <blakfy-a11y locale="tr" theme="auto" position="bottom-left"></blakfy-a11y>
 ```
@@ -30,7 +30,7 @@ varsayılan olarak same-origin çalışır — Wix'in sandboxed iframe tuzağın
 Webflow'da bu ekstra dikkat gerektirmez.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget-element.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget-element.js"></script>
 
 <blakfy-a11y locale="tr" theme="auto" position="bottom-left"></blakfy-a11y>
 ```
@@ -48,7 +48,7 @@ etiketini `<head>...</head>` içine, `<blakfy-a11y ...>` elementini ise `{{ cont
 kapanmadan hemen önce / `</body>` etiketinden hemen önce yapıştırın:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget-element.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget-element.js"></script>
 <blakfy-a11y locale="tr" theme="auto" position="bottom-left"></blakfy-a11y>
 ```
 
@@ -81,7 +81,7 @@ Webflow'daki gibi same-origin bir embed noktasıdır, Wix'in iframe tuzağı yok
 İkas mağazaları TR-only olduğu için `locale="tr"` açıkça sabit kullanılır (`"auto"` değil):
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget-element.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget-element.js"></script>
 <blakfy-a11y locale="tr" theme="auto" position="bottom-left"></blakfy-a11y>
 ```
 

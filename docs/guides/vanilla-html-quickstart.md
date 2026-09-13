@@ -38,7 +38,7 @@ Framework olmadan, sadece tek bir `<script>` etiketiyle widget entegrasyonu.
 
     <!-- Widget — kesin versiyon pini (alpha'da floating tag kullanma) -->
     <script
-      src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js"
+      src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js"
       data-locale="tr"
       data-theme="auto"
       data-position="bottom-right"
@@ -61,7 +61,7 @@ Framework olmadan, sadece tek bir `<script>` etiketiyle widget entegrasyonu.
 
 ```
 # Alpha — kesin versiyon pini zorunlu
-https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js
+https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js
 
 # Stable release sonrası floating tag kullanılabilir
 https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@v2/dist/widget.js

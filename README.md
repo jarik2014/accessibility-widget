@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Script
-          src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js"
+          src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js"
           strategy="lazyOnload"
           data-locale="tr"
           data-theme="auto"
@@ -76,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <!-- içerik -->
 
     <script
-      src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js"
+      src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js"
       data-locale="tr"
       data-theme="auto"
       defer
@@ -159,7 +159,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Script
-          src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js"
+          src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js"
           strategy="lazyOnload"
           data-locale="tr"
           data-theme="auto"
@@ -296,7 +296,7 @@ Tam dosya örneği:
 
     <!-- Widget mount -->
     <script
-      src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js"
+      src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js"
       data-locale="tr"
       data-theme="auto"
       data-position="bottom-left"
@@ -311,7 +311,7 @@ Tam dosya örneği:
 Custom Element variant'ı kullanın:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget-element.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget-element.js"></script>
 
 <blakfy-a11y locale="tr" theme="auto" position="bottom-left"></blakfy-a11y>
 ```
@@ -349,7 +349,7 @@ Tam kontrat: [`docs/STABLE-API.md` §6](./docs/STABLE-API.md).
 
 **Sade — sadece dil**:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js"
+<script src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js"
         data-locale="tr" defer></script>
 ```
 
@@ -365,7 +365,7 @@ Tam kontrat: [`docs/STABLE-API.md` §6](./docs/STABLE-API.md).
     }
   };
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js" defer></script>
 ```
 
 **Runtime — footer butonu**:
@@ -515,7 +515,7 @@ Custom Elements + Shadow DOM gereklidir. **IE11 desteklenmez.** Polyfill öneril
 
 ```html
 <!-- Tam sürüm pin — ZORUNLU, alpha boyunca otomatik güncelleme yok -->
-<script src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.4/dist/widget.js" defer></script>
 ```
 
 Alpha pre-release sürümleri **kırılma değişiklikleri içerebilir**, bu nedenle floating tag ile auto-update **desteklenmez**. Yeni alpha sürüm çıktığında README ve CHANGELOG takip edilmelidir.
