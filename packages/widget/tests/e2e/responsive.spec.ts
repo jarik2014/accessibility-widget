@@ -3,6 +3,30 @@ import { test, expect } from '@playwright/test';
 import { FIXTURE, fab, dialog, waitForMount, openPanel } from './_helpers';
 
 test.describe('Responsive viewports', () => {
+  test('280×653 — Galaxy Fold-class min-support width (WebForge 280/350/758/1200 scale)', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 280, height: 653 });
+    await page.goto(FIXTURE);
+    await waitForMount(page);
+    await expect(fab(page)).toBeVisible();
+    // No horizontal scroll on host page
+    const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+    expect(scrollWidth).toBeLessThanOrEqual(280 + 1);
+    // FAB stays a real ≥44×44 touch target even at this width.
+    const fabBox = await fab(page).boundingBox();
+    expect(fabBox).not.toBeNull();
+    expect(fabBox!.width).toBeGreaterThanOrEqual(44);
+    expect(fabBox!.height).toBeGreaterThanOrEqual(44);
+    // Open the panel and check it fits the viewport without overflow.
+    await openPanel(page);
+    const dlgBox = await dialog(page).boundingBox();
+    expect(dlgBox).not.toBeNull();
+    expect(dlgBox!.width).toBeLessThanOrEqual(280);
+    const scrollWidthOpen = await page.evaluate(() => document.documentElement.scrollWidth);
+    expect(scrollWidthOpen).toBeLessThanOrEqual(280 + 1);
+  });
+
   test('320×256 — no horizontal scroll, FAB visible, panel fits', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 256 });
     await page.goto(FIXTURE);
