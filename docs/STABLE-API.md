@@ -192,6 +192,24 @@ Müşteri tema customization'ı için. `:root` veya widget'in dış container'ı
 }
 ```
 
+### Token adapter recipe — map your own 3 brand values in one block
+
+Most integrations only need to set primary color, radius, and hover shade. Copy this block,
+replace the three `--your-brand-*` values with your site's own tokens:
+
+```css
+:root {
+  --blakfy-a11y-primary: var(--your-brand-primary, #000000);
+  --blakfy-a11y-primary-hover: color-mix(in srgb, var(--your-brand-primary, #000000) 85%, white);
+  --blakfy-a11y-toggle-on: var(--your-brand-primary, #000000);
+  --blakfy-a11y-focus-ring: var(--your-brand-primary, #000000);
+  --blakfy-a11y-radius: var(--your-brand-radius, 3px);
+}
+```
+
+`color-mix()` needs a modern browser (Baseline 2023+). If you need older-browser support, set
+`--blakfy-a11y-primary-hover` to a literal color instead of the `color-mix()` expression.
+
 ---
 
 ## 5. Storage Schema
