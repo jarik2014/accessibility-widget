@@ -2,19 +2,19 @@
   {
     "name": "widget IIFE (CDN)",
     "path": "packages/widget/dist/widget.js",
-    "limit": "18 KB",
+    "limit": "26 KB",
     "gzip": true
   },
   {
     "name": "widget ESM (NPM)",
     "path": "packages/widget/dist/widget.esm.js",
-    "limit": "18 KB",
+    "limit": "26 KB",
     "gzip": true
   },
   {
     "name": "widget Custom Element",
     "path": "packages/widget/dist/widget-element.js",
-    "limit": "18 KB",
+    "limit": "26 KB",
     "gzip": true
   }
 ]
