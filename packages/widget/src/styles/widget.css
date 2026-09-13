@@ -17,11 +17,6 @@
   --blakfy-a11y-panel-muted: rgba(28, 28, 46, 0.45);
   --blakfy-a11y-panel-border: rgba(0, 0, 0, 0.08);
 
-  --blakfy-a11y-panel-bg-dark: #16191b;
-  --blakfy-a11y-panel-text-dark: #deeffd;
-  --blakfy-a11y-panel-muted-dark: rgba(222, 239, 253, 0.45);
-  --blakfy-a11y-panel-border-dark: rgba(255, 255, 255, 0.06);
-
   --blakfy-a11y-toggle-on: #000000;
   --blakfy-a11y-toggle-off: #d0d0d0;
   --blakfy-a11y-focus-ring: #000000;

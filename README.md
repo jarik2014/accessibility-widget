@@ -392,10 +392,6 @@ Widget Shadow DOM içindedir — host CSS sızamaz. Tema sadece **15 CSS custom 
 | `--blakfy-a11y-panel-text` | `#171717` | Panel metin (light) |
 | `--blakfy-a11y-panel-muted` | `#525252` | Panel ikincil metin (light) |
 | `--blakfy-a11y-panel-border` | `#e5e5e5` | Panel border (light) |
-| `--blakfy-a11y-panel-bg-dark` | `#0a0a0a` | Panel arkaplan (dark) |
-| `--blakfy-a11y-panel-text-dark` | `#fafafa` | Panel metin (dark) |
-| `--blakfy-a11y-panel-muted-dark` | `#a3a3a3` | Panel ikincil metin (dark) |
-| `--blakfy-a11y-panel-border-dark` | `#262626` | Panel border (dark) |
 | `--blakfy-a11y-toggle-on` | `#171717` | Switch açık rengi |
 | `--blakfy-a11y-toggle-off` | `#d4d4d4` | Switch kapalı rengi |
 | `--blakfy-a11y-focus-ring` | `#2563eb` | Fokus halkası rengi |

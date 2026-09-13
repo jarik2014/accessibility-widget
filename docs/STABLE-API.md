@@ -178,10 +178,6 @@ Müşteri tema customization'ı için. `:root` veya widget'in dış container'ı
 | `--blakfy-a11y-panel-text` | `#1c1c2e` | Panel metin (light) | 1.0.0 |
 | `--blakfy-a11y-panel-muted` | `rgba(28,28,46,0.45)` | Panel ikincil metin (light) | 1.0.0 |
 | `--blakfy-a11y-panel-border` | `rgba(0,0,0,0.08)` | Panel border (light) | 1.0.0 |
-| `--blakfy-a11y-panel-bg-dark` | `#16191b` | Panel arkaplan (dark) | 1.0.0 |
-| `--blakfy-a11y-panel-text-dark` | `#deeffd` | Panel metin (dark) | 1.0.0 |
-| `--blakfy-a11y-panel-muted-dark` | `rgba(222,239,253,0.45)` | Panel ikincil metin (dark) | 1.0.0 |
-| `--blakfy-a11y-panel-border-dark` | `rgba(255,255,255,0.06)` | Panel border (dark) | 1.0.0 |
 | `--blakfy-a11y-toggle-on` | `#000000` | Switch açık rengi | 1.0.0 |
 | `--blakfy-a11y-toggle-off` | `#d0d0d0` | Switch kapalı rengi (light) — dark override `#3a3a3a` | 1.0.0 |
 | `--blakfy-a11y-focus-ring` | `#000000` | Fokus halkası rengi | 1.0.0 |
@@ -191,12 +187,12 @@ Müşteri tema customization'ı için. `:root` veya widget'in dış container'ı
 | `--blakfy-a11y-card-bg` | `#f5f5f5` (light) / `#1e1e1e` (dark) | Kart arkaplanı (profile-list-item/stepper-row/toggle-row) | 2.0.0 |
 | `--blakfy-a11y-divider` | `rgba(0,0,0,0.07)` (light) / `rgba(255,255,255,0.07)` (dark) | Ayraç çizgisi (panel-header/stepper/info-tooltip/panel-footer border) | 2.0.0 |
 
-> **Not (`-dark` sonekli değişkenler):** `panel-bg-dark`/`panel-text-dark`/`panel-muted-dark`/`panel-border-dark`
-> `:host` bloğunda (light-mode) bir kez tanımlanır; `:host([data-theme="dark"])` bunları AYRICA
-> override etmez — o blok `panel-bg`/`panel-text`/`panel-muted`/`panel-border` (soneksiz) değişkenlerini
-> override eder. Kod taramasında bu 4 değişkenin `widget.css` DIŞINDA (component/CSS) hiçbir yerde
-> tüketilmediği doğrulandı — muhtemelen kullanılmayan/ölü kod. Değerler bu STABLE-API sözleşmesinde
-> kilitli olduğu için burada SİLİNMEDİ; ayrı bir issue açıldı (bkz. dead-code bulgusu).
+> **Kaldırıldı (`-dark` sonekli değişkenler, #73, 2026-09-13):** `panel-bg-dark`/`panel-text-dark`/
+> `panel-muted-dark`/`panel-border-dark` `:host` bloğunda tanımlıydı ama hiçbir CSS kuralı
+> tarafından okunmuyordu — dark tema zaten `panel-bg`/`panel-text`/`panel-muted`/`panel-border`
+> (soneksiz) değişkenlerinin `:host([data-theme="dark"])` override'ıyla sağlanıyor. Doğrulanmış
+> ölü kod olduğu için kaldırıldı; henüz npm'e yayınlanmadığından (v2.0.0-alpha) gerçek bir
+> breaking change riski yok.
 
 ### Tema örneği — Stripe-vari mor
 
