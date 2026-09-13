@@ -69,6 +69,8 @@ export interface WidgetOptions {
   position: Position;
   font: string;
   debug: boolean;
+  iconStyle: IconStyle;
+  keyboardShortcut: boolean;
 }
 
 /** Listener callback invoked whenever preferences change. */

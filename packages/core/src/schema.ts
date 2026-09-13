@@ -8,6 +8,7 @@ import {
   type Contrast,
   type CursorSize,
   type FontScale,
+  type IconStyle,
   type LetterSpacing,
   type LineHeight,
   type Locale,
@@ -38,6 +39,8 @@ const DEFAULT_OPTIONS: WidgetOptions = {
   position: 'bottom-left',
   font: '',
   debug: false,
+  iconStyle: 'access',
+  keyboardShortcut: true,
 };
 
 function isPlainObject(v: unknown): v is Record<string, unknown> {
@@ -119,6 +122,10 @@ function pickString(v: unknown, fallback: string): string {
   return typeof v === 'string' ? v : fallback;
 }
 
+function pickIconStyle(v: unknown): IconStyle {
+  return v === 'walking' || v === 'access' || v === 'eye' ? v : DEFAULT_OPTIONS.iconStyle;
+}
+
 /**
  * Merge unknown input with `DEFAULT_PREFS` and return a fully-valid
  * `Preferences`. Never throws — invalid fields are replaced with defaults.
@@ -168,5 +175,7 @@ export function safeMergeOptions(input: unknown): WidgetOptions {
     position: pickPosition(input.position),
     font: pickString(input.font, ''),
     debug: pickBoolean(input.debug, false),
+    iconStyle: pickIconStyle(input.iconStyle),
+    keyboardShortcut: pickBoolean(input.keyboardShortcut, DEFAULT_OPTIONS.keyboardShortcut),
   };
 }

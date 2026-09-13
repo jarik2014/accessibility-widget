@@ -108,6 +108,8 @@ function _readScriptDataAttrs(): Partial<WidgetOptions> & { devPipe?: string; ve
   if (ds.position) out.position = ds.position as WidgetOptions['position'];
   if (ds.font) out.font = ds.font;
   if (ds.debug) out.debug = ds.debug === 'true';
+  if (ds.iconStyle) out.iconStyle = ds.iconStyle as WidgetOptions['iconStyle'];
+  if (ds.keyboardShortcut != null) out.keyboardShortcut = ds.keyboardShortcut !== 'false';
   if (ds.devPipe) out.devPipe = ds.devPipe;
   if (ds.version) out.version = ds.version;
   return out;
@@ -396,6 +398,8 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
         h(Widget, {
           config: state.config,
           translation: state.translation,
+          iconStyle: state.config.iconStyle,
+          keyboardShortcut: state.config.keyboardShortcut,
           onThemeChange: (theme) => {
             state.config = { ...state.config, theme };
             _applyHostAttributes(host, state.config);

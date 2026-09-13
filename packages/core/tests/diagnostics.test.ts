@@ -16,6 +16,8 @@ const baseConfig: WidgetOptions = {
   position: 'bottom-left',
   font: '',
   debug: false,
+  iconStyle: 'access',
+  keyboardShortcut: true,
 };
 
 beforeEach(() => {
