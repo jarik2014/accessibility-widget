@@ -10,8 +10,9 @@ adımları açıklar.
 - `@blakfy/accessibility-widget` (widget — IIFE + ESM + web component)
 - `@blakfy/a11y-core` (framework-agnostic core)
 - `@blakfy/accessibility-widget-next` (Next.js helpers)
+- `@blakfy/accessibility-widget-react` (React 18 helpers — release akışına eklendi, bkz. #34; henüz npm'de yayınlanmadı)
 
-Üçü `linked` (changesets) — biri minor bump alırsa diğerleri de minor olur.
+Dördü `linked` (changesets) — biri minor bump alırsa diğerleri de minor olur.
 
 ## Normal sürüm flow
 

@@ -7,7 +7,8 @@
     [
       "@blakfy/accessibility-widget",
       "@blakfy/a11y-core",
-      "@blakfy/accessibility-widget-next"
+      "@blakfy/accessibility-widget-next",
+      "@blakfy/accessibility-widget-react"
     ]
   ],
   "access": "public",
