@@ -29,6 +29,7 @@
     "format:check": "prettier --check .",
     "size": "size-limit",
     "size:why": "size-limit --why",
+    "check:stable-api": "node scripts/check-stable-api-sync.mjs",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "pnpm build && changeset publish",

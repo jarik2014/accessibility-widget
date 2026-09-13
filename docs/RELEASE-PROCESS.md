@@ -29,8 +29,11 @@ Dördü `linked` (changesets) — biri minor bump alırsa diğerleri de minor ol
    - `typecheck`
    - `test` (unit)
    - `test:contract` (kilitli yüzey doğrulaması)
+   - `check:stable-api` — `widget.css`'teki bir `--blakfy-a11y-*` değeri değiştiyse
+     `docs/STABLE-API.md` §4 + `tests/contract/css-vars.spec.ts` AYNI PR'da güncellenmeli
+     (#35 — #24'teki drift'in tekrarını önler)
    - `build`
-   - `size` (≤ 18 KB gz)
+   - `size` (≤ 26 KB gz)
    - `e2e` + `axe`
 5. PR merge edildiğinde `release.yml` tetiklenir. **Bekleyen changeset varsa**
    Changesets bot otomatik olarak **"Version Packages"** PR'ı açar (veya günceller).

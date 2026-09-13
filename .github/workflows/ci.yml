@@ -48,6 +48,9 @@ jobs:
       - name: Format check
         run: pnpm format:check
 
+      - name: STABLE-API.md sync check (#35)
+        run: pnpm check:stable-api
+
   typecheck:
     name: Typecheck
     runs-on: ubuntu-latest
