@@ -45,6 +45,8 @@ export interface ApiContext {
   config: WidgetOptions;
   mountTimeMs: number;
   bundleSizeGz: number;
+  /** #50: real first-FAB-click timing, or null if never clicked yet. */
+  getTimeToFirstClick: () => number | null;
   storage: {
     version: string;
     migratedFrom: string | null;
@@ -75,7 +77,7 @@ export function setupPublicAPI(ctx: ApiContext): BlakfyA11yAPI {
         performance: {
           mountTimeMs: ctx.mountTimeMs,
           bundleSizeGz: ctx.bundleSizeGz,
-          timeToFirstClick: null,
+          timeToFirstClick: ctx.getTimeToFirstClick(),
         },
         storage: ctx.storage,
       }),

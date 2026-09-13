@@ -432,6 +432,16 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
   // 7. Render with bundled English first; lazy-load actual locale next.
   let translation: Translation = getEnglishLocale();
 
+  // #50: real timeToFirstClick tracking. Only the FAB's own click handler
+  // reports this (not a programmatic BlakfyA11y.open()) — recorded once,
+  // on the first click only.
+  let timeToFirstClick: number | null = null;
+  const onFirstFabClick = (): void => {
+    if (timeToFirstClick !== null) return;
+    timeToFirstClick =
+      (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startTime;
+  };
+
   const state: InternalState = {
     config,
     translation,
@@ -444,6 +454,7 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
           translation: state.translation,
           iconStyle: state.config.iconStyle,
           keyboardShortcut: state.config.keyboardShortcut,
+          onFirstFabClick,
           onThemeChange: (theme) => {
             state.config = { ...state.config, theme };
             _applyHostAttributes(host, state.config);
@@ -474,7 +485,12 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
   setupPublicAPI({
     config,
     mountTimeMs,
-    bundleSizeGz: 0, // populated by build pipeline if/when known
+    // #50: literal placeholder patched post-build with the real gzipped
+    // dist size — see scripts/patch-bundle-size.mjs. Two-pass problem
+    // (the number's own byte-length changes what it measures) is accepted
+    // as approximation; the patch runs against the pre-patch gzip size.
+    bundleSizeGz: 123454321 /* __BUNDLE_SIZE_GZ__ */,
+    getTimeToFirstClick: () => timeToFirstClick,
     storage,
     configure: (newOpts) => {
       const next = safeMergeOptions({ ...state.config, ...newOpts });

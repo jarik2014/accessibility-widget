@@ -30,6 +30,8 @@ type Props = {
   iconStyle?: IconStyle;
   keyboardShortcut?: boolean;
   onThemeChange?: (theme: Theme) => void;
+  /** #50: real timeToFirstClick tracking — fires on the FAB's first real click only. */
+  onFirstFabClick?: () => void;
 };
 
 export function Widget({
@@ -38,6 +40,7 @@ export function Widget({
   iconStyle = 'access',
   keyboardShortcut = true,
   onThemeChange,
+  onFirstFabClick,
 }: Props): JSX.Element {
   const [open, setOpen] = useState(false);
   const [readingMask, setReadingMask] = useState(() => getPreferences().readingMask);
@@ -87,6 +90,7 @@ export function Widget({
   }, [keyboardShortcut]);
 
   const handleFabClick = (): void => {
+    onFirstFabClick?.();
     setOpen(true);
     emit(EVENT_NAMES.OPEN, {});
   };

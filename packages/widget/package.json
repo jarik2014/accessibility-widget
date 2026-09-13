@@ -24,7 +24,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "cross-env BUILD_TARGET=iife vite build && cross-env BUILD_TARGET=esm vite build && cross-env BUILD_TARGET=element vite build",
+    "build": "cross-env BUILD_TARGET=iife vite build && cross-env BUILD_TARGET=esm vite build && cross-env BUILD_TARGET=element vite build && node scripts/patch-bundle-size.mjs",
     "build:iife": "cross-env BUILD_TARGET=iife vite build",
     "build:esm": "cross-env BUILD_TARGET=esm vite build",
     "build:element": "cross-env BUILD_TARGET=element vite build",

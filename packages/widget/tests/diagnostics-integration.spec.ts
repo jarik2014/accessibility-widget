@@ -175,4 +175,23 @@ describe('Diagnostics integration', () => {
       errSpy.mockRestore();
     }
   });
+
+  it('performance.timeToFirstClick is null before the FAB is clicked, a number after (#50)', () => {
+    mount();
+    const before = window.BlakfyA11y!.diagnostics();
+    expect(before.performance.timeToFirstClick).toBeNull();
+
+    const host = document.querySelector('blakfy-a11y-root') as HTMLElement;
+    const fab = host.shadowRoot!.querySelector('button.fab') as HTMLButtonElement;
+    fab.click();
+
+    const after = window.BlakfyA11y!.diagnostics();
+    expect(typeof after.performance.timeToFirstClick).toBe('number');
+
+    // A second click must not change the recorded value (only the FIRST click counts).
+    const firstValue = after.performance.timeToFirstClick;
+    fab.click();
+    const afterSecond = window.BlakfyA11y!.diagnostics();
+    expect(afterSecond.performance.timeToFirstClick).toBe(firstValue);
+  });
 });
