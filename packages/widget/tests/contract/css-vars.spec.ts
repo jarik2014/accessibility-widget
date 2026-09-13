@@ -63,8 +63,8 @@ describe('CSS custom properties contract (STABLE-API §4)', () => {
 
   it('default color values match the locked spec values', () => {
     const expected: Record<string, string> = {
-      '--blakfy-a11y-primary': '#3b82f6',
-      '--blakfy-a11y-primary-hover': '#2563eb',
+      '--blakfy-a11y-primary': '#000000',
+      '--blakfy-a11y-primary-hover': '#262626',
       '--blakfy-a11y-primary-text': '#ffffff',
       '--blakfy-a11y-panel-bg': '#ffffff',
       '--blakfy-a11y-panel-text': '#1c1c2e',
@@ -74,9 +74,9 @@ describe('CSS custom properties contract (STABLE-API §4)', () => {
       '--blakfy-a11y-panel-text-dark': '#deeffd',
       '--blakfy-a11y-panel-muted-dark': 'rgba(222, 239, 253, 0.45)',
       '--blakfy-a11y-panel-border-dark': 'rgba(255, 255, 255, 0.06)',
-      '--blakfy-a11y-toggle-on': '#3b82f6',
+      '--blakfy-a11y-toggle-on': '#000000',
       '--blakfy-a11y-toggle-off': '#d0d0d0',
-      '--blakfy-a11y-focus-ring': '#3b82f6',
+      '--blakfy-a11y-focus-ring': '#000000',
       '--blakfy-a11y-fab-size': '48px',
       '--blakfy-a11y-radius': '3px',
       '--blakfy-a11y-radius-pill': '9999px',

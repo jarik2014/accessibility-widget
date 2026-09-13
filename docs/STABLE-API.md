@@ -169,8 +169,8 @@ Müşteri tema customization'ı için. `:root` veya widget'in dış container'ı
 
 | Variable | Default | Açıklama | Sürüm |
 |---|---|---|---|
-| `--blakfy-a11y-primary` | `#3b82f6` | FAB rengi, accent | 1.0.0 |
-| `--blakfy-a11y-primary-hover` | `#2563eb` | FAB hover rengi (light) — dark override `#60a5fa` | 1.0.0 |
+| `--blakfy-a11y-primary` | `#000000` | FAB rengi, accent | 1.0.0 |
+| `--blakfy-a11y-primary-hover` | `#262626` | FAB hover rengi (light) — dark override `#404040` | 1.0.0 |
 | `--blakfy-a11y-primary-text` | `#ffffff` | FAB icon rengi | 1.0.0 |
 | `--blakfy-a11y-panel-bg` | `#ffffff` | Panel arkaplan (light) | 1.0.0 |
 | `--blakfy-a11y-panel-text` | `#1c1c2e` | Panel metin (light) | 1.0.0 |
@@ -180,9 +180,9 @@ Müşteri tema customization'ı için. `:root` veya widget'in dış container'ı
 | `--blakfy-a11y-panel-text-dark` | `#deeffd` | Panel metin (dark) | 1.0.0 |
 | `--blakfy-a11y-panel-muted-dark` | `rgba(222,239,253,0.45)` | Panel ikincil metin (dark) | 1.0.0 |
 | `--blakfy-a11y-panel-border-dark` | `rgba(255,255,255,0.06)` | Panel border (dark) | 1.0.0 |
-| `--blakfy-a11y-toggle-on` | `#3b82f6` | Switch açık rengi | 1.0.0 |
+| `--blakfy-a11y-toggle-on` | `#000000` | Switch açık rengi | 1.0.0 |
 | `--blakfy-a11y-toggle-off` | `#d0d0d0` | Switch kapalı rengi (light) — dark override `#3a3a3a` | 1.0.0 |
-| `--blakfy-a11y-focus-ring` | `#3b82f6` | Fokus halkası rengi | 1.0.0 |
+| `--blakfy-a11y-focus-ring` | `#000000` | Fokus halkası rengi | 1.0.0 |
 | `--blakfy-a11y-fab-size` | `48px` | FAB buton boyutu | 1.0.0 |
 | `--blakfy-a11y-radius` | `3px` | Kart/buton/tooltip köşe yarıçapı | 2.0.0 |
 | `--blakfy-a11y-radius-pill` | `9999px` | FAB/switch/info-btn tam yuvarlak yarıçapı | 2.0.0 |
@@ -207,14 +207,17 @@ Müşteri tema customization'ı için. `:root` veya widget'in dış container'ı
 }
 ```
 
-### Tema örneği — Vercel-vari siyah-beyaz
+### Tema örneği — eski mavi paletine dönüş
+
+Nötr siyah/beyaz varsayılan sürüm 2.0.0'dan itibaren shipped default'tur (bkz. #65). Eski
+mavi paleti istiyorsanız:
 
 ```css
 :root {
-  --blakfy-a11y-primary: #000000;
-  --blakfy-a11y-primary-hover: #333333;
-  --blakfy-a11y-toggle-on: #000000;
-  --blakfy-a11y-focus-ring: #0070f3;
+  --blakfy-a11y-primary: #3b82f6;
+  --blakfy-a11y-primary-hover: #2563eb;
+  --blakfy-a11y-toggle-on: #3b82f6;
+  --blakfy-a11y-focus-ring: #3b82f6;
 }
 ```
 
