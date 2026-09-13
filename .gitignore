@@ -18,6 +18,3 @@ test-site/locales/
 **/temp/
 docs/reference/*
 !docs/reference/README.md
-.changeset/*.md
-!.changeset/README.md
-!.changeset/config.json

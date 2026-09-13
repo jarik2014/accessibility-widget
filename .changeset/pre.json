@@ -1,0 +1,14 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@blakfy/example-nextjs": "0.0.0",
+    "@blakfy/example-react-vite": "0.0.0",
+    "@blakfy/example-vanilla-html": "0.0.0",
+    "@blakfy/a11y-core": "2.0.0-alpha.1",
+    "@blakfy/accessibility-widget-next": "2.0.0-alpha.3",
+    "@blakfy/accessibility-widget-react": "2.0.0-alpha.0",
+    "@blakfy/accessibility-widget": "2.0.0-alpha.0"
+  },
+  "changesets": []
+}
