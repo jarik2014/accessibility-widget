@@ -73,6 +73,18 @@ page-builder uygulamalarının section/block sistemi) yapıştırmak, widget'ı 
 page-builder iframe bağlamına hapsedebilir — [#15](https://github.com/tariktunc/accessibility-widget/issues/15)'teki
 iframe tuzağıyla aynı arıza ailesi, farklı tetikleyici.
 
+## İkas
+
+İkas admin panelinde **Tema Ayarları → Özel Kod (Custom Code)** üzerinden ekleyin —
+Webflow'daki gibi same-origin bir embed noktasıdır, Wix'in iframe tuzağı yoktur.
+
+İkas mağazaları TR-only olduğu için `locale="tr"` açıkça sabit kullanılır (`"auto"` değil):
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget-element.js"></script>
+<blakfy-a11y locale="tr" theme="auto" position="bottom-left"></blakfy-a11y>
+```
+
 ## Sorun mu yaşıyorsunuz?
 
 - Wix sandboxed iframe sorunu: [#15](https://github.com/tariktunc/accessibility-widget/issues/15)
