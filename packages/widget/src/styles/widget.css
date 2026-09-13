@@ -554,10 +554,14 @@ button {
 }
 
 .info-btn {
-  width: 16px;
-  height: 16px;
+  /* Real WCAG 2.2 AA SC 2.5.8 (Target Size Minimum) requires >=24x24 CSS px —
+     see #63. Visual dot stays small via ::before; the button box itself is
+     the actual (invisible) 24x24 tap target, centered on the dot. */
+  position: relative;
+  width: 24px;
+  height: 24px;
   border-radius: 9999px;
-  background: var(--__muted);
+  background: transparent;
   color: var(--__bg);
   font-size: 9px;
   font-weight: 700;
@@ -570,15 +574,25 @@ button {
   padding: 0;
   line-height: 1;
   flex-shrink: 0;
+  transition: opacity 150ms ease;
+}
+.info-btn::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 9999px;
+  background: var(--__muted);
   opacity: 0.45;
-  transition:
-    opacity 150ms ease,
-    background 150ms ease;
+  transition: background 150ms ease;
+  z-index: -1;
+}
+.info-btn:hover::before,
+.info-btn:focus-visible::before {
+  opacity: 1;
+  background: var(--blakfy-a11y-primary);
 }
 .info-btn:hover,
 .info-btn:focus-visible {
-  opacity: 1;
-  background: var(--blakfy-a11y-primary);
   color: #ffffff;
 }
 .info-btn:focus-visible {
