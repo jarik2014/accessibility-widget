@@ -87,7 +87,7 @@ pnpm release:manual --filter @blakfy/accessibility-widget-next  # Tek paket
 
 ```
 # Alpha (kesin pin — floating tag yok)
-https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.1/dist/widget.js
+https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@2.0.0-alpha.0/dist/widget.js
 
 # Stable (gelecek)
 https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget@v2/dist/widget.js
@@ -120,22 +120,23 @@ SSH: `git@github.com:tariktunc/accessibility-widget.git`
 
 ---
 
-## Versiyon Durumu (Mayıs 2026)
+## Versiyon Durumu (güncellendi 2026-09-13)
 
 | Paket | npm Versiyonu |
 |---|---|
 | `@blakfy/a11y-core` | 2.0.0-alpha.1 |
 | `@blakfy/accessibility-widget` | 2.0.0-alpha.0 |
-| `@blakfy/accessibility-widget-next` | 2.0.0-alpha.1 |
-| `@blakfy/accessibility-widget-react` | 2.0.0-alpha.0 |
+| `@blakfy/accessibility-widget-next` | 2.0.0-alpha.3 |
+| `@blakfy/accessibility-widget-react` | 2.0.0-alpha.0 (unpublished — bkz. #34) |
 
 Stable release için `2.0.0` hedefleniyor. Alpha'da breaking change beklenir.
+**Bu tabloyu her release'de güncelle** — `npm view <pkg> version` ile doğrula, silently drift etmesin.
 
 ---
 
 ## Stable 2.0.0 Release Hazırlık Adımları
 
-1. `@blakfy/accessibility-widget` versiyonunu `2.0.0-alpha.1`'e çek
+1. `@blakfy/accessibility-widget` (vanilla) sürüm numarasını gözden geçir — diğer 3 paketle (core/next/react) hizalı bir alpha/beta numarası seç, `pnpm changeset add` ile bump'ı belgeleyerek yap
 2. `pnpm api:update` — API Extractor baseline güncelle
 3. `pnpm changeset` ile `2.0.0` major bump hazırla
 4. CHANGELOG.md `[Unreleased]` bölümünü `[2.0.0]` olarak kilitle
