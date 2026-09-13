@@ -105,6 +105,10 @@
       "hideImages": {
         "title": "Hide Images",
         "description": "Hides all images on the page, reducing visual distraction. Useful for users sensitive to visual stimuli or on slow connections."
+      },
+      "readAloud": {
+        "title": "Read Aloud",
+        "description": "Click any text on the page to have it read aloud using your browser's built-in text-to-speech."
       }
     }
   }

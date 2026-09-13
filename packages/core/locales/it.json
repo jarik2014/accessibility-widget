@@ -114,6 +114,10 @@
       "hideImages": {
         "title": "Nascondi immagini",
         "description": "Nasconde tutte le immagini nella pagina, riducendo la distrazione visiva. Utile per utenti sensibili agli stimoli visivi."
+      },
+      "readAloud": {
+        "title": "Leggi ad alta voce",
+        "description": "Fai clic su qualsiasi testo della pagina per farlo leggere ad alta voce tramite la sintesi vocale integrata del tuo browser."
       }
     }
   }

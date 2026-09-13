@@ -114,6 +114,10 @@
       "hideImages": {
         "title": "Ocultar imágenes",
         "description": "Oculta todas las imágenes de la página, reduciendo la distracción visual. Útil para usuarios sensibles a los estímulos visuales."
+      },
+      "readAloud": {
+        "title": "Leer en voz alta",
+        "description": "Haz clic en cualquier texto de la página para que se lea en voz alta usando la conversión de texto a voz integrada de tu navegador."
       }
     }
   }

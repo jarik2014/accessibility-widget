@@ -154,8 +154,44 @@ export function applyPreferences(prefs: Preferences): void {
   html.setAttribute('data-a11y-saturation', prefs.saturation);
   html.setAttribute('data-a11y-cursor', prefs.cursorSize);
   html.setAttribute('data-a11y-hideimages', String(prefs.hideImages));
+  html.setAttribute('data-a11y-readaloud', String(prefs.readAloud));
 
   _injectHostStyles(prefs);
+  applyReadAloud(prefs.readAloud);
+}
+
+const READ_ALOUD_LISTENER_FLAG = '__blakfyReadAloudBound';
+const _readAloudEnabledRef = { current: false };
+
+/**
+ * When `enabled`, binds a click listener on `document` that reads the
+ * clicked element's text via the Web Speech API. Idempotent — safe to
+ * call on every preference change. Reads `document.documentElement.lang`
+ * at speak-time rather than threading a locale param through
+ * `applyPreferences` (simpler, no API signature change).
+ */
+export function applyReadAloud(enabled: boolean): void {
+  if (typeof document === 'undefined' || typeof window === 'undefined') return;
+  if (!('speechSynthesis' in window)) return; // graceful no-op, no diagnostics spam
+  const doc = document as unknown as Record<string, unknown>;
+  if (!doc[READ_ALOUD_LISTENER_FLAG]) {
+    document.addEventListener('click', (e) => {
+      if (!_readAloudEnabledRef.current) return;
+      const target = e.target as HTMLElement | null;
+      if (!target || target.closest('blakfy-a11y-root')) return; // never read our own panel
+      const text = target.innerText?.trim();
+      if (!text) return;
+      window.speechSynthesis.cancel(); // stop any prior utterance
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = document.documentElement.lang || 'en';
+      window.speechSynthesis.speak(utter);
+    });
+    doc[READ_ALOUD_LISTENER_FLAG] = true;
+  }
+  if (!enabled && _readAloudEnabledRef.current && 'speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+  _readAloudEnabledRef.current = enabled;
 }
 
 /**

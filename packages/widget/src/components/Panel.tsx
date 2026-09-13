@@ -439,6 +439,12 @@ export function Panel({
         checked={prefs.hideImages}
         onChange={(v) => update('hideImages', v)}
       />
+      <Toggle
+        title={t.preferences.readAloud.title}
+        description={t.preferences.readAloud.description}
+        checked={prefs.readAloud}
+        onChange={(v) => update('readAloud', v)}
+      />
 
       {/* Tema */}
       <p class="section-label">{t.theme.label}</p>

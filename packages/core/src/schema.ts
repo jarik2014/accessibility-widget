@@ -144,6 +144,7 @@ export function safeMergePrefs(input: unknown): Preferences {
     saturation: pickSaturation(input.saturation),
     cursorSize: pickCursorSize(input.cursorSize),
     hideImages: pickBoolean(input.hideImages, DEFAULT_PREFS.hideImages),
+    readAloud: pickBoolean(input.readAloud, DEFAULT_PREFS.readAloud),
   };
 }
 

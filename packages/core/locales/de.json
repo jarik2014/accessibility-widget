@@ -105,6 +105,10 @@
       "hideImages": {
         "title": "Bilder ausblenden",
         "description": "Blendet alle Bilder auf der Seite aus, um visuelle Ablenkung zu reduzieren. Nützlich für Nutzer, die empfindlich auf visuelle Reize reagieren."
+      },
+      "readAloud": {
+        "title": "Vorlesen",
+        "description": "Klicken Sie auf beliebigen Text auf der Seite, um ihn mit der integrierten Sprachausgabe Ihres Browsers vorlesen zu lassen."
       }
     }
   }

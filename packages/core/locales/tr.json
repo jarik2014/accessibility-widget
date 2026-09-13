@@ -105,6 +105,10 @@
       "hideImages": {
         "title": "Görselleri Gizle",
         "description": "Sayfadaki tüm görselleri gizleyerek görsel dikkat dağınıklığını azaltır. Görsel uyaranlara duyarlı kullanıcılar veya yavaş bağlantılar için kullanışlıdır."
+      },
+      "readAloud": {
+        "title": "Sesli Okuma",
+        "description": "Sayfadaki herhangi bir metne tıklayarak tarayıcınızın yerleşik metin okuma özelliğiyle sesli okutabilirsiniz."
       }
     }
   }

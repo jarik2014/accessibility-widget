@@ -110,6 +110,10 @@
       "hideImages": {
         "title": "Masquer les images",
         "description": "Masque toutes les images de la page, réduisant les distractions visuelles. Utile pour les utilisateurs sensibles aux stimuli visuels."
+      },
+      "readAloud": {
+        "title": "Lecture à voix haute",
+        "description": "Cliquez sur n'importe quel texte de la page pour le faire lire à voix haute grâce à la synthèse vocale intégrée de votre navigateur."
       }
     }
   }

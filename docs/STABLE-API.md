@@ -42,6 +42,14 @@ interface Preferences {
   motion: 'auto' | 'reduce';
   dyslexiaFont: boolean;
   readingMode: boolean;
+  lineHeight: 'normal' | 'medium' | 'large';
+  letterSpacing: 'normal' | 'medium' | 'large';
+  textAlign: 'default' | 'left' | 'center' | 'right';
+  highlightHeadings: boolean;
+  saturation: 'normal' | 'high' | 'low' | 'none';
+  cursorSize: 'default' | 'large-dark' | 'large-light';
+  hideImages: boolean;
+  readAloud: boolean;
 }
 
 interface WidgetOptions {
@@ -50,6 +58,8 @@ interface WidgetOptions {
   position: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
   font: string;
   debug: boolean;
+  iconStyle: 'walking' | 'access' | 'eye';
+  keyboardShortcut: boolean;
 }
 
 interface PreferencesRecord {
@@ -126,6 +136,14 @@ Bu attribute'lar widget tarafından `<html>` elementine yazılır. Müşteri CSS
 | `data-a11y-motion` | `"auto" \| "reduce"` | Hareket azaltma | 1.0.0 |
 | `data-a11y-dyslexia` | `"true" \| "false"` | Disleksi font | 1.0.0 |
 | `data-a11y-reading` | `"true" \| "false"` | Okuma modu | 1.0.0 |
+| `data-a11y-lineheight` | `"normal" \| "medium" \| "large"` | Satır yüksekliği | 2.0.0 |
+| `data-a11y-letterspacing` | `"normal" \| "medium" \| "large"` | Harf aralığı | 2.0.0 |
+| `data-a11y-textalign` | `"default" \| "left" \| "center" \| "right"` | Metin hizalama | 2.0.0 |
+| `data-a11y-headings` | `"true" \| "false"` | Başlık vurgusu | 2.0.0 |
+| `data-a11y-saturation` | `"normal" \| "high" \| "low" \| "none"` | Renk doygunluğu | 2.0.0 |
+| `data-a11y-cursor` | `"default" \| "large-dark" \| "large-light"` | İmleç boyutu | 2.0.0 |
+| `data-a11y-hideimages` | `"true" \| "false"` | Görselleri gizle | 2.0.0 |
+| `data-a11y-readaloud` | `"true" \| "false"` | Sesli okuma (click-to-read) | 2.0.0 |
 
 ### Müşteri kullanım örneği
 

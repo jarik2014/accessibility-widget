@@ -52,6 +52,7 @@ export interface Preferences {
   saturation: Saturation;
   cursorSize: CursorSize;
   hideImages: boolean;
+  readAloud: boolean;
 }
 
 /** Persisted preferences envelope written to localStorage and cookie. */
@@ -147,6 +148,7 @@ export interface Translation {
       dyslexiaFont: { title: string; description: string; note: string };
       readingMode: { title: string; description: string };
       hideImages: { title: string; description: string };
+      readAloud: { title: string; description: string };
     };
   };
 }
@@ -231,6 +233,7 @@ export const DEFAULT_PREFS: Preferences = {
   saturation: 'normal',
   cursorSize: 'default',
   hideImages: false,
+  readAloud: false,
 };
 
 /** Locked ordered list of supported locale codes. */
