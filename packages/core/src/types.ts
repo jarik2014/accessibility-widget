@@ -175,6 +175,8 @@ export interface DiagnosticsSnapshot {
     reducedMotion: boolean;
     contrast: 'normal' | 'more' | 'less';
     colorScheme: 'light' | 'dark' | 'no-preference';
+    reducedTransparency: boolean;
+    reducedData: boolean;
   };
   performance: {
     mountTimeMs: number;
@@ -248,6 +250,8 @@ export const ISSUE_CODES = {
   OS_PREFERS_REDUCED_MOTION: 'OS_PREFERS_REDUCED_MOTION',
   OS_PREFERS_CONTRAST_MORE: 'OS_PREFERS_CONTRAST_MORE',
   OS_PREFERS_COLOR_SCHEME_DARK: 'OS_PREFERS_COLOR_SCHEME_DARK',
+  OS_PREFERS_REDUCED_TRANSPARENCY: 'OS_PREFERS_REDUCED_TRANSPARENCY',
+  OS_PREFERS_REDUCED_DATA: 'OS_PREFERS_REDUCED_DATA',
   INVALID_PREF_VALUE: 'INVALID_PREF_VALUE',
 } as const;
 

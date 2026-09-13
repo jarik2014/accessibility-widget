@@ -28,6 +28,7 @@
 - Locked public API contract (STABLE-API.md, ADR-004)
 - Migration guide v1 → v2
 - 7 yeni tercih alanı: `lineHeight`, `letterSpacing`, `textAlign`, `highlightHeadings`, `saturation`, `cursorSize`, `hideImages`
+- OS signal detection: prefers-reduced-transparency, prefers-reduced-data (diagnostics only, parity with existing OS-signal handling)
 
 ### Changed (BREAKING)
 - Distribution model: `npx degit` → CDN script tag / NPM package

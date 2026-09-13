@@ -330,6 +330,12 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
   if (osPrefs.colorScheme === 'dark') {
     addIssue('info', 'OS_PREFERS_COLOR_SCHEME_DARK', 'OS prefers-color-scheme=dark detected.');
   }
+  if (osPrefs.reducedTransparency) {
+    addIssue('info', 'OS_PREFERS_REDUCED_TRANSPARENCY', 'OS prefers-reduced-transparency=reduce detected.');
+  }
+  if (osPrefs.reducedData) {
+    addIssue('info', 'OS_PREFERS_REDUCED_DATA', 'OS prefers-reduced-data=reduce detected.');
+  }
   const offOSChanges = subscribeToOSChanges(() => {
     if (state.config.theme === 'auto') {
       _applyHostAttributes(state.host, state.config);

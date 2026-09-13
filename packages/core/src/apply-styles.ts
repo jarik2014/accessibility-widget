@@ -6,6 +6,8 @@ export interface OSPreferences {
   reducedMotion: boolean;
   contrast: 'normal' | 'more' | 'less';
   colorScheme: 'light' | 'dark' | 'no-preference';
+  reducedTransparency: boolean;
+  reducedData: boolean;
 }
 
 const HOST_STYLE_ID = 'blakfy-a11y-host';
@@ -162,11 +164,19 @@ export function applyPreferences(prefs: Preferences): void {
  */
 export function detectOSPreferences(): OSPreferences {
   if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
-    return { reducedMotion: false, contrast: 'normal', colorScheme: 'no-preference' };
+    return {
+      reducedMotion: false,
+      contrast: 'normal',
+      colorScheme: 'no-preference',
+      reducedTransparency: false,
+      reducedData: false,
+    };
   }
   let reducedMotion = false;
   let contrast: OSPreferences['contrast'] = 'normal';
   let colorScheme: OSPreferences['colorScheme'] = 'no-preference';
+  let reducedTransparency = false;
+  let reducedData = false;
   try {
     reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   } catch {
@@ -184,7 +194,17 @@ export function detectOSPreferences(): OSPreferences {
   } catch {
     /* ignore */
   }
-  return { reducedMotion, contrast, colorScheme };
+  try {
+    reducedTransparency = window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+  } catch {
+    /* not supported in all engines yet — Safari/iOS only as of writing */
+  }
+  try {
+    reducedData = window.matchMedia('(prefers-reduced-data: reduce)').matches;
+  } catch {
+    /* Chrome-only, behind a flag in some versions — expect frequent no-op */
+  }
+  return { reducedMotion, contrast, colorScheme, reducedTransparency, reducedData };
 }
 
 /**

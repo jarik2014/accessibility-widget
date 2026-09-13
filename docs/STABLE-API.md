@@ -72,6 +72,8 @@ interface DiagnosticsSnapshot {
     reducedMotion: boolean;
     contrast: 'normal' | 'more' | 'less';
     colorScheme: 'light' | 'dark' | 'no-preference';
+    reducedTransparency: boolean;
+    reducedData: boolean;
   };
   performance: {
     mountTimeMs: number;

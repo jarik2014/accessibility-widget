@@ -220,6 +220,8 @@ export function getDiagnostics(opts: {
       reducedMotion: os.reducedMotion,
       contrast: os.contrast,
       colorScheme: os.colorScheme,
+      reducedTransparency: os.reducedTransparency,
+      reducedData: os.reducedData,
     },
     performance: {
       mountTimeMs: opts.performance.mountTimeMs,

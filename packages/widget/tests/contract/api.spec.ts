@@ -76,6 +76,8 @@ describe('Public API contract (STABLE-API §1)', () => {
         reducedMotion: expect.any(Boolean),
         contrast: expect.any(String),
         colorScheme: expect.any(String),
+        reducedTransparency: expect.any(Boolean),
+        reducedData: expect.any(Boolean),
       },
       performance: {
         mountTimeMs: expect.any(Number),

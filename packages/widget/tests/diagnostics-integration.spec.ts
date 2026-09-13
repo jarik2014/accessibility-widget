@@ -143,6 +143,8 @@ describe('Diagnostics integration', () => {
     expect(snap).toHaveProperty('osPreferences.reducedMotion');
     expect(snap).toHaveProperty('osPreferences.contrast');
     expect(snap).toHaveProperty('osPreferences.colorScheme');
+    expect(snap).toHaveProperty('osPreferences.reducedTransparency');
+    expect(snap).toHaveProperty('osPreferences.reducedData');
     expect(snap).toHaveProperty('performance.mountTimeMs', 7);
     expect(snap).toHaveProperty('performance.bundleSizeGz', 17834);
     expect(snap).toHaveProperty('performance.timeToFirstClick', null);
