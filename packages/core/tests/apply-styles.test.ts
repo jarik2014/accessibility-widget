@@ -14,6 +14,23 @@ beforeEach(() => {
   html.removeAttribute('data-a11y-reading');
 });
 
+describe('applyPreferences — lineHeight selector (#14)', () => {
+  it('covers headings, links, labels and table cells for medium/large', () => {
+    applyPreferences({ ...DEFAULT_PREFS, lineHeight: 'large' });
+    const css = document.getElementById('blakfy-a11y-host')?.textContent ?? '';
+    expect(css).toContain('line-height: 2.4 !important');
+    for (const sel of ['html h1', 'html h2', 'html h3', 'html h4', 'html h5', 'html h6', 'html a', 'html label', 'html td', 'html th', 'html p', 'html li', 'html dd', 'html dt', 'html span', 'html div']) {
+      expect(css).toContain(sel);
+    }
+  });
+
+  it('does not touch textAlign selector/logic', () => {
+    applyPreferences({ ...DEFAULT_PREFS, lineHeight: 'large', textAlign: 'center' });
+    const css = document.getElementById('blakfy-a11y-host')?.textContent ?? '';
+    expect(css).toContain('text-align: center !important');
+  });
+});
+
 describe('applyPreferences', () => {
   it('writes all 7 data-attrs with default contract strings', () => {
     applyPreferences(DEFAULT_PREFS);

@@ -10,6 +10,9 @@ export interface OSPreferences {
 
 const HOST_STYLE_ID = 'blakfy-a11y-host';
 
+const LINE_HEIGHT_SELECTOR =
+  'html p, html li, html dd, html dt, html span, html div, html h1, html h2, html h3, html h4, html h5, html h6, html a, html label, html td, html th';
+
 function _svgCursor(fill: string, stroke: string): string {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M6 2L6 26L12 20L16 28L19 27L15 19L22 19Z" fill="${fill}" stroke="${stroke}" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
   return `url("data:image/svg+xml,${encodeURIComponent(svg)}") 6 2`;
@@ -61,9 +64,9 @@ function _buildHostCSS(prefs: Preferences): string {
   }
 
   if (prefs.lineHeight === 'medium') {
-    rules.push(`html p, html li, html dd, html dt, html span, html div { line-height: 1.8 !important; }`);
+    rules.push(`${LINE_HEIGHT_SELECTOR} { line-height: 1.8 !important; }`);
   } else if (prefs.lineHeight === 'large') {
-    rules.push(`html p, html li, html dd, html dt, html span, html div { line-height: 2.4 !important; }`);
+    rules.push(`${LINE_HEIGHT_SELECTOR} { line-height: 2.4 !important; }`);
   }
 
   if (prefs.letterSpacing === 'medium') {
