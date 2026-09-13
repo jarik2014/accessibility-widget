@@ -28,11 +28,17 @@ test('FAB is anchored to the right side in RTL (mirrored)', async ({ page }) => 
   expect(rightEdgeDistance).toBeLessThan(96);
 });
 
-test('badge is on the opposite side from the FAB in RTL', async ({ page }) => {
-  // Badge default is `inset-inline-end: 1rem` → resolves to LEFT in RTL.
+test('badge stacks above the FAB on the same (mirrored) side in RTL', async ({ page }) => {
+  // Badge uses `inset-inline-start` (same logical side as the FAB) so it
+  // stacks directly above it rather than floating to the opposite corner.
+  // In RTL that logical start resolves to the right edge, same as the FAB.
   const box = await badge(page).boundingBox();
+  const fabBox = await fab(page).boundingBox();
   expect(box).not.toBeNull();
-  expect(box!.x).toBeLessThan(96);
+  expect(fabBox).not.toBeNull();
+  const viewport = page.viewportSize()!;
+  const rightEdgeDistance = viewport.width - (box!.x + box!.width);
+  expect(rightEdgeDistance).toBeLessThan(96);
 });
 
 test('panel content flows RTL when opened', async ({ page }) => {

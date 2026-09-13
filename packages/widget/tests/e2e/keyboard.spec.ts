@@ -81,12 +81,15 @@ test('non-English locale loads from /dist/locales/*.json (Phase 11 Deviation 4)'
   await expect(titleLocator).toContainText(/Eri.ilebilirlik/, { timeout: 5_000 });
 });
 
-test('all 7 toggle controls are reachable via keyboard', async ({ page }) => {
+test('all toggle controls are reachable via keyboard', async ({ page }) => {
   await openPanel(page);
-  // Six are role="switch", and the font-scale exposes 3 buttons. We
-  // assert we have at least 6 switches and 3 scale buttons reachable.
+  // 12 are role="switch" (one per boolean preference), and fontScale is a
+  // 2-button (−/+) stepper rather than 3 discrete scale buttons.
   const switchCount = await switches(page).count();
-  expect(switchCount).toBe(6);
-  const scaleButtons = await page.locator('blakfy-a11y-root').locator('button.scale-btn').count();
-  expect(scaleButtons).toBe(3);
+  expect(switchCount).toBe(12);
+  const stepperButtons = await page
+    .locator('blakfy-a11y-root')
+    .locator('button.stepper-btn')
+    .count();
+  expect(stepperButtons).toBeGreaterThanOrEqual(2);
 });

@@ -29,8 +29,8 @@ test('dark theme: panel background resolves to dark value', async ({ page }) => 
   await waitForMount(page);
   await openPanel(page);
   const bg = await getDialogBg(page);
-  // #0a0a0a → rgb(10, 10, 10)
-  expect(bg).toMatch(/rgb\s*\(\s*10\s*,\s*10\s*,\s*10\s*\)/);
+  // #111111 → rgb(17, 17, 17)
+  expect(bg).toMatch(/rgb\s*\(\s*17\s*,\s*17\s*,\s*17\s*\)/);
 });
 
 test('auto + emulated prefers-color-scheme=dark uses dark vars', async ({ page, browser }) => {
@@ -40,7 +40,7 @@ test('auto + emulated prefers-color-scheme=dark uses dark vars', async ({ page, 
   await waitForMount(p);
   await openPanel(p);
   const bg = await getDialogBg(p);
-  expect(bg).toMatch(/rgb\s*\(\s*10\s*,\s*10\s*,\s*10\s*\)/);
+  expect(bg).toMatch(/rgb\s*\(\s*17\s*,\s*17\s*,\s*17\s*\)/);
   await ctx.close();
 });
 
@@ -57,5 +57,5 @@ test('CSS custom properties are queryable on the host', async ({ page }) => {
           .trim()
       : '';
   });
-  expect(value).toBe('#2563eb');
+  expect(value).toBe('#000000');
 });

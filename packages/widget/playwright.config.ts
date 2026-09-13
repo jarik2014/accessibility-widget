@@ -26,7 +26,11 @@ export default defineConfig({
     // `.` is the widget package root (where this config lives). We serve
     // it so that /tests/e2e/fixtures/test-page.html and /dist/widget.js
     // are both reachable.
-    command: 'pnpm exec http-server . -p 5173 -s -c-1',
+    // --cors mirrors the real CDN (jsdelivr sends Access-Control-Allow-Origin:
+    // *) — without it, cross-origin/opaque-origin frames (see
+    // sandboxed-iframe.spec.ts) get a script's real error masked as "Script
+    // error." by the browser.
+    command: 'pnpm exec http-server . -p 5173 -s -c-1 --cors',
     url: `http://localhost:5173${FIXTURE_PATH}`,
     timeout: 30_000,
     reuseExistingServer: !process.env.CI,

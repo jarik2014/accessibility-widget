@@ -33,18 +33,26 @@ async function getHtmlAttrs(
 
 test('fontScale → data-a11y-fontscale + persists', async ({ page }) => {
   await openPanel(page);
-  // Three scale buttons in DOM order: 100% / 110% / 125%
-  await page.locator('blakfy-a11y-root').locator('button.scale-btn').nth(1).click();
+  // fontScale is a stepper (100 → 110 → 125): one "artır" (+) click from
+  // the 100 default lands on 110.
+  await page
+    .locator('blakfy-a11y-root')
+    .locator('.stepper-row', { hasText: 'Yazı Ölçeği' })
+    .locator('button.stepper-btn[aria-label="artır"]')
+    .click();
   expect((await getHtmlAttrs(page)).fontscale).toBe('110');
   await page.reload();
   await waitForMount(page);
   expect((await getHtmlAttrs(page)).fontscale).toBe('110');
 });
 
+function switchByName(page: import('@playwright/test').Page, name: string) {
+  return page.locator('blakfy-a11y-root').getByRole('switch', { name });
+}
+
 test('contrast switch → data-a11y-contrast="high" + persists', async ({ page }) => {
   await openPanel(page);
-  // First switch in the order is "contrast"
-  await page.locator('blakfy-a11y-root').locator('[role="switch"]').first().click();
+  await switchByName(page, 'Yüksek Kontrast').click();
   expect((await getHtmlAttrs(page)).contrast).toBe('high');
   await page.reload();
   await waitForMount(page);
@@ -53,7 +61,7 @@ test('contrast switch → data-a11y-contrast="high" + persists', async ({ page }
 
 test('focusRing → data-a11y-focus="enhanced" + persists', async ({ page }) => {
   await openPanel(page);
-  await page.locator('blakfy-a11y-root').locator('[role="switch"]').nth(1).click();
+  await switchByName(page, 'Belirgin Odak Halkası').click();
   expect((await getHtmlAttrs(page)).focus).toBe('enhanced');
   await page.reload();
   await waitForMount(page);
@@ -62,7 +70,7 @@ test('focusRing → data-a11y-focus="enhanced" + persists', async ({ page }) => 
 
 test('linkUnderline → data-a11y-links="underline" + persists', async ({ page }) => {
   await openPanel(page);
-  await page.locator('blakfy-a11y-root').locator('[role="switch"]').nth(2).click();
+  await switchByName(page, 'Bağlantı Altçizgisi').click();
   expect((await getHtmlAttrs(page)).links).toBe('underline');
   await page.reload();
   await waitForMount(page);
@@ -71,7 +79,7 @@ test('linkUnderline → data-a11y-links="underline" + persists', async ({ page }
 
 test('motion → data-a11y-motion="reduce" + persists', async ({ page }) => {
   await openPanel(page);
-  await page.locator('blakfy-a11y-root').locator('[role="switch"]').nth(3).click();
+  await switchByName(page, 'Hareketi Azalt').click();
   expect((await getHtmlAttrs(page)).motion).toBe('reduce');
   await page.reload();
   await waitForMount(page);
@@ -80,7 +88,7 @@ test('motion → data-a11y-motion="reduce" + persists', async ({ page }) => {
 
 test('dyslexiaFont → data-a11y-dyslexia="true" + persists', async ({ page }) => {
   await openPanel(page);
-  await page.locator('blakfy-a11y-root').locator('[role="switch"]').nth(4).click();
+  await switchByName(page, 'Disleksi Dostu Yazı Tipi').click();
   expect((await getHtmlAttrs(page)).dyslexia).toBe('true');
   await page.reload();
   await waitForMount(page);
@@ -89,7 +97,7 @@ test('dyslexiaFont → data-a11y-dyslexia="true" + persists', async ({ page }) =
 
 test('readingMode → data-a11y-reading="true" + persists', async ({ page }) => {
   await openPanel(page);
-  await page.locator('blakfy-a11y-root').locator('[role="switch"]').nth(5).click();
+  await switchByName(page, 'Okuma Modu').click();
   expect((await getHtmlAttrs(page)).reading).toBe('true');
   await page.reload();
   await waitForMount(page);
@@ -98,7 +106,7 @@ test('readingMode → data-a11y-reading="true" + persists', async ({ page }) => 
 
 test('localStorage + cookie both record changes', async ({ page }) => {
   await openPanel(page);
-  await page.locator('blakfy-a11y-root').locator('[role="switch"]').first().click();
+  await switchByName(page, 'Yüksek Kontrast').click();
   const ls = await page.evaluate(() => window.localStorage.getItem('blakfy_a11y_prefs'));
   const ck = await page.evaluate(() => document.cookie);
   expect(ls).not.toBeNull();

@@ -28,7 +28,7 @@ export function backdrop(page: Page): Locator {
 }
 
 export function resetButton(page: Page): Locator {
-  return page.locator('blakfy-a11y-root').locator('button.btn-secondary');
+  return page.locator('blakfy-a11y-root').locator('button.btn-reset');
 }
 
 export function switches(page: Page): Locator {

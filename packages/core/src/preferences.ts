@@ -56,7 +56,14 @@ function _setCookie(name: string, value: string, days: number): void {
 
 function _getCookie(name: string): string | null {
   if (!_hasDocument()) return null;
-  const cookieStr = document.cookie || '';
+  let cookieStr = '';
+  try {
+    cookieStr = document.cookie || '';
+  } catch {
+    // Sandboxed cross-origin iframes without allow-same-origin throw
+    // SecurityError on cookie access — treat as "no cookie available".
+    return null;
+  }
   const match = cookieStr.match(new RegExp(`(^| )${name}=([^;]+)`));
   if (!match || typeof match[2] !== 'string') return null;
   try {

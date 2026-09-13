@@ -38,6 +38,9 @@
 
 ### Fixed
 - `.info-btn` tap target enlarged from 16x16 to a real 24x24 (WCAG 2.2 AA SC 2.5.8 Target Size Minimum) — was a genuine AA violation, visual dot unchanged via `::before` (#63). Note: `.stepper-btn`/`.opt-btn`/`.switch`/`.btn-reset` still fall short of the stronger 44x44 figure quoted in the v1.0.0 entry above — tracked separately, not yet resolved.
+- `document.cookie` read (`_getCookie`) now catches `SecurityError` — a sandboxed cross-origin iframe without `allow-same-origin` (Wix "Embed a Widget", #15) throws on cookie access, which previously aborted `mount()` before it rendered anything.
+- Panel color-contrast: `--__muted` text (profile descriptions, etc.) raised from 0.45 to 0.62 (light) / 0.58 (dark) alpha — the lighter value fell under WCAG AA 4.5:1 against `--__card`, caught by `contrast.spec.ts` (axe-core).
+- e2e test suite realigned with UI changes landed earlier this session that were never re-verified against Chromium (browser wasn't installed until now): stale switch-by-index selectors → accessible-name lookups, `.btn-secondary`/`.scale-btn` → `.btn-reset`/stepper buttons, stale blue-palette (`#2563eb`)/old dark-bg (`#0a0a0a`) color assertions → current black/white palette + `#111111`, RTL badge assertion corrected to match the shipped same-side (not opposite-side) stacking behavior.
 
 ### Changed (BREAKING)
 - Distribution model: `npx degit` → CDN script tag / NPM package
