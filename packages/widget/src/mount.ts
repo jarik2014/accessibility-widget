@@ -259,6 +259,17 @@ function _injectStyles(shadowRoot: ShadowRoot): void {
   shadowRoot.appendChild(styleEl);
 }
 
+function _isSandboxedCrossOriginIframe(): boolean {
+  if (window.top === window.self) return false; // not in an iframe at all
+  try {
+    // Same-origin iframes can read window.top.location; cross-origin throws.
+    void window.top?.location.href;
+    return false;
+  } catch {
+    return true;
+  }
+}
+
 function _getOrCreateHost(): HTMLElement {
   const existing = document.querySelector(ROOT_TAG);
   if (existing && existing instanceof HTMLElement) return existing;
@@ -297,6 +308,16 @@ export function mount(opts: Partial<WidgetOptions> = {}): MountResult {
   };
   const merged = safeMergeOptions({ ...scriptCfg, ...winGlobal, ...opts });
   const config: WidgetOptions = merged;
+
+  if (_isSandboxedCrossOriginIframe()) {
+    addIssue(
+      'warn',
+      'SANDBOXED_IFRAME',
+      'Widget mounted inside a cross-origin sandboxed iframe (e.g. Wix "Embed a Widget"). ' +
+        'Preferences will not persist and the FAB will be trapped inside the iframe box. ' +
+        'Use a same-origin embed point instead (e.g. Wix Site Settings → Custom Code).',
+    );
+  }
 
   // 2. Apply persisted prefs immediately. Before mutating <html>, sample
   //    any server-rendered data-a11y-* to detect SSR hydration mismatch.
