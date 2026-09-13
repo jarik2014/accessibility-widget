@@ -146,6 +146,7 @@ export function safeMergePrefs(input: unknown): Preferences {
     hideImages: pickBoolean(input.hideImages, DEFAULT_PREFS.hideImages),
     readAloud: pickBoolean(input.readAloud, DEFAULT_PREFS.readAloud),
     readingMask: pickBoolean(input.readingMask, DEFAULT_PREFS.readingMask),
+    magnifier: pickBoolean(input.magnifier, DEFAULT_PREFS.magnifier),
   };
 }
 

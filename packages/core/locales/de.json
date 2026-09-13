@@ -113,6 +113,10 @@
       "readingMask": {
         "title": "Lesemaske",
         "description": "Blendet die Seite aus, außer einem horizontalen Band, das Ihrem Cursor folgt, damit Sie sich auf eine Textzeile konzentrieren können."
+      },
+      "magnifier": {
+        "title": "Lupe",
+        "description": "Zeigt eine vergrößernde Lupe, die Ihrem Cursor folgt. Hinweis: Videos oder andere Live-Inhalte werden möglicherweise nicht perfekt vergrößert."
       }
     }
   }

@@ -54,6 +54,7 @@ export interface Preferences {
   hideImages: boolean;
   readAloud: boolean;
   readingMask: boolean;
+  magnifier: boolean;
 }
 
 /** Persisted preferences envelope written to localStorage and cookie. */
@@ -151,6 +152,7 @@ export interface Translation {
       hideImages: { title: string; description: string };
       readAloud: { title: string; description: string };
       readingMask: { title: string; description: string };
+      magnifier: { title: string; description: string };
     };
   };
 }
@@ -237,6 +239,7 @@ export const DEFAULT_PREFS: Preferences = {
   hideImages: false,
   readAloud: false,
   readingMask: false,
+  magnifier: false,
 };
 
 /** Locked ordered list of supported locale codes. */

@@ -22,6 +22,7 @@ import { Dialog } from './Dialog';
 import { Panel } from './Panel';
 import { FloatingBadge } from './FloatingBadge';
 import { ReadingMask } from './ReadingMask';
+import { Magnifier } from './Magnifier';
 
 type Props = {
   config: WidgetOptions;
@@ -40,6 +41,7 @@ export function Widget({
 }: Props): JSX.Element {
   const [open, setOpen] = useState(false);
   const [readingMask, setReadingMask] = useState(() => getPreferences().readingMask);
+  const [magnifier, setMagnifier] = useState(() => getPreferences().magnifier);
   const baseId = useId();
   const titleId = `${baseId}-title`;
   const descriptionId = `${baseId}-desc`;
@@ -47,6 +49,7 @@ export function Widget({
   useEffect(() => {
     return on(EVENT_NAMES.CHANGE, (record) => {
       setReadingMask(record.prefs.readingMask);
+      setMagnifier(record.prefs.magnifier);
     });
   }, []);
 
@@ -103,6 +106,7 @@ export function Widget({
       />
       <FloatingBadge />
       <ReadingMask enabled={readingMask} />
+      <Magnifier enabled={magnifier} />
       <Dialog open={open} onClose={handleClose} titleId={titleId} descriptionId={descriptionId}>
         <Panel
           translation={translation}

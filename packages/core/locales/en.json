@@ -113,6 +113,10 @@
       "readingMask": {
         "title": "Reading Mask",
         "description": "Dims the page except for a horizontal band that follows your cursor, helping you focus on one line of text at a time."
+      },
+      "magnifier": {
+        "title": "Magnifier",
+        "description": "Shows a magnified lens that follows your cursor. Note: it may not perfectly magnify videos or other live content."
       }
     }
   }

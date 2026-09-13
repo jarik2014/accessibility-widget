@@ -241,6 +241,23 @@ button {
   );
 }
 
+/* ==========================================================================
+ * 6c. Magnifier lens (#30) — cursor-following DOM-clone zoom.
+ * Same z-index tier as .reading-mask.
+ * ========================================================================== */
+.magnifier-lens {
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid var(--blakfy-a11y-primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 9990;
+  pointer-events: none;
+  background: #fff;
+}
+
 .backdrop {
   position: fixed;
   inset: 0;

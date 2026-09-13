@@ -451,6 +451,12 @@ export function Panel({
         checked={prefs.readingMask}
         onChange={(v) => update('readingMask', v)}
       />
+      <Toggle
+        title={t.preferences.magnifier.title}
+        description={t.preferences.magnifier.description}
+        checked={prefs.magnifier}
+        onChange={(v) => update('magnifier', v)}
+      />
 
       {/* Tema */}
       <p class="section-label">{t.theme.label}</p>

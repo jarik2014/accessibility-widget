@@ -113,6 +113,10 @@
       "readingMask": {
         "title": "Okuma Maskesi",
         "description": "İmlecinizi takip eden yatay bir bant dışında sayfayı karartır, tek seferde bir satıra odaklanmanıza yardımcı olur."
+      },
+      "magnifier": {
+        "title": "Büyüteç",
+        "description": "İmlecinizi takip eden büyüteç merceği gösterir. Not: video veya diğer canlı içerikleri tam olarak büyütemeyebilir."
       }
     }
   }

@@ -122,6 +122,10 @@
       "readingMask": {
         "title": "Maschera di lettura",
         "description": "Oscura la pagina tranne una fascia orizzontale che segue il cursore, aiutandoti a concentrarti su una riga di testo alla volta."
+      },
+      "magnifier": {
+        "title": "Lente d'ingrandimento",
+        "description": "Mostra una lente d'ingrandimento che segue il cursore. Nota: potrebbe non ingrandire perfettamente video o altri contenuti dal vivo."
       }
     }
   }

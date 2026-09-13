@@ -122,6 +122,10 @@
       "readingMask": {
         "title": "Máscara de lectura",
         "description": "Oscurece la página excepto una franja horizontal que sigue tu cursor, ayudándote a enfocarte en una línea de texto a la vez."
+      },
+      "magnifier": {
+        "title": "Lupa",
+        "description": "Muestra una lupa de aumento que sigue tu cursor. Nota: puede que no amplíe perfectamente vídeos u otro contenido en vivo."
       }
     }
   }

@@ -32,6 +32,7 @@
 - Quick-preset "profiles" (epilepsy/vision/cognitive/adhd/blindness) in the panel UI — apply a bundle of preferences in one click
 - readAloud preference: click-to-read via native Web Speech API
 - readingMask preference: cursor-following reading mask/ruler (dims viewport except a horizontal band), rendered inside the widget's own Shadow DOM
+- magnifier preference: cursor-following DOM-clone lens (~2.5x zoom), zero new dependency (static snapshot — doesn't reflect live video/canvas)
 
 ### Fixed
 - `.info-btn` tap target enlarged from 16x16 to a real 24x24 (WCAG 2.2 AA SC 2.5.8 Target Size Minimum) — was a genuine AA violation, visual dot unchanged via `::before` (#63). Note: `.stepper-btn`/`.opt-btn`/`.switch`/`.btn-reset` still fall short of the stronger 44x44 figure quoted in the v1.0.0 entry above — tracked separately, not yet resolved.

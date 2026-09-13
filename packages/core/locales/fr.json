@@ -118,6 +118,10 @@
       "readingMask": {
         "title": "Masque de lecture",
         "description": "Assombrit la page sauf une bande horizontale qui suit votre curseur, vous aidant à vous concentrer sur une ligne de texte à la fois."
+      },
+      "magnifier": {
+        "title": "Loupe",
+        "description": "Affiche une loupe grossissante qui suit votre curseur. Remarque : elle peut ne pas agrandir parfaitement les vidéos ou autre contenu en direct."
       }
     }
   }
