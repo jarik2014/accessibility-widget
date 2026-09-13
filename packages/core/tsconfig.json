@@ -6,6 +6,6 @@
     "rootDir": ".",
     "declarationMap": true
   },
-  "include": ["src/**/*", "locales/**/*.json"],
+  "include": ["src/**/*", "locales/**/*.json", "package.json"],
   "exclude": ["dist", "node_modules", "tests", "**/*.test.ts", "**/*.spec.ts"]
 }

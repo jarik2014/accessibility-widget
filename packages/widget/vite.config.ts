@@ -10,6 +10,7 @@ import dts from 'vite-plugin-dts';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { resolve } from 'node:path';
 import { copyFileSync } from 'node:fs';
+import pkg from './package.json' with { type: 'json' };
 
 type BuildTarget = 'iife' | 'esm' | 'element';
 
@@ -104,6 +105,6 @@ export default defineConfig({
       }),
   ].filter(Boolean),
   define: {
-    __VERSION__: JSON.stringify('2.0.0-alpha.0'),
+    __VERSION__: JSON.stringify(pkg.version),
   },
 });

@@ -17,6 +17,7 @@
  *  10. Emit ready
  */
 import { h, render } from 'preact';
+import { PACKAGE_VERSION_FALLBACK } from './version';
 import {
   _inspectStorage,
   EVENT_NAMES,
@@ -45,8 +46,7 @@ import { setupPublicAPI } from './public-api';
 const ROOT_TAG = 'blakfy-a11y-root';
 
 declare const __VERSION__: string;
-const VERSION_FALLBACK = '2.0.0-alpha.0';
-const VERSION = typeof __VERSION__ !== 'undefined' ? __VERSION__ : VERSION_FALLBACK;
+const VERSION = typeof __VERSION__ !== 'undefined' ? __VERSION__ : PACKAGE_VERSION_FALLBACK;
 
 interface MountResult {
   unmount: () => void;

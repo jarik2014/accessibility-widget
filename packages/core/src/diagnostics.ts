@@ -1,5 +1,6 @@
 // @blakfy/a11y-core — diagnostics.ts
 import { detectOSPreferences } from './apply-styles';
+import pkg from '../package.json' with { type: 'json' };
 import type {
   DiagnosticsSnapshot,
   Issue,
@@ -11,13 +12,14 @@ import type {
 // process may be injected by Node or bundlers; declare minimally to satisfy TS without @types/node.
 declare const process: { env: Record<string, string | undefined> } | undefined;
 
-// __VERSION__ is replaced at build time by Vite's `define` (see vite.config.ts).
-// Outside the build (vitest, raw tsc) the symbol is absent, hence the
-// `typeof` guard which is safe even when the identifier is not declared.
+// __VERSION__ is replaced at build time by Vite's `define` from this package's
+// own package.json (see vite.config.ts). Outside the build (vitest, raw tsc)
+// the symbol is absent, hence the `typeof` guard — the fallback reads the same
+// package.json directly so it can never drift from the build-time value.
 declare const __VERSION__: string;
-// TODO: drop the literal fallback once the build pipeline is hooked to package.json.
+const PACKAGE_VERSION_FALLBACK = pkg.version;
 const VERSION: string =
-  typeof __VERSION__ !== 'undefined' ? __VERSION__ : '2.0.0-alpha.0';
+  typeof __VERSION__ !== 'undefined' ? __VERSION__ : PACKAGE_VERSION_FALLBACK;
 
 const MAX_ISSUES = 50;
 const PIPE_RATE_LIMIT = 10; // max messages per second

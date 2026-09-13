@@ -23,7 +23,7 @@ type Props = {
   debug?: boolean;
   /** Next.js dev terminal log endpoint (yalnızca dev'de aktif). */
   devPipe?: string;
-  /** CDN sürümü. Alpha boyunca varsayılan tam pin (`'2.0.0-alpha.0'`). Stabil sürümle birlikte `'v2'` floating tag default olur. */
+  /** CDN sürümü. Alpha boyunca varsayılan, widget paketinin kendi sürümüne pin'lenir. Stabil sürümle birlikte `'v2'` floating tag default olur. */
   version?: string;
   /** `next/script` strategy. Default `'lazyOnload'` (R3 araştırması). */
   strategy?: 'lazyOnload' | 'afterInteractive';
@@ -31,9 +31,14 @@ type Props = {
 
 const CDN_BASE = 'https://cdn.jsdelivr.net/npm/@blakfy/accessibility-widget';
 
+// Replaced at build time by Vite's `define` with @blakfy/accessibility-widget's
+// own package.json version (see vite.config.ts) — this is the CDN package
+// being loaded, not this (next) package's own version.
+declare const __WIDGET_CDN_VERSION_DEFAULT__: string;
+
 /**
  * Loads the Blakfy accessibility widget via `next/script`. During alpha,
- * defaults to the exact alpha version (`2.0.0-alpha.0`). Pass a semver
+ * defaults to the widget package's exact alpha version. Pass a semver
  * string (e.g. `'2.0.0'`) to pin a stable release once available, or
  * `'v2'` to opt into auto-update on the floating tag. Forwards every
  * locked `data-*` config attribute listed in STABLE-API.md §6.
@@ -61,7 +66,7 @@ export function A11yScript({
   font,
   debug,
   devPipe,
-  version = '2.0.0-alpha.0',
+  version = __WIDGET_CDN_VERSION_DEFAULT__,
   strategy = 'lazyOnload',
 }: Props): JSX.Element {
   const src = `${CDN_BASE}@${version}/dist/widget.js`;

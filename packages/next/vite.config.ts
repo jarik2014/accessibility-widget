@@ -4,6 +4,10 @@
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { resolve } from 'node:path';
+// The default CDN version pin in A11yScript.tsx loads the WIDGET package's
+// dist bundle, not this (next) package — so the fallback must track
+// @blakfy/accessibility-widget's own version, not this package.json's.
+import widgetPkg from '../widget/package.json' with { type: 'json' };
 
 export default defineConfig({
   // Use the automatic JSX runtime so emitted code imports
@@ -37,4 +41,7 @@ export default defineConfig({
       tsconfigPath: './tsconfig.json',
     }),
   ],
+  define: {
+    __WIDGET_CDN_VERSION_DEFAULT__: JSON.stringify(widgetPkg.version),
+  },
 });

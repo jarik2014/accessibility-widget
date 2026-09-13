@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { resolve } from 'node:path';
+import pkg from './package.json' with { type: 'json' };
 
 export default defineConfig({
   build: {
@@ -21,6 +22,6 @@ export default defineConfig({
     dts({ rollupTypes: true, tsconfigPath: './tsconfig.json' }),
   ],
   define: {
-    __VERSION__: JSON.stringify('2.0.0-alpha.1'),
+    __VERSION__: JSON.stringify(pkg.version),
   },
 });

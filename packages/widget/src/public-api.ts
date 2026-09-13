@@ -15,10 +15,10 @@ import {
   type PreferencesRecord,
   type WidgetOptions,
 } from '@blakfy/a11y-core';
+import { PACKAGE_VERSION_FALLBACK } from './version';
 
 declare const __VERSION__: string;
-const VERSION_FALLBACK = '2.0.0-alpha.0';
-const VERSION = typeof __VERSION__ !== 'undefined' ? __VERSION__ : VERSION_FALLBACK;
+const VERSION = typeof __VERSION__ !== 'undefined' ? __VERSION__ : PACKAGE_VERSION_FALLBACK;
 
 export interface BlakfyA11yAPI {
   open: () => void;
